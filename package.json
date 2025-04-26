@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tailwindcss -i ./src/css/tailwind.css -o ./public/css/styles.css --watch",
-    "build": "tailwindcss -i ./src/css/tailwind.css -o ./public/css/styles.css --minify",
+    "dev": "npx update-browserslist-db@latest && tailwindcss -i ./src/css/tailwind.css -o ./public/css/styles.css --watch --verbose",
+    "build": "npm run optimize-images && tailwindcss -i ./src/css/tailwind.css -o ./public/css/styles.css --minify",
     "optimize-images": "node scripts/optimize-images.js",
     "analyze": "tailwindcss -i ./src/css/tailwind.css -o ./public/css/styles.css --minify --analyze",
-    "predeploy": "npm run build && npm run optimize-images",
-    "prebuild": "npm run optimize-images && npx update-browserslist-db@latest"
+    "predeploy": "npm run build",
+    "prebuild": "npm run optimize-images && npx update-browserslist-db@latest",
+    "check:images": "test -d ./src/images || (echo 'Error: Source images missing in src/images/' && exit 1)",
+    "clean": "rimraf public/css/styles.css public/images/*",
+    "all:build": "npm run clean && npm run check:images && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -19,9 +22,8 @@
     "cssnano": "^7.0.6",
     "postcss": "^8.5.3",
     "postcss-import": "^16.1.0",
+    "rimraf": "^6.0.1",
+    "sharp": "^0.33.2",
     "tailwindcss": "^4.1.4"
-  },
-  "dependencies": {
-    "sharp": "^0.34.1"
   }
 }

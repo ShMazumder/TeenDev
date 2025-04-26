@@ -19,7 +19,6 @@ module.exports = {
   safelist: [
     {
       pattern: /^(text|bg|border|hover:bg)-/,
-      variants: ['hover', 'focus'],
     },
     'btn-primary',
     'text-shadow',

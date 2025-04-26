@@ -9,8 +9,11 @@
 
   <!-- Preload critical resources -->
   <link rel="preload" href="./images/hero1.webp" as="image" fetchpriority="high">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+</noscript>
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="TeenDev: Accelerate Your Development Career | CAFU at Feni University">
@@ -27,7 +30,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
   
   <style>
     :root {
@@ -331,6 +334,7 @@
     </div>
   </div>
 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
   <!-- JavaScript -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

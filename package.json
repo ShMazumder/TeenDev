@@ -1,0 +1,27 @@
+{
+  "name": "teendev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/css/tailwind.css -o ./public/css/styles.css --watch",
+    "build": "tailwindcss -i ./src/css/tailwind.css -o ./public/css/styles.css --minify",
+    "optimize-images": "node scripts/optimize-images.js",
+    "analyze": "tailwindcss -i ./src/css/tailwind.css -o ./public/css/styles.css --minify --analyze",
+    "predeploy": "npm run build && npm run optimize-images",
+    "prebuild": "npm run optimize-images && npx update-browserslist-db@latest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.3",
+    "postcss-import": "^16.1.0",
+    "tailwindcss": "^4.1.4"
+  },
+  "dependencies": {
+    "sharp": "^0.34.1"
+  }
+}

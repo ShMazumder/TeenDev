@@ -7,10 +7,15 @@
   <title>TeenDev: Accelerate Your Development Career | CAFU at Feni University</title>
   <meta name="description" content="Join TeenDev's intensive 1-month program to master web & mobile app development, Git/GitHub, and launch your tech career. Limited seats available!">
 
+  <!-- Preload critical resources -->
+  <link rel="preload" href="./images/hero1.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="TeenDev: Accelerate Your Development Career | CAFU at Feni University">
   <meta property="og:description" content="Join TeenDev's intensive 1-month program to master web & mobile app development, Git/GitHub, and launch your tech career.">
-  <meta property="og:image" content="./images/hero1.png">
+  <meta property="og:image" content="./images/hero1.webp">
   <meta property="og:url" content="https://teendev.web.app/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -18,10 +23,11 @@
   <!-- Favicon -->
   <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 
-  <!-- CSS & Fonts -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -40,7 +46,7 @@
     }
 
     .hero {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/hero1.png);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/hero1.webp);
       background-attachment: fixed;
       background-position: center;
       background-size: cover;
@@ -73,7 +79,7 @@
     }
 
     .footnote {
-      background: linear-gradient(rgba(26, 86, 219, 0.9), rgba(26, 86, 219, 0.9)), url(./images/rocket.png);
+      background: linear-gradient(rgba(26, 86, 219, 0.9), rgba(26, 86, 219, 0.9)), url(./images/rocket.webp);
       background-size: cover;
       background-position: top;
       background-repeat: no-repeat;
@@ -212,8 +218,7 @@
   </section>
 
   <!-- Program Outline -->
-  <section class="program-contents outline-dotted bg-white p-8 md:p-12 max-w-5xl mx-auto rounded-2xl shadow-lg my-10"
-    data-aos="fade-up">
+  <section class="program-contents outline-dotted bg-white p-8 md:p-12 max-w-5xl mx-auto rounded-2xl shadow-lg my-10" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📚 What You'll Learn</h2>
 
     <div class="space-y-8">
@@ -275,7 +280,7 @@
     </div>
   </section>
 
-  <!-- Testimonials (Placeholder) -->
+  <!-- Testimonials -->
   <section class="p-8 md:p-12 max-w-5xl mx-auto" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">💬 What Past Participants Say</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -295,8 +300,7 @@
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">🚀 Launch Your Development Career Today! 🚀</h2>
       <p class="text-xl mb-8 max-w-2xl mx-auto">Limited seats available for this intensive 1-month program. Don't miss this opportunity to accelerate your skills!</p>
-      <a href="https://teendev.web.app/" target="_blank" rel="noopener noreferrer"
-        class="btn-primary inline-block">
+      <a href="https://teendev.web.app/" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block">
         Apply Now
       </a>
     </div>
@@ -331,63 +335,59 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     // Initialize AOS animations
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: 'ease-out-quad',
-      offset: 100
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true,
+        easing: 'ease-out-quad',
+        offset: 100
+      });
+
+      // Cookie Consent Logic
+      const cookieConsent = document.getElementById('cookie-consent');
+      const acceptCookies = document.getElementById('accept-cookies');
+      const rejectCookies = document.getElementById('reject-cookies');
+
+      if (!localStorage.getItem('cookieConsent')) {
+        cookieConsent.style.display = 'flex';
+      } else if (localStorage.getItem('cookieConsent') === 'accepted') {
+        cookieConsent.style.display = 'none';
+        loadAnalytics();
+      }
+
+      acceptCookies.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        cookieConsent.style.display = 'none';
+        loadAnalytics();
+      });
+
+      rejectCookies.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'rejected');
+        cookieConsent.style.display = 'none';
+      });
+
+      function loadAnalytics() {
+        if (window.dataLayer) return;
+        
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HS4MQ1S6TY';
+        script.async = true;
+        document.head.appendChild(script);
+
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', 'G-HS4MQ1S6TY');
+          gtag('consent', 'update', {
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+          });
+        };
+      }
     });
-
-    // Cookie Consent Logic
-    const cookieConsent = document.getElementById('cookie-consent');
-    const acceptCookies = document.getElementById('accept-cookies');
-    const rejectCookies = document.getElementById('reject-cookies');
-
-    // Check if consent already given
-    if (!localStorage.getItem('cookieConsent')) {
-      cookieConsent.style.display = 'flex';
-    } else if (localStorage.getItem('cookieConsent') === 'accepted') {
-      cookieConsent.style.display = 'none';
-      loadAnalytics();
-    }
-
-    acceptCookies.addEventListener('click', function() {
-      localStorage.setItem('cookieConsent', 'accepted');
-      cookieConsent.style.display = 'none';
-      loadAnalytics();
-    });
-
-    rejectCookies.addEventListener('click', function() {
-      localStorage.setItem('cookieConsent', 'rejected');
-      cookieConsent.style.display = 'none';
-    });
-
-    // Function to load Google Analytics (or any tracking script)
-    function loadAnalytics() {
-      // Only load if not already loaded
-      if (window.dataLayer) return;
-      
-      var script = document.createElement('script');
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HS4MQ1S6TY';
-      script.async = true;
-      document.head.appendChild(script);
-
-      script.onload = function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-HS4MQ1S6TY');
-
-        // Grant all consent if accepted
-        gtag('consent', 'update', {
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'ad_storage': 'granted',
-          'analytics_storage': 'granted'
-        });
-      };
-    }
   </script>
 </body>
-
 </html>

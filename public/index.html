@@ -10,10 +10,19 @@
   <style>
     body {
       scroll-behavior: smooth;
+      background-image: url('images/hero.png');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .hero {
-      background-color: #72a7b9 !important;
+      /* background-color: #72a7b9 !important; */
+      background-image: url(images/hero1.png);
+      background-attachment: fixed;
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .program-contents {
@@ -48,8 +57,6 @@
     <p class="italic text-xl mb-2">"Learn Today. Lead Tomorrow."</p>
     <p class="text-base">আয়োজক: সিএসই অ্যাসোসিয়েশন ফেনী ইউনিভার্সিটি (CAFU)</p>
   </section>
-
-  <canvas id="pond"></canvas>
 
   <!-- Event Details -->
   <section class="p-10 max-w-5xl mx-auto" data-aos="fade-up">
@@ -117,13 +124,15 @@
   </section>
 
   <!-- Call to Action -->
-  <section class="footnote bg-blue-700 text-white text-center p-16 my-10" data-aos="fade-up">
+  <section class="footnote bg-blue-700 text-center p-16 my-10" data-aos="fade-up">
     <h2 class="text-4xl font-bold mb-6">🚀 ক্যারিয়ার এগিয়ে নিতে আজই যুক্ত হও TeenDev এর সাথে! 🚀</h2>
     <a href="https://teendev.web.app/" target="_blank"
       class="bg-white text-blue-700 font-bold py-4 px-8 rounded-full hover:bg-gray-200 transition">
       Join Now
     </a>
   </section>
+
+  <canvas id="pond"></canvas>
 
   <!-- Footer -->
   <footer class="text-center p-6 text-gray-500 text-sm">

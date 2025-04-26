@@ -192,6 +192,8 @@
 
     #cookie-consent #accept-cookies:hover {
       background: #2ecc71;
+      opacity: 0.9;
+      /* Adjust hover state */
     }
 
     #cookie-consent #reject-cookies {
@@ -201,6 +203,14 @@
 
     #cookie-consent #reject-cookies:hover {
       background: #c0392b;
+      opacity: 0.9;
+      /* Adjust hover state */
+    }
+
+    #accept-cookies:focus,
+    #reject-cookies:focus {
+      outline: 2px solid #0056b3;
+      /* Darker outline on focus */
     }
 
     @media (max-width: 768px) {

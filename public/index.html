@@ -7,15 +7,10 @@
   <title>TeenDev: Accelerate Your Development Career | CAFU at Feni University</title>
   <meta name="description" content="Join TeenDev's intensive 1-month program to master web & mobile app development, Git/GitHub, and launch your tech career. Limited seats available!">
 
-  <!-- Preload critical resources -->
-  <link rel="preload" href="./images/hero1.webp" as="image" fetchpriority="high">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"></noscript>
-
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="TeenDev: Accelerate Your Development Career | CAFU at Feni University">
   <meta property="og:description" content="Join TeenDev's intensive 1-month program to master web & mobile app development, Git/GitHub, and launch your tech career.">
-  <meta property="og:image" content="./images/hero1.webp">
+  <meta property="og:image" content="./images/hero1.png">
   <meta property="og:url" content="https://teendev.web.app/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +18,11 @@
   <!-- Favicon -->
   <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 
-  <!-- Inline Critical CSS -->
+  <!-- CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --primary-color: #1a56db;
@@ -33,20 +32,53 @@
     body {
       scroll-behavior: smooth;
       font-family: 'Poppins', sans-serif;
+      background-image: url(./images/hero.png);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
       line-height: 1.6;
-      margin: 0;
-      padding: 0;
     }
 
     .hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/hero1.png);
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       min-height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 2rem 1rem;
-      color: white;
+    }
+
+    .program-contents {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(./images/staire.png);
+      background-attachment: fixed;
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .program-contents div div {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      padding: 20px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .program-contents div div:hover {
+      transform: translateY(-5px);
+    }
+
+    .footnote {
+      background: linear-gradient(rgba(26, 86, 219, 0.9), rgba(26, 86, 219, 0.9)), url(./images/rocket.png);
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      padding: 5rem 1rem;
     }
 
     .btn-primary {
@@ -57,11 +89,19 @@
       border-radius: 9999px;
       transition: all 0.3s ease;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      display: inline-block;
-      text-decoration: none;
     }
 
-    /* Cookie Consent minimal styles */
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .text-shadow {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Cookie Consent Styles */
     #cookie-consent {
       position: fixed;
       bottom: 20px;
@@ -73,41 +113,107 @@
       color: white;
       padding: 20px;
       border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
       z-index: 9999;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      display: none;
+      animation: slideUp 0.5s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { bottom: -100px; opacity: 0; }
+      to { bottom: 20px; opacity: 1; }
+    }
+
+    #cookie-consent p {
+      margin: 0;
+      font-size: 16px;
+      flex: 1;
+      min-width: 250px;
+      padding-right: 20px;
+    }
+
+    #cookie-consent a {
+      color: #f1c40f;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+
+    #cookie-consent a:hover {
+      color: #f39c12;
+    }
+
+    #cookie-consent .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    #cookie-consent button {
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    #cookie-consent #accept-cookies {
+      background: #27ae60;
+    }
+
+    #cookie-consent #accept-cookies:hover {
+      background: #2ecc71;
+    }
+
+    #cookie-consent #reject-cookies {
+      background: #e74c3c;
+    }
+
+    #cookie-consent #reject-cookies:hover {
+      background: #c0392b;
     }
 
     @media (max-width: 768px) {
+      #cookie-consent {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      #cookie-consent p {
+        padding-right: 0;
+        margin-bottom: 15px;
+      }
+      
       .hero {
         min-height: 50vh;
+        padding: 2rem 1rem;
+      }
+      
+      .footnote h2 {
+        font-size: 1.8rem;
       }
     }
   </style>
-
-  <!-- Defer non-critical CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdn.tailwindcss.com" media="print" onload="this.media='all'">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://unpkg.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 </head>
 
 <body class="bg-gradient-to-b from-blue-50 to-white text-gray-800">
 
   <!-- Hero Section -->
-  <section class="hero text-white text-center px-4" data-aos="fade-down" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/hero1.webp); background-attachment: fixed; background-position: center; background-size: cover; background-repeat: no-repeat;">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-6" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">🔥 TeenDev: Accelerate Your Development Career! 🔥</h1>
-    <p class="italic text-xl md:text-2xl mb-6" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">"Learn Today. Lead Tomorrow."</p>
-    <p class="text-lg md:text-xl max-w-3xl mx-auto" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">A 1-month intensive program by CSE Association Feni University (CAFU) to jumpstart your career in web and mobile development</p>
+  <section class="hero text-white text-center px-4" data-aos="fade-down">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-shadow">🔥 TeenDev: Accelerate Your Development Career! 🔥</h1>
+    <p class="italic text-xl md:text-2xl mb-6 text-shadow">"Learn Today. Lead Tomorrow."</p>
+    <p class="text-lg md:text-xl text-shadow max-w-3xl mx-auto">A 1-month intensive program by CSE Association Feni University (CAFU) to jumpstart your career in web and mobile development</p>
   </section>
 
   <!-- Program Outline -->
-  <section class="bg-white p-8 md:p-12 max-w-5xl mx-auto rounded-2xl shadow-lg my-10" data-aos="fade-up">
+  <section class="program-contents outline-dotted bg-white p-8 md:p-12 max-w-5xl mx-auto rounded-2xl shadow-lg my-10"
+    data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📚 What You'll Learn</h2>
 
     <div class="space-y-8">
@@ -169,7 +275,7 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Testimonials (Placeholder) -->
   <section class="p-8 md:p-12 max-w-5xl mx-auto" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">💬 What Past Participants Say</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -185,11 +291,12 @@
   </section>
 
   <!-- Call to Action -->
-  <section class="text-center text-white py-16 px-4" data-aos="fade-up" style="background: linear-gradient(rgba(26, 86, 219, 0.9), rgba(26, 86, 219, 0.9)), url(./images/rocket.webp); background-size: cover; background-position: top; background-repeat: no-repeat; background-attachment: fixed;">
+  <section class="footnote text-center text-white" data-aos="fade-up">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">🚀 Launch Your Development Career Today! 🚀</h2>
       <p class="text-xl mb-8 max-w-2xl mx-auto">Limited seats available for this intensive 1-month program. Don't miss this opportunity to accelerate your skills!</p>
-      <a href="https://teendev.web.app/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+      <a href="https://teendev.web.app/" target="_blank" rel="noopener noreferrer"
+        class="btn-primary inline-block">
         Apply Now
       </a>
     </div>
@@ -216,71 +323,69 @@
     <p>We use cookies to enhance your experience on our website. They help us understand how you interact with our site and improve its performance. <a href="/privacy-policy">Learn more</a> about how we use cookies.</p>
     <div class="btn-group">
       <button id="accept-cookies">Accept All</button>
-      <button id="reject-cookies" style="background: #e74c3c;">Reject Non-Essential</button>
+      <button id="reject-cookies" class="reject">Reject Non-Essential</button>
     </div>
   </div>
 
+  <!-- JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Load Tailwind CSS asynchronously
-    if ('fonts' in document) {
-      document.fonts.load('1em Poppins').then(function() {
-        // Font loaded
-      });
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out-quad',
+      offset: 100
+    });
+
+    // Cookie Consent Logic
+    const cookieConsent = document.getElementById('cookie-consent');
+    const acceptCookies = document.getElementById('accept-cookies');
+    const rejectCookies = document.getElementById('reject-cookies');
+
+    // Check if consent already given
+    if (!localStorage.getItem('cookieConsent')) {
+      cookieConsent.style.display = 'flex';
+    } else if (localStorage.getItem('cookieConsent') === 'accepted') {
+      loadAnalytics();
     }
 
-    // Initialize AOS animations
-    document.addEventListener('DOMContentLoaded', function() {
-      AOS.init({
-        duration: 800,
-        once: true,
-        easing: 'ease-out-quad',
-        offset: 100
-      });
-
-      // Cookie Consent Logic
-      const cookieConsent = document.getElementById('cookie-consent');
-      const acceptCookies = document.getElementById('accept-cookies');
-      const rejectCookies = document.getElementById('reject-cookies');
-
-      if (!localStorage.getItem('cookieConsent')) {
-        cookieConsent.style.display = 'flex';
-      } else if (localStorage.getItem('cookieConsent') === 'accepted') {
-        loadAnalytics();
-      }
-
-      acceptCookies.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        cookieConsent.style.display = 'none';
-        loadAnalytics();
-      });
-
-      rejectCookies.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'rejected');
-        cookieConsent.style.display = 'none';
-      });
-
-      function loadAnalytics() {
-        if (window.dataLayer) return;
-        
-        var script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HS4MQ1S6TY';
-        script.async = true;
-        document.head.appendChild(script);
-
-        script.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag() { dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', 'G-HS4MQ1S6TY');
-          gtag('consent', 'update', {
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted'
-          });
-        };
-      }
+    acceptCookies.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieConsent.style.display = 'none';
+      loadAnalytics();
     });
+
+    rejectCookies.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'rejected');
+      cookieConsent.style.display = 'none';
+    });
+
+    // Function to load Google Analytics (or any tracking script)
+    function loadAnalytics() {
+      // Only load if not already loaded
+      if (window.dataLayer) return;
+      
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HS4MQ1S6TY';
+      script.async = true;
+      document.head.appendChild(script);
+
+      script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HS4MQ1S6TY');
+
+        // Grant all consent if accepted
+        gtag('consent', 'update', {
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
+      };
+    }
   </script>
 </body>
 

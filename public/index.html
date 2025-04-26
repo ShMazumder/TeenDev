@@ -12,12 +12,22 @@
       scroll-behavior: smooth;
     }
 
-    .outline {
+    .hero {
+      background-color: #72a7b9 !important;
+    }
+
+    .program-contents {
       background-image: url(images/staire.png);
       background-attachment: fixed;
       background-position: top;
       background-size: cover;
       background-repeat: no-repeat;
+    }
+
+    .program-contents div div {
+      background: #ffffff55;
+      border-radius: 10px;
+      padding: 10px 25px;
     }
 
     .footnote {
@@ -33,11 +43,11 @@
 <body class="bg-gradient-to-b from-blue-50 to-white text-gray-800">
 
   <!-- Hero Section -->
-  <section class="bg-blue-700 text-white p-14 text-center" data-aos="fade-down">
+  <canvas class="hero bg-blue-700 text-white p-14 text-center" data-aos="fade-down">
     <h1 class="text-5xl font-extrabold mb-4">🔥 TeenDev: Accelerate Career In Development Program! 🔥</h1>
     <p class="italic text-xl mb-2">"Learn Today. Lead Tomorrow."</p>
     <p class="text-base">আয়োজক: সিএসই অ্যাসোসিয়েশন ফেনী ইউনিভার্সিটি (CAFU)</p>
-  </section>
+  </canvas>
 
   <!-- Event Details -->
   <section class="p-10 max-w-5xl mx-auto" data-aos="fade-up">
@@ -56,7 +66,8 @@
   </section>
 
   <!-- Program Outline -->
-  <section class="outline bg-white p-10 max-w-5xl mx-auto rounded-2xl shadow-lg my-10" data-aos="fade-up">
+  <section class="program-contents outline-dotted bg-white p-10 max-w-5xl mx-auto rounded-2xl shadow-lg my-10"
+    data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📚 What You'll Learn</h2>
 
     <div class="space-y-10">
@@ -105,7 +116,7 @@
 
   <!-- Call to Action -->
   <section class="footnote bg-blue-700 text-white text-center p-16 my-10" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-6">🚀 ক্যারিয়ার এগিয়ে নিতে আজই যুক্ত হও TeenDev এর সাথে!</h2>
+    <h2 class="text-4xl font-bold mb-6">🚀 ক্যারিয়ার এগিয়ে নিতে আজই যুক্ত হও TeenDev এর সাথে! 🚀</h2>
     <a href="https://teendev.web.app/" target="_blank"
       class="bg-white text-blue-700 font-bold py-4 px-8 rounded-full hover:bg-gray-200 transition">
       Join Now
@@ -126,6 +137,7 @@
       once: true,
     });
   </script>
+  <script src="./js/fishpond.js"></script>
 </body>
 
 </html>

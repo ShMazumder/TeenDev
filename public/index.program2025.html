@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 TeenDev: Accelerate Career In Development Program!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center">🔥 TeenDev: Accelerate Career In Development Program!</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-10 text-center bg-white" data-aos="fade-up">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Career Accelerator Program for Teenagers!</h2>
+    <p class="max-w-2xl mx-auto text-lg">Learn, Build, and Grow into a future developer with real-world skills. 🚀</p>
+  </section>
+
+  <!-- Special Benefits Section -->
+  <section class="py-12 bg-gray-50" id="benefits">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">✨ বিশেষ সুবিধাসমূহ:</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transform hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold mb-2">✅ Hands-on Coding</h3>
+          <p>Real-world projects to boost your skills fast.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transform hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold mb-2">✅ Expert Mentors</h3>
+          <p>Guidance from industry professionals.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transform hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-xl font-semibold mb-2">✅ Certification</h3>
+          <p>Get recognized with a completion certificate.</p>
+        </div>
+
+        <!-- More Cards if you want -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white mt-12">
+    <p>© 2025 TeenDev Program. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="hidden fixed bottom-8 right-8 bg-indigo-600 hover:bg-purple-600 text-white p-3 rounded-full shadow-lg">
+    ↑
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.remove('hidden');
+      } else {
+        scrollToTopBtn.classList.add('hidden');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>

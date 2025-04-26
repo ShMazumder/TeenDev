@@ -347,6 +347,7 @@
     if (!localStorage.getItem('cookieConsent')) {
       cookieConsent.style.display = 'flex';
     } else if (localStorage.getItem('cookieConsent') === 'accepted') {
+      cookieConsent.style.display = 'none';
       loadAnalytics();
     }
 

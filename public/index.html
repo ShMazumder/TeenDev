@@ -4,37 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TeenDev: Accelerate Career In Development Program</title>
-  <meta name="description" content="TeenDev: Accelerate your development career with CAFU at Feni University. Learn web and mobile app development, Git/GitHub and more!">
+  <title>TeenDev: Accelerate Your Development Career | CAFU at Feni University</title>
+  <meta name="description" content="Join TeenDev's intensive 1-month program to master web & mobile app development, Git/GitHub, and launch your tech career. Limited seats available!">
 
-  <meta property="og:title" content="TeenDev: Accelerate Career In Development Program">
-  <meta property="og:description" content="TeenDev: Accelerate your development career with CAFU at Feni University. Learn web and mobile app development, Git/GitHub and more!">
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="TeenDev: Accelerate Your Development Career | CAFU at Feni University">
+  <meta property="og:description" content="Join TeenDev's intensive 1-month program to master web & mobile app development, Git/GitHub, and launch your tech career.">
   <meta property="og:image" content="./images/hero1.png">
   <meta property="og:url" content="https://teendev.web.app/">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Favicon -->
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
+  <!-- CSS & Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
+    :root {
+      --primary-color: #1a56db;
+      --secondary-color: #1e429f;
+    }
+    
     body {
       scroll-behavior: smooth;
-      background-image: url(./images/hero.png) !important;
+      font-family: 'Poppins', sans-serif;
+      background-image: url(./images/hero.png);
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
+      line-height: 1.6;
     }
 
     .hero {
-      /* background-color: #72a7b9 !important; */
-      background-image: url(./images/hero1.png);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/hero1.png);
       background-attachment: fixed;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .program-contents {
-      background-image: url(./images/staire.png);
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(./images/staire.png);
       background-attachment: fixed;
       background-position: top;
       background-size: cover;
@@ -42,231 +61,332 @@
     }
 
     .program-contents div div {
-      background: #ffffff55;
+      background: rgba(255, 255, 255, 0.85);
       border-radius: 10px;
-      padding: 10px 25px;
+      padding: 20px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .program-contents div div:hover {
+      transform: translateY(-5px);
     }
 
     .footnote {
-      background: url(./images/rocket.png);
+      background: linear-gradient(rgba(26, 86, 219, 0.9), rgba(26, 86, 219, 0.9)), url(./images/rocket.png);
       background-size: cover;
       background-position: top;
       background-repeat: no-repeat;
       background-attachment: fixed;
+      padding: 5rem 1rem;
     }
-  </style>
 
-  <style>
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .text-shadow {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Cookie Consent Styles */
     #cookie-consent {
       position: fixed;
       bottom: 20px;
-      left: 20px;
-      right: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90%;
+      width: 800px;
       background: #2c3e50;
       color: white;
-      padding: 15px;
-      border-radius: 8px;
-      font-family: Arial, sans-serif;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
       z-index: 9999;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.5s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { bottom: -100px; opacity: 0; }
+      to { bottom: 20px; opacity: 1; }
     }
 
     #cookie-consent p {
       margin: 0;
       font-size: 16px;
+      flex: 1;
+      min-width: 250px;
+      padding-right: 20px;
+    }
+
+    #cookie-consent a {
+      color: #f1c40f;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+
+    #cookie-consent a:hover {
+      color: #f39c12;
+    }
+
+    #cookie-consent .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
     }
 
     #cookie-consent button {
-      background: #27ae60;
       border: none;
       padding: 10px 20px;
-      margin-left: 10px;
       color: white;
       font-size: 14px;
       border-radius: 5px;
       cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
     }
 
-    #cookie-consent button.reject {
+    #cookie-consent #accept-cookies {
+      background: #27ae60;
+    }
+
+    #cookie-consent #accept-cookies:hover {
+      background: #2ecc71;
+    }
+
+    #cookie-consent #reject-cookies {
       background: #e74c3c;
     }
+
+    #cookie-consent #reject-cookies:hover {
+      background: #c0392b;
+    }
+
+    @media (max-width: 768px) {
+      #cookie-consent {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      #cookie-consent p {
+        padding-right: 0;
+        margin-bottom: 15px;
+      }
+      
+      .hero {
+        min-height: 50vh;
+        padding: 2rem 1rem;
+      }
+      
+      .footnote h2 {
+        font-size: 1.8rem;
+      }
+    }
   </style>
-
-  <!-- Google tag (gtag.js) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-HS4MQ1S6TY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-HS4MQ1S6TY');
-  </script> -->
 </head>
 
 <body class="bg-gradient-to-b from-blue-50 to-white text-gray-800">
 
   <!-- Hero Section -->
-  <section class="hero bg-blue-700 text-white p-14 text-center" data-aos="fade-down">
-    <h1 class="text-3xl font-extrabold mb-4" style="filter: drop-shadow(2px 4px 6px black);">🔥 TeenDev: Accelerate Career In Development Program! 🔥</h1>
-    <p class="italic text-xl mb-2" style="filter: drop-shadow(2px 4px 6px black);">"Learn Today. Lead Tomorrow."</p>
-    <!-- <p class="text-base" style="filter: drop-shadow(2px 4px 6px black);">Organizer: CSE Association Feni University (CAFU)</p> -->
-  </section>
-
-  <!-- Event Details -->
-  <section class="p-10 max-w-5xl mx-auto" data-aos="fade-up" style="display: none !important;">
-    <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📅 Event Details</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
-      <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
-        <p>🗓️ Date: <strong>April 28, 2025 - May 28, 2025</strong></p>
-        <p>🕑 Time: <strong>01:30 PM - 03:00 PM</strong></p>
-        <p>📍 Place: <strong>Feni University</strong></p>
-      </div>
-      <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
-        <p>📌 Seat: <strong>20</strong></p>
-        <p>🔒 Condition: <strong>Only for registered CAFU members</strong></p>
-      </div>
-    </div>
+  <section class="hero text-white text-center px-4" data-aos="fade-down">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-shadow">🔥 TeenDev: Accelerate Your Development Career! 🔥</h1>
+    <p class="italic text-xl md:text-2xl mb-6 text-shadow">"Learn Today. Lead Tomorrow."</p>
+    <p class="text-lg md:text-xl text-shadow max-w-3xl mx-auto">A 1-month intensive program by CSE Association Feni University (CAFU) to jumpstart your career in web and mobile development</p>
   </section>
 
   <!-- Program Outline -->
-  <section class="program-contents outline-dotted bg-white p-10 max-w-5xl mx-auto rounded-2xl shadow-lg my-10"
+  <section class="program-contents outline-dotted bg-white p-8 md:p-12 max-w-5xl mx-auto rounded-2xl shadow-lg my-10"
     data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📚 What You'll Learn</h2>
 
-    <div class="space-y-10">
-      <div>
-        <h3 class="text-2xl font-bold mb-3">💻 Web Application Development</h3>
+    <div class="space-y-8">
+      <div data-aos="fade-right">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600">💻 Web Application Development</h3>
         <ul class="list-disc pl-6 space-y-2">
-          <li>UI/UX Design and User Journey Maping</li>
+          <li>UI/UX Design and User Journey Mapping</li>
           <li>Frontend Development (HTML, CSS, JavaScript)</li>
           <li>Backend Development (PHP/Python)</li>
           <li>Database Integration (MySQL/NoSQL)</li>
-          <li>Server Deployment</li>
+          <li>Server Deployment and Cloud Basics</li>
         </ul>
       </div>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-3">📱 Mobile Application Development</h3>
+      <div data-aos="fade-left">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600">📱 Mobile Application Development</h3>
         <ul class="list-disc pl-6 space-y-2">
-          <li>Mobile UI Mockup and UX Design</li>
-          <li>App Development with Flutter</li>
+          <li>Mobile UI Mockup and UX Design Principles</li>
+          <li>Cross-platform App Development with Flutter</li>
           <li>Serverless Microservice Integration</li>
-          <li>App Release to Play Store</li>
+          <li>App Publishing to Google Play Store</li>
         </ul>
       </div>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-3">🛠️ Version Control with Git and GitHub</h3>
+      <div data-aos="fade-right">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600">🛠️ Essential Developer Tools</h3>
         <ul class="list-disc pl-6 space-y-2">
-          <li>Git Version Control System</li>
-          <li>Git Command Line and Code Hacking</li>
-          <li>GitHub Repository and Collaboration</li>
+          <li>Git Version Control System Mastery</li>
+          <li>Git Command Line and Advanced Techniques</li>
+          <li>GitHub Collaboration and Open Source Contribution</li>
+          <li>Developer Workflow Best Practices</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Special Benefits -->
-  <section class="p-10 max-w-5xl mx-auto" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">✨ Special Benefits</h2>
-    <ul class="list-disc pl-6 space-y-3 text-lg">
-      <li>Hands-on learning opportunities</li>
-      <li>Buildup skill based on homework and makeup sessions</li>
-      <li>Awarding certificates to successful participants</li>
-      <li>Internship benefits for those who complete 90% of the tasks</li>
-    </ul>
+  <section class="p-8 md:p-12 max-w-5xl mx-auto bg-white rounded-2xl shadow-lg" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">✨ Program Benefits</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-blue-50 p-6 rounded-xl" data-aos="zoom-in">
+        <h3 class="text-xl font-bold mb-3 text-blue-600">🎯 Learning Experience</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Hands-on, project-based learning approach</li>
+          <li>Personalized feedback and mentorship</li>
+          <li>Structured curriculum with practical exercises</li>
+          <li>Weekly progress assessments</li>
+        </ul>
+      </div>
+      <div class="bg-blue-50 p-6 rounded-xl" data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-xl font-bold mb-3 text-blue-600">🏆 Career Advantages</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Certificate of completion for all participants</li>
+          <li>Internship opportunities for top performers</li>
+          <li>Portfolio project showcase</li>
+          <li>Networking with industry professionals</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (Placeholder) -->
+  <section class="p-8 md:p-12 max-w-5xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">💬 What Past Participants Say</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow-md" data-aos="flip-left">
+        <p class="italic mb-4">"TeenDev completely transformed my approach to coding. The hands-on projects gave me the confidence to build real applications."</p>
+        <p class="font-semibold text-blue-600">— Previous Participant</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md" data-aos="flip-left" data-aos-delay="100">
+        <p class="italic mb-4">"The Git/GitHub training alone was worth it! I now collaborate on projects like a pro and my workflow is so much more efficient."</p>
+        <p class="font-semibold text-blue-600">— Program Graduate</p>
+      </div>
+    </div>
   </section>
 
   <!-- Call to Action -->
-  <section class="footnote bg-blue-700 text-center p-16 mt-10" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-6">🚀 Join TeenDev today to advance your career! 🚀</h2>
-    <a href="https://teendev.web.app/" target="_blank"
-      class="bg-white text-blue-700 font-bold py-4 px-8 rounded-full hover:bg-gray-200 transition">
-      Join Now
-    </a>
+  <section class="footnote text-center text-white" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">🚀 Launch Your Development Career Today! 🚀</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Limited seats available for this intensive 1-month program. Don't miss this opportunity to accelerate your skills!</p>
+      <a href="https://teendev.web.app/" target="_blank" rel="noopener noreferrer"
+        class="btn-primary inline-block">
+        Apply Now
+      </a>
+    </div>
   </section>
 
-  <canvas id="pond"></canvas>
-
   <!-- Footer -->
-  <footer class="text-center p-6 text-gray-500 text-sm">
-    #TeenDev #AccelerateCareer #CareerPathway #CareerGrowth #WebDevelopment #MobileDevelopment #GitHub
-    #VersionControl
+  <footer class="text-center p-6 bg-gray-100 text-gray-600 text-sm">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-wrap justify-center gap-4 mb-4">
+        <span>#TeenDev</span>
+        <span>#AccelerateCareer</span>
+        <span>#WebDevelopment</span>
+        <span>#MobileDevelopment</span>
+        <span>#GitHub</span>
+        <span>#TechEducation</span>
+      </div>
+      <p>© 2025 TeenDev Program by CSE Association Feni University (CAFU). All rights reserved.</p>
+      <p class="mt-2"><a href="/privacy" class="text-blue-600 hover:underline">Privacy Policy</a> | <a href="/terms" class="text-blue-600 hover:underline">Terms of Service</a></p>
+    </div>
   </footer>
 
+  <!-- Cookie Consent Banner -->
   <div id="cookie-consent">
-    <p>We use cookies to ensure you get the best experience on our website. <a href="/privacy-policy"
-        style="color:#f1c40f; text-decoration: underline;">Learn more</a>.</p>
-    <div>
-      <button id="accept-cookies">Accept</button>
-      <button id="reject-cookies" class="reject">Reject</button>
+    <p>We use cookies to enhance your experience on our website. They help us understand how you interact with our site and improve its performance. <a href="/privacy-policy">Learn more</a> about how we use cookies.</p>
+    <div class="btn-group">
+      <button id="accept-cookies">Accept All</button>
+      <button id="reject-cookies" class="reject">Reject Non-Essential</button>
     </div>
   </div>
 
+  <!-- JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Cookie Consent Logic
-    document.getElementById('accept-cookies').onclick = function () {
-      localStorage.setItem('cookieConsent', 'accepted');
-      document.getElementById('cookie-consent').style.display = 'none';
-      loadAnalytics(); // Load Google Analytics script here after consent
-    };
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out-quad',
+      offset: 100
+    });
 
-    document.getElementById('reject-cookies').onclick = function () {
-      localStorage.setItem('cookieConsent', 'rejected');
-      document.getElementById('cookie-consent').style.display = 'none';
-    };
+    // Cookie Consent Logic
+    const cookieConsent = document.getElementById('cookie-consent');
+    const acceptCookies = document.getElementById('accept-cookies');
+    const rejectCookies = document.getElementById('reject-cookies');
 
     // Check if consent already given
-    window.onload = function () {
-      if (localStorage.getItem('cookieConsent')) {
-        if (localStorage.getItem('cookieConsent') === 'accepted') {
-          document.getElementById('cookie-consent').style.display = 'none';
-          loadAnalytics(); // Load Google Analytics if accepted
-        }
-      }
-    };
+    if (!localStorage.getItem('cookieConsent')) {
+      cookieConsent.style.display = 'flex';
+    } else if (localStorage.getItem('cookieConsent') === 'accepted') {
+      loadAnalytics();
+    }
+
+    acceptCookies.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieConsent.style.display = 'none';
+      loadAnalytics();
+    });
+
+    rejectCookies.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'rejected');
+      cookieConsent.style.display = 'none';
+    });
 
     // Function to load Google Analytics (or any tracking script)
     function loadAnalytics() {
+      // Only load if not already loaded
+      if (window.dataLayer) return;
+      
       var script = document.createElement('script');
       script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HS4MQ1S6TY';
       script.async = true;
       document.head.appendChild(script);
 
-      script.onload = function () {
-        // Initialize Google Analytics once the script is loaded
+      script.onload = function() {
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-HS4MQ1S6TY');
 
-        allConsentGranted();
-
-        function allConsentGranted() {
-          gtag('consent', 'update', {
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted'
-          });
-        }
+        // Grant all consent if accepted
+        gtag('consent', 'update', {
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
       };
     }
   </script>
-
-  <!-- AOS Animation Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  </script>
-  <script src="./js/fishpond.js"></script>
-
 </body>
 
 </html>

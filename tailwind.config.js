@@ -18,7 +18,7 @@ module.exports = {
   },
   safelist: [
     {
-      pattern: /^(text|bg|border|hover:bg)-/,
+      pattern: /^(text|bg|border|hover:bg)-(red|blue|green|yellow)-/,
     },
     'btn-primary',
     'text-shadow',
@@ -27,4 +27,4 @@ module.exports = {
     }
   ],
   plugins: [],
-}
+};

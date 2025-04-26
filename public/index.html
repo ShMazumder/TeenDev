@@ -1,89 +1,110 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TeenDev: Accelerate Career In Development Program</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-white text-gray-800">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.6.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.6.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.6.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <!-- Hero Section -->
+  <section class="bg-blue-700 text-white p-14 text-center" data-aos="fade-down">
+    <h1 class="text-5xl font-extrabold mb-4">🔥 TeenDev Program</h1>
+    <p class="italic text-xl mb-2">"Learn Today. Lead Tomorrow."</p>
+    <p class="text-base">আয়োজক: সিএসই অ্যাসোসিয়েশন ফেনী ইউনিভার্সিটি (CAFU)</p>
+  </section>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <!-- Event Details -->
+  <section class="p-10 max-w-5xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📅 Event Details</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+      <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <p>🗓️ তারিখ: <strong>২৮ এপ্রিল ২০২৫ - ২৮ মে ২০২৫</strong></p>
+        <p>🕑 সময়: <strong>দুপুর ২:৩০ - বিকাল ৩:০০</strong></p>
+        <p>📍 স্থান: <strong>ফেনী ইউনিভার্সিটি</strong></p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+        <p>📌 সিট সংখ্যা: <strong>২০ জন</strong></p>
+        <p>🔒 শর্ত: <strong>শুধুমাত্র CAFU-এর রেজিস্টার মেম্বারদের জন্য</strong></p>
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </section>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <!-- Program Outline -->
+  <section class="bg-white p-10 max-w-5xl mx-auto rounded-2xl shadow-lg my-10" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📚 What You'll Learn</h2>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <div class="space-y-10">
+      <div>
+        <h3 class="text-2xl font-bold mb-3">💻 Web Application Development</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>UI/UX ডিজাইন এবং ইউনিফাইড ক্লাসিং</li>
+          <li>Frontend (HTML, CSS, JavaScript)</li>
+          <li>Backend Development (PHP/Python)</li>
+          <li>Database Integration (MySQL/NoSQL)</li>
+          <li>Server Deployment</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-3">📱 Mobile Application Development</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Mobile UI Mockup এবং UX Design</li>
+          <li>Flutter দিয়ে App Development</li>
+          <li>Serverless Microservice Integration</li>
+          <li>Play Store-এ App Release এবং নিয়ম-কানুন</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-3">🛠️ Version Control with Git and GitHub</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Git Version Control System</li>
+          <li>Git Command Line এবং Code Hacking</li>
+          <li>GitHub Repository এবং Collaboration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Benefits -->
+  <section class="p-10 max-w-5xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">✨ Special Benefits</h2>
+    <ul class="list-disc pl-6 space-y-3 text-lg">
+      <li>হাতে-কলমে শেখার সুযোগ</li>
+      <li>ওয়ার্কশপ ও এক্সাম শেষে সার্টিফিকেট প্রদান</li>
+      <li>সকল অংশগ্রহণকারীদের জন্য সার্টিফিকেট প্রদান</li>
+      <li>১০% সফল অংশগ্রহণকারীদের Internship সুবিধা</li>
+    </ul>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-blue-700 text-white text-center p-16 my-10" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-6">🚀 ক্যারিয়ার এগিয়ে নিতে আজই যুক্ত হও TeenDev এর সাথে!</h2>
+    <a href="https://teendev.web.app/" target="_blank" class="bg-white text-blue-700 font-bold py-4 px-8 rounded-full hover:bg-gray-200 transition">
+      Join Now
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 text-gray-500 text-sm">
+    #TeenDev #CAFU #AccelerateCareer #CareerPathway #CareerGrowth #WebDevelopment #MobileDevelopment #GitHub #VersionControl
+  </footer>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+</body>
 </html>

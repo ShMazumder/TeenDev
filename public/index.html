@@ -198,16 +198,6 @@
     </div>
   </div>
 
-  <!-- AOS Animation Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  </script>
-  <script src="./js/fishpond.js"></script>
-
   <script>
     // Cookie Consent Logic
     document.getElementById('accept-cookies').onclick = function () {
@@ -246,18 +236,29 @@
         gtag('config', 'G-HS4MQ1S6TY');
 
         allConsentGranted();
+
+        function allConsentGranted() {
+          gtag('consent', 'update', {
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+          });
+        }
       };
     }
-
-    function allConsentGranted() {
-      gtag('consent', 'update', {
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'ad_storage': 'granted',
-        'analytics_storage': 'granted'
-      });
-    }
   </script>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+  <script src="./js/fishpond.js"></script>
+
 </body>
 
 </html>

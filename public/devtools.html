@@ -272,20 +272,31 @@
         <p>To stage all changes, run: </p>
         <pre><code class="language-bash">git add .</code></pre>
 
-        <h4>Commit</h4>
-        <p>To Commit staged changes, run: </p>
+        <h4>3. Commit changes</h4>
+        <p>To commit staged changes, run: </p>
         <pre><code class="language-bash">git commit -m "Message"</code></pre>
         <p>Write a proper message to describe the staged changes in the place of "Message"</p>
 
-        <h4>Branching</h4>
-        <pre><code class="language-bash">git branch                # List branches
-git checkout -b feature   # Create & switch to new branch
-git merge feature         # Merge into current branch</code></pre>
+        <h4>4. Branching</h4>
+        <p>To list branches, run: </p>
+        <pre><code class="language-bash">git branch</code></pre>
+        <p>This shows all local branches with an asterisk (*) marking the current one</p>
 
-        <h4>Undoing Mistakes</h4>
-        <pre><code class="language-bash">git reset --soft HEAD~1   # Undo last commit (keep changes)
-git checkout -- &lt;file&gt;    # Discard file changes
-git revert &lt;commit-hash&gt;  # Create undo commit</code></pre>
+        <p>To create & switch to new branch ("feature" in this case), run: </p>
+        <pre><code class="language-bash">git checkout -b feature</code></pre>
+
+        <p>To merge into current branch, run: </p>
+        <pre><code class="language-bash">git merge feature</code></pre>
+
+        <h4>5. Undoing Mistakes</h4>
+        <p>To undo last commit (keep changes), run</p>
+        <pre><code class="language-bash">git reset --soft HEAD~1</code></pre>
+
+        <p>To discard file changes, run</p>
+        <pre><code class="language-bash">git checkout -- &lt;file&gt;</code></pre>
+
+        <p>To create undo commit, run</p>
+        <pre><code class="language-bash">git revert &lt;commit-hash&gt;</code></pre>
 
         <div class="note">
             <p><strong>Pro Tip:</strong> Use <code>git log --oneline --graph</code> to visualize your commit history

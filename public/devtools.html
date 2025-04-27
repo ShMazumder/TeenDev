@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Developer Tools - Web & Mobile Development</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="TeenDev" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png" />
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .note {
+            background: #e7f5fe;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+        }
+
+        .tip {
+            background: #e8f8e8;
+            padding: 10px;
+            border-left: 4px solid #2ecc71;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Essential Developer Tools for Web & Mobile Development</h1>
+
+    <!-- Section 1: Essential Developer Tools -->
+    <section id="essential-tools">
+        <h2>1. 🛠️ Essential Developer Tools</h2>
+
+        <h3>Why Developer Tools Matter</h3>
+        <p>Modern development relies on powerful tools to streamline coding, debugging, and collaboration.</p>
+
+        <h3>Key Tools to Master</h3>
+        <ul>
+            <li><strong>Code Editors & IDEs:</strong> VS Code, IntelliJ, Android Studio, Xcode</li>
+            <li><strong>Browser DevTools:</strong> Chrome, Firefox for debugging web apps</li>
+            <li><strong>Package Managers:</strong> npm, yarn, Homebrew</li>
+            <li><strong>Command Line (CLI):</strong> Bash, PowerShell, Zsh</li>
+            <li><strong>API Testing Tools:</strong> Postman, Insomnia</li>
+            <li><strong>Containerization:</strong> Docker, Vagrant</li>
+        </ul>
+
+        <div class="tip">
+            <strong>Pro Tip:</strong> Use VS Code extensions like <code>Prettier</code> (auto-formatting) and
+            <code>ESLint</code> (code linting) for better productivity.
+        </div>
+
+        <h3>Example: Installing npm Packages</h3>
+        <pre><code>npm install express         # Install Express.js
+npm install -g nodemon    # Install globally for live reload</code></pre>
+    </section>
+
+    <!-- Section 2: Git Version Control -->
+    <section id="git-version-control">
+        <h2>2. Git Version Control System Mastery</h2>
+
+        <h3>Basic Git Workflow</h3>
+        <ol>
+            <li>Initialize a repo: <code>git init</code></li>
+            <li>Stage changes: <code>git add .</code></li>
+            <li>Commit changes: <code>git commit -m "Initial commit"</code></li>
+        </ol>
+
+        <h3>Example: Creating a New Git Repository</h3>
+        <pre><code>mkdir my-project
+cd my-project
+git init
+echo "# My Project" >> README.md
+git add README.md
+git commit -m "First commit"</code></pre>
+
+        <div class="note">
+            <strong>Note:</strong> Always write meaningful commit messages (e.g.,
+            <code>"Fix login button styling"</code> instead of <code>"Update code"</code>).
+        </div>
+    </section>
+
+    <!-- Section 3: Advanced Git Techniques -->
+    <section id="advanced-git">
+        <h2>3. Git Command Line and Advanced Techniques</h2>
+
+        <h3>Branching & Merging</h3>
+        <pre><code>git checkout -b feature/login   # Create and switch to a new branch
+git merge feature/login      # Merge into main branch</code></pre>
+
+        <h3>Undoing Changes</h3>
+        <pre><code>git reset --hard HEAD      # Discard all uncommitted changes
+git revert &lt;commit-hash&gt;  # Revert a specific commit safely</code></pre>
+
+        <h3>Rebasing Example</h3>
+        <pre><code>git checkout feature/login
+git rebase main           # Apply changes on top of main branch</code></pre>
+    </section>
+
+    <!-- Section 4: GitHub Collaboration -->
+    <section id="github-collab">
+        <h2>4. GitHub Collaboration & Open Source</h2>
+
+        <h3>Fork & Pull Request Workflow</h3>
+        <ol>
+            <li>Fork a repository on GitHub</li>
+            <li>Clone your fork: <code>git clone https://github.com/your-username/repo.git</code></li>
+            <li>Create a branch: <code>git checkout -b fix-bug</code></li>
+            <li>Push changes: <code>git push origin fix-bug</code></li>
+            <li>Open a Pull Request (PR) on GitHub</li>
+        </ol>
+
+        <h3>Example: Contributing to Open Source</h3>
+        <pre><code># Clone your fork
+git clone https://github.com/your-username/awesome-project.git
+
+# Add upstream (original repo)
+git remote add upstream https://github.com/original-owner/awesome-project.git
+
+# Sync with upstream
+git fetch upstream
+git merge upstream/main</code></pre>
+    </section>
+
+    <!-- Section 5: Developer Workflow Best Practices -->
+    <section id="best-practices">
+        <h2>5. Developer Workflow Best Practices</h2>
+
+        <h3>Modular Code Structure Example</h3>
+        <pre><code>project/
+├── src/
+│   ├── components/  # Reusable UI components
+│   ├── utils/       # Helper functions
+│   └── styles/      # CSS/SCSS files
+├── tests/           # Unit & integration tests
+└── README.md</code></pre>
+
+        <h3>CI/CD with GitHub Actions</h3>
+        <pre><code># .github/workflows/nodejs.yml
+name: Node.js CI
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm test</code></pre>
+
+        <div class="tip">
+            <strong>Best Practice:</strong> Use <code>.gitignore</code> to exclude unnecessary files (e.g.,
+            <code>node_modules/</code>, <code>.env</code>).
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+        <h2>Start Learning: Next Steps</h2>
+        <ul>
+            <li>Practice Git daily with small projects</li>
+            <li>Contribute to open-source (look for <code>good-first-issue</code> tags)</li>
+            <li>Automate deployments with Netlify/Vercel</li>
+        </ul>
+
+        <div class="note">
+            <strong>Final Tip:</strong> Document your learning journey in a <code>DEVLOG.md</code> file!
+        </div>
+    </section>
+
+</body>
+
+</html>

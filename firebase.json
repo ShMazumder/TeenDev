@@ -12,8 +12,12 @@
         "destination": "/privacy-police.html"
       },
       {
-        "source": "/privacy",
+        "source": "/terms",
         "destination": "/terms.html"
+      },
+      {
+        "source": "/devtools",
+        "destination": "/devtools.html"
       },
       {
         "source": "/**",

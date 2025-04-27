@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Version Control System, Git and GitHub Collaboration</title>
 
-    <meta name="description" content="Comprehensive guide to Git and GitHub for web and mobile developers. Learn version control, branching strategies, collaboration workflows, and best practices.">
-    <meta name="keywords" content="Git, GitHub, version control, Git commands, Git tutorial, GitHub collaboration, Git workflow, VCS, Git branching">
+    <meta name="description"
+        content="Comprehensive guide to Git and GitHub for web and mobile developers. Learn version control, branching strategies, collaboration workflows, and best practices.">
+    <meta name="keywords"
+        content="Git, GitHub, version control, Git commands, Git tutorial, GitHub collaboration, Git workflow, VCS, Git branching">
     <meta name="author" content="S.h. Mazumder">
     <meta property="og:title" content="Complete Git and GitHub Guide for Developers">
-    <meta property="og:description" content="Master version control with this comprehensive Git and GitHub tutorial for web and mobile developers">
+    <meta property="og:description"
+        content="Master version control with this comprehensive Git and GitHub tutorial for web and mobile developers">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://teendev.web.app/">
     <meta property="og:image" content="https://teendev.web.app/images/git-social-preview.png">
@@ -249,6 +252,11 @@
             line-height: 1.8;
         }
     </style>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
 </head>
 
 <body>
@@ -649,6 +657,81 @@ jobs:
             <p><strong>Pro Tip:</strong> Maintain a <code>DEVLOG.md</code> to document your learning journey!</p>
         </div>
     </section>
+
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" style="display: none;" role="dialog" aria-live="polite" aria-label="Cookie Consent Notice">
+        <p>
+            We use cookies to enhance your experience on our website. They help us understand how you interact with our
+            site
+            and improve its performance. Read our
+            <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            to learn about how we use cookies.
+        </p>
+        <div class="btn-group">
+            <button id="accept-cookies">Accept All</button>
+            <button id="reject-cookies" class="reject">Reject Non-Essential</button>
+        </div>
+    </div>
+
+    <script>
+
+        // Initialize AOS animations
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                once: true,
+                easing: 'ease-out-quad',
+                offset: 100
+            });
+
+            // Cookie Consent Logic
+            const cookieConsent = document.getElementById('cookie-consent');
+            const acceptCookies = document.getElementById('accept-cookies');
+            const rejectCookies = document.getElementById('reject-cookies');
+
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieConsent.style.display = 'flex';
+            } else if (localStorage.getItem('cookieConsent') === 'accepted') {
+                cookieConsent.style.display = 'none';
+                loadAnalytics();
+            }
+
+            acceptCookies.addEventListener('click', function () {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieConsent.style.display = 'none';
+                loadAnalytics();
+            });
+
+            rejectCookies.addEventListener('click', function () {
+                localStorage.setItem('cookieConsent', 'rejected');
+                cookieConsent.style.display = 'none';
+            });
+
+            function loadAnalytics() {
+                if (window.dataLayer) return;
+
+                var script = document.createElement('script');
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HS4MQ1S6TY';
+                script.async = true;
+                document.head.appendChild(script);
+
+                script.onload = function () {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-HS4MQ1S6TY');
+                    gtag('consent', 'update', {
+                        'ad_user_data': 'granted',
+                        'ad_personalization': 'granted',
+                        'ad_storage': 'granted',
+                        'analytics_storage': 'granted'
+                    });
+                };
+            }
+        });
+
+    </script>
 
 </body>
 

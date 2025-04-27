@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essential Developer Tools - Web & Mobile Development</title>
+    <title>Version Control System, Git and GitHub Collaboration</title>
+
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
@@ -16,12 +17,11 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png" />
 
-
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             color: #333;
@@ -31,186 +31,408 @@
         h2,
         h3 {
             color: #2c3e50;
+            margin-top: 30px;
+        }
+
+        h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
         }
 
         code {
-            background: #f4f4f4;
+            background: #2d2d2d;
             padding: 2px 5px;
             border-radius: 3px;
-            font-family: monospace;
+            font-family: 'Courier New', monospace;
         }
 
         pre {
-            background: #f4f4f4;
-            padding: 10px;
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
             border-radius: 5px;
             overflow-x: auto;
+            line-height: 1.4;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
 
         .note {
             background: #e7f5fe;
-            padding: 10px;
+            padding: 15px;
             border-left: 4px solid #3498db;
-            margin: 10px 0;
+            margin: 20px 0;
         }
 
         .tip {
             background: #e8f8e8;
-            padding: 10px;
+            padding: 15px;
             border-left: 4px solid #2ecc71;
-            margin: 10px 0;
+            margin: 20px 0;
+        }
+
+        .warning {
+            background: #fef2e7;
+            padding: 15px;
+            border-left: 4px solid #e67e22;
+            margin: 20px 0;
+        }
+
+        #toc {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        #toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #toc li {
+            margin-bottom: 8px;
+        }
+
+        #toc a {
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        #toc a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Essential Developer Tools for Web & Mobile Development</h1>
+    <h1>Version Control System, Git and GitHub Collaboration</h1>
+    <p><em>A Comprehensive Guide for Web & Mobile Developers</em></p>
 
-    <!-- Section 1: Essential Developer Tools -->
-    <section id="essential-tools">
-        <h2>1. 🛠️ Essential Developer Tools</h2>
-
-        <h3>Why Developer Tools Matter</h3>
-        <p>Modern development relies on powerful tools to streamline coding, debugging, and collaboration.</p>
-
-        <h3>Key Tools to Master</h3>
+    <div id="toc">
+        <h2>Table of Contents</h2>
         <ul>
-            <li><strong>Code Editors & IDEs:</strong> VS Code, IntelliJ, Android Studio, Xcode</li>
-            <li><strong>Browser DevTools:</strong> Chrome, Firefox for debugging web apps</li>
-            <li><strong>Package Managers:</strong> npm, yarn, Homebrew</li>
-            <li><strong>Command Line (CLI):</strong> Bash, PowerShell, Zsh</li>
-            <li><strong>API Testing Tools:</strong> Postman, Insomnia</li>
-            <li><strong>Containerization:</strong> Docker, Vagrant</li>
+            <li><a href="#intro-to-vcs">1. Introduction to Version Control Systems</a></li>
+            <li><a href="#git-fundamentals">2. Git Fundamentals</a></li>
+            <li><a href="#github-collaboration">3. GitHub Collaboration</a></li>
+            <li><a href="#practical-task">4. Practical Task: Branch Creation & Submission</a></li>
+            <li><a href="#best-practices">5. Best Practices & Workflow</a></li>
+        </ul>
+    </div>
+
+    <section id="intro-to-vcs">
+        <h2>1. Introduction to Version Control Systems</h2>
+
+        <h3>What is Version Control?</h3>
+        <p>A system that records changes to files over time, allowing you to:</p>
+        <ul>
+            <li>✔ Track modifications</li>
+            <li>✔ Revert to previous versions</li>
+            <li>✔ Collaborate efficiently</li>
+        </ul>
+
+        <h3>Types of Version Control</h3>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><strong>Local</strong></td>
+                <td>Tracks changes on a single machine</td>
+                <td>RCS, SCCS</td>
+            </tr>
+            <tr>
+                <td><strong>Centralized</strong></td>
+                <td>Single server hosts all versions</td>
+                <td>SVN, CVS</td>
+            </tr>
+            <tr>
+                <td><strong>Distributed</strong></td>
+                <td>Every user has a full repository copy</td>
+                <td><strong>Git</strong>, Mercurial</td>
+            </tr>
+        </table>
+
+        <div class="tip">
+            <h3>Why Git?</h3>
+            <ul>
+                <li>Most widely used VCS (93% of developers)</li>
+                <li>Enables non-linear workflows (branching/merging)</li>
+                <li>Fully decentralized for offline work</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="git-fundamentals">
+        <h2>2. Git Fundamentals</h2>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li><strong>Repository</strong>: Project folder tracked by Git</li>
+            <li><strong>Commit</strong>: Snapshot of changes with a message</li>
+            <li><strong>Branch</strong>: Isolated line of development</li>
+            <li><strong>Merge</strong>: Combining branches</li>
+            <li><strong>Remote</strong>: Hosted repository (e.g., GitHub)</li>
+        </ul>
+
+        <h3>Essential Commands</h3>
+
+        <h4>Setup & Basics</h4>
+        <pre><code class="language-bash">git init                  # Initialize new repo
+git clone &lt;url&gt;           # Clone existing repo
+git status                # View changed files</code></pre>
+
+        <h4>Making Changes</h4>
+        <pre><code class="language-bash">git add &lt;file&gt;            # Stage specific file
+git add .                 # Stage all changes
+git commit -m "Message"   # Commit staged changes</code></pre>
+
+        <h4>Branching</h4>
+        <pre><code class="language-bash">git branch                # List branches
+git checkout -b feature   # Create & switch to new branch
+git merge feature         # Merge into current branch</code></pre>
+
+        <h4>Undoing Mistakes</h4>
+        <pre><code class="language-bash">git reset --soft HEAD~1   # Undo last commit (keep changes)
+git checkout -- &lt;file&gt;    # Discard file changes
+git revert &lt;commit-hash&gt;  # Create undo commit</code></pre>
+
+        <div class="note">
+            <p><strong>Pro Tip:</strong> Use <code>git log --oneline --graph</code> to visualize your commit history
+                with branch structure.</p>
+        </div>
+    </section>
+
+    <section id="github-collaboration">
+        <h2>3. GitHub Collaboration</h2>
+
+        <h3>GitHub Workflow</h3>
+        <ol>
+            <li><strong>Fork</strong> the repository</li>
+            <li><strong>Clone</strong> your fork locally:
+                <pre><code class="language-bash">git clone https://github.com/your-username/repo.git</code></pre>
+            </li>
+            <li><strong>Add upstream</strong> (original repo):
+                <pre><code class="language-bash">git remote add upstream https://github.com/original-owner/repo.git</code></pre>
+            </li>
+            <li><strong>Sync with upstream</strong>:
+                <pre><code class="language-bash">git fetch upstream
+git merge upstream/main</code></pre>
+            </li>
+        </ol>
+
+        <h3>Pull Requests (PRs)</h3>
+        <ul>
+            <li>Create PRs to propose changes to original projects</li>
+            <li>Resolve merge conflicts if they occur</li>
+            <li>Use <strong>GitHub Issues</strong> to track bugs/enhancements</li>
         </ul>
 
         <div class="tip">
-            <strong>Pro Tip:</strong> Use VS Code extensions like <code>Prettier</code> (auto-formatting) and
-            <code>ESLint</code> (code linting) for better productivity.
-        </div>
-
-        <h3>Example: Installing npm Packages</h3>
-        <pre>
-<code>npm install express         # Install Express.js
-npm install -g nodemon    # Install globally for live reload</code></pre>
-    </section>
-
-    <!-- Section 2: Git Version Control -->
-    <section id="git-version-control">
-        <h2>2. Git Version Control System Mastery</h2>
-
-        <h3>Basic Git Workflow</h3>
-        <ol>
-            <li>Initialize a repo: <code>git init</code></li>
-            <li>Stage changes: <code>git add .</code></li>
-            <li>Commit changes: <code>git commit -m "Initial commit"</code></li>
-        </ol>
-
-        <h3>Example: Creating a New Git Repository</h3>
-        <pre>
-<code>mkdir my-project
-cd my-project
-git init
-echo "# My Project" >> README.md
-git add README.md
-git commit -m "First commit"</code></pre>
-
-        <div class="note">
-            <strong>Note:</strong> Always write meaningful commit messages (e.g.,
-            <code>"Fix login button styling"</code> instead of <code>"Update code"</code>).
+            <h3>Open Source Contribution</h3>
+            <ul>
+                <li>✔ Start with <code>good-first-issue</code> labeled tasks</li>
+                <li>✔ Follow project guidelines (CONTRIBUTING.md)</li>
+                <li>✔ Keep commits small and focused</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Section 3: Advanced Git Techniques -->
-    <section id="advanced-git">
-        <h2>3. Git Command Line and Advanced Techniques</h2>
+    <section id="practical-task">
+        <h2>4. Practical Task: Branch Creation & Submission</h2>
 
-        <h3>Branching & Merging</h3>
-        <pre>
-<code>git checkout -b feature/login   # Create and switch to a new branch
-git merge feature/login      # Merge into main branch</code></pre>
-
-        <h3>Undoing Changes</h3>
-        <pre>
-<code>git reset --hard HEAD      # Discard all uncommitted changes
-git revert &lt;commit-hash&gt;  # Revert a specific commit safely</code></pre>
-
-        <h3>Rebasing Example</h3>
-        <pre>
-<code>git checkout feature/login
-git rebase main           # Apply changes on top of main branch</code></pre>
-    </section>
-
-    <!-- Section 4: GitHub Collaboration -->
-    <section id="github-collab">
-        <h2>4. GitHub Collaboration & Open Source</h2>
-
-        <h3>Fork & Pull Request Workflow</h3>
+        <h3>Task Instructions</h3>
         <ol>
-            <li>Fork a repository on GitHub</li>
-            <li>Clone your fork: <code>git clone https://github.com/your-username/repo.git</code></li>
-            <li>Create a branch: <code>git checkout -b fix-bug</code></li>
-            <li>Push changes: <code>git push origin fix-bug</code></li>
-            <li>Open a Pull Request (PR) on GitHub</li>
+            <li>Fork the test repository:
+                <p><a href="https://github.com/ShMazumder/test-examples"
+                        target="_blank">https://github.com/ShMazumder/test-examples</a></p>
+            </li>
+            <li>Create a branch <strong>named after your GitHub username</strong>:
+                <pre><code class="language-bash">git checkout -b your-username</code></pre>
+            </li>
+            <li>Make changes (e.g., add a file with your name)</li>
+            <li>Push your branch:
+                <pre><code class="language-bash">git push origin your-username</code></pre>
+            </li>
+            <li>Create a Pull Request to the original repository</li>
         </ol>
 
-        <h3>Example: Contributing to Open Source</h3>
-        <pre>
-<code># Clone your fork
-git clone https://github.com/your-username/awesome-project.git
+        <div class="warning">
+            <p><strong>Important:</strong> Your branch name must exactly match your GitHub username for verification.
+            </p>
+        </div>
 
-# Add upstream (original repo)
-git remote add upstream https://github.com/original-owner/awesome-project.git
+        <h3>Verification Form</h3>
+        <form id="task-verification">
+            <div class="form-group">
+                <label for="github-username">GitHub Username:</label>
+                <input type="text" id="github-username" name="github-username" required>
+            </div>
 
-# Sync with upstream
-git fetch upstream
-git merge upstream/main</code></pre>
+            <div class="form-group">
+                <label for="branch-name">Branch Name:</label>
+                <input type="text" id="branch-name" name="branch-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pr-url">Pull Request URL (Optional):</label>
+                <input type="url" id="pr-url" name="pr-url">
+            </div>
+
+            <button type="submit">Submit Task</button>
+        </form>
+
+        <script>
+            document.getElementById('task-verification').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const username = document.getElementById('github-username').value.trim();
+                const branch = document.getElementById('branch-name').value.trim();
+
+                if (username.toLowerCase() !== branch.toLowerCase()) {
+                    alert("Error: Branch name must match your GitHub username!");
+                } else {
+                    alert("Task submitted successfully!\n\nGitHub: " + username + "\nBranch: " + branch);
+                    // Here you would typically send the data to your server
+                    // Example fetch() implementation:
+                    /*
+                    fetch('/submit-task', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            username: username,
+                            branch: branch,
+                            pr_url: document.getElementById('pr-url').value
+                        }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                    });
+                    */
+                }
+            });
+        </script>
     </section>
 
-    <!-- Section 5: Developer Workflow Best Practices -->
     <section id="best-practices">
-        <h2>5. Developer Workflow Best Practices</h2>
+        <h2>5. Best Practices & Workflow</h2>
 
-        <h3>Modular Code Structure Example</h3>
-        <pre>
-<code>project/
-├── src/
-│   ├── components/  # Reusable UI components
-│   ├── utils/       # Helper functions
-│   └── styles/      # CSS/SCSS files
-├── tests/           # Unit & integration tests
-└── README.md</code></pre>
+        <h3>Git Hygiene</h3>
+        <ul>
+            <li>Write <strong>descriptive commit messages</strong> (e.g., "Fix login button alignment")</li>
+            <li><strong>Commit often</strong>, push logically related changes together</li>
+            <li>Use <code>.gitignore</code> to exclude unnecessary files</li>
+        </ul>
 
-        <h3>CI/CD with GitHub Actions</h3>
-        <pre>
-<code># .github/workflows/nodejs.yml
-name: Node.js CI
+        <h3>Branching Strategies</h3>
+        <table>
+            <tr>
+                <th>Strategy</th>
+                <th>Use Case</th>
+            </tr>
+            <tr>
+                <td><strong>Feature Branches</strong></td>
+                <td>New functionality (e.g., <code>feat/user-auth</code>)</td>
+            </tr>
+            <tr>
+                <td><strong>Hotfix Branches</strong></td>
+                <td>Critical bug fixes</td>
+            </tr>
+            <tr>
+                <td><strong>Git Flow</strong></td>
+                <td>Complex projects with versions</td>
+            </tr>
+        </table>
+
+        <h3>CI/CD Integration</h3>
+        <p>Automate testing with GitHub Actions:</p>
+        <pre><code class="language-yaml">name: Node.js CI
 on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm install
-      - run: npm test</code></pre>
+      - run: npm install && npm test</code></pre>
 
         <div class="tip">
-            <strong>Best Practice:</strong> Use <code>.gitignore</code> to exclude unnecessary files (e.g.,
-            <code>node_modules/</code>, <code>.env</code>).
-        </div>
-    </section>
-
-    <!-- Conclusion -->
-    <section id="conclusion">
-        <h2>Start Learning: Next Steps</h2>
-        <ul>
-            <li>Practice Git daily with small projects</li>
-            <li>Contribute to open-source (look for <code>good-first-issue</code> tags)</li>
-            <li>Automate deployments with Netlify/Vercel</li>
-        </ul>
-
-        <div class="note">
-            <strong>Final Tip:</strong> Document your learning journey in a <code>DEVLOG.md</code> file!
+            <h3>Next Steps</h3>
+            <ol>
+                <li>Practice daily with small projects</li>
+                <li>Contribute to open-source repositories</li>
+                <li>Explore advanced Git features (rebase, submodules)</li>
+            </ol>
+            <p><strong>Pro Tip:</strong> Maintain a <code>DEVLOG.md</code> to document your learning journey!</p>
         </div>
     </section>
 

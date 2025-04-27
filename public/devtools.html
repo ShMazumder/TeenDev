@@ -18,6 +18,15 @@
     <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png" />
 
     <style>
+        :root {
+            --primary: #3498db;
+            --success: #2ecc71;
+            --warning: #e67e22;
+            --danger: #e74c3c;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -29,18 +38,19 @@
 
         h1,
         h2,
-        h3 {
-            color: #2c3e50;
+        h3,
+        h4 {
+            color: var(--dark);
             margin-top: 30px;
         }
 
         h1 {
-            border-bottom: 2px solid #3498db;
+            border-bottom: 2px solid var(--primary);
             padding-bottom: 10px;
         }
 
         h2 {
-            border-left: 4px solid #3498db;
+            border-left: 4px solid var(--primary);
             padding-left: 10px;
         }
 
@@ -56,9 +66,26 @@
             background: #2d2d2d;
             color: #f8f8f2;
             padding: 15px;
+            padding-left: 30px;
             border-radius: 5px;
             overflow-x: auto;
             line-height: 1.4;
+            position: relative;
+        }
+
+        pre:before {
+            content: '$';
+            position: absolute;
+            left: 15px;
+            color: var(--success);
+        }
+
+        pre.code-block {
+            padding-left: 30px;
+        }
+
+        pre.code-block:before {
+            content: '';
         }
 
         table {
@@ -75,7 +102,7 @@
         }
 
         th {
-            background-color: #3498db;
+            background-color: var(--primary);
             color: white;
         }
 
@@ -86,26 +113,33 @@
         .note {
             background: #e7f5fe;
             padding: 15px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid var(--primary);
             margin: 20px 0;
         }
 
         .tip {
             background: #e8f8e8;
             padding: 15px;
-            border-left: 4px solid #2ecc71;
+            border-left: 4px solid var(--success);
             margin: 20px 0;
         }
 
         .warning {
             background: #fef2e7;
             padding: 15px;
-            border-left: 4px solid #e67e22;
+            border-left: 4px solid var(--warning);
+            margin: 20px 0;
+        }
+
+        .danger {
+            background: #fee;
+            padding: 15px;
+            border-left: 4px solid var(--danger);
             margin: 20px 0;
         }
 
         #toc {
-            background: #f8f9fa;
+            background: var(--light);
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 30px;
@@ -122,7 +156,7 @@
 
         #toc a {
             text-decoration: none;
-            color: #3498db;
+            color: var(--primary);
         }
 
         #toc a:hover {
@@ -130,7 +164,7 @@
         }
 
         form {
-            background: #f8f9fa;
+            background: var(--light);
             padding: 20px;
             border-radius: 8px;
             margin: 20px 0;
@@ -156,17 +190,54 @@
         }
 
         button {
-            background-color: #3498db;
+            background-color: var(--primary);
             color: white;
             padding: 12px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s;
         }
 
         button:hover {
             background-color: #2980b9;
+        }
+
+        .command {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .command-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .command-desc {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .workflow-diagram {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .workflow-diagram img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .branch-visual {
+            font-family: monospace;
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -187,7 +258,7 @@
         </ul>
     </div>
 
-    <section id="intro-to-vcs">
+    <!-- <section id="intro-to-vcs">
         <h2>1. Introduction to Version Control Systems</h2>
 
         <h3>What is Version Control?</h3>
@@ -230,9 +301,66 @@
                 <li>Fully decentralized for offline work</li>
             </ul>
         </div>
+    </section> -->
+
+    <section id="intro-to-vcs">
+        <h2>1. Introduction to Version Control Systems</h2>
+
+        <div class="workflow-diagram">
+            <img src="https://git-scm.com/book/en/v2/images/areas.png" alt="Git workflow diagram">
+            <p>Git's three-tree architecture (Working Directory, Staging Area, Repository)</p>
+        </div>
+
+        <h3>What is Version Control?</h3>
+        <p>A system that records changes to files over time, allowing you to:</p>
+        <ul>
+            <li>✔ Track modifications to your code</li>
+            <li>✔ Revert to previous versions when needed</li>
+            <li>✔ Collaborate efficiently with team members</li>
+            <li>✔ Maintain different versions of your project</li>
+        </ul>
+
+        <h3>Types of Version Control</h3>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>When to Use</th>
+            </tr>
+            <tr>
+                <td><strong>Local</strong></td>
+                <td>Tracks changes on a single machine</td>
+                <td>RCS, SCCS</td>
+                <td>Individual projects with no need for collaboration</td>
+            </tr>
+            <tr>
+                <td><strong>Centralized</strong></td>
+                <td>Single server hosts all versions</td>
+                <td>SVN, CVS</td>
+                <td>Small teams with centralized infrastructure</td>
+            </tr>
+            <tr>
+                <td><strong>Distributed</strong></td>
+                <td>Every user has a full repository copy</td>
+                <td><strong>Git</strong>, Mercurial</td>
+                <td>Modern development (teams, open source, etc.)</td>
+            </tr>
+        </table>
+
+        <div class="tip">
+            <h3>Why Git?</h3>
+            <ul>
+                <li><strong>93% of developers</strong> use Git (Stack Overflow Survey 2021)</li>
+                <li>Enables <strong>non-linear workflows</strong> through branching and merging</li>
+                <li><strong>Fully decentralized</strong> - work offline and sync later</li>
+                <li><strong>Lightweight</strong> and extremely fast</li>
+                <li><strong>Integrates</strong> with all modern development tools</li>
+            </ul>
+        </div>
     </section>
 
-    <section id="git-fundamentals">
+    <!-- <section id="git-fundamentals">
         <h2>2. Git Fundamentals</h2>
 
         <h3>Key Concepts</h3>
@@ -301,6 +429,166 @@
         <div class="note">
             <p><strong>Pro Tip:</strong> Use <code>git log --oneline --graph</code> to visualize your commit history
                 with branch structure.</p>
+        </div>
+    </section> -->
+
+    <section id="git-fundamentals">
+        <h2>2. Git Fundamentals</h2>
+
+        <div class="workflow-diagram">
+            <img src="https://git-scm.com/book/en/v2/images/lifecycle.png" alt="Git file lifecycle">
+            <p>Git file lifecycle - from untracked to committed</p>
+        </div>
+
+        <h3>Key Concepts</h3>
+        <ul>
+            <li><strong>Repository</strong>: Your project folder tracked by Git</li>
+            <li><strong>Commit</strong>: A snapshot of your changes with a descriptive message</li>
+            <li><strong>Branch</strong>: An isolated line of development</li>
+            <li><strong>Merge</strong>: Combining branches together</li>
+            <li><strong>Remote</strong>: A hosted repository (e.g., on GitHub)</li>
+            <li><strong>Staging Area</strong>: Where you prepare changes before committing</li>
+        </ul>
+
+        <h3>Essential Commands</h3>
+
+        <h4>1. Setup & Basics</h4>
+
+        <div class="command">
+            <div class="command-title">Initialize a new repository</div>
+            <pre>git init</pre>
+            <div class="command-desc">Creates a new .git directory in your project</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Clone an existing repository</div>
+            <pre>git clone https://github.com/user/repo.git</pre>
+            <div class="command-desc">Downloads the entire repository with history</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Check repository status</div>
+            <pre>git status</pre>
+            <div class="command-desc">Shows changed, staged, and untracked files</div>
+        </div>
+
+        <h4>2. Making Changes</h4>
+
+        <div class="command">
+            <div class="command-title">Stage specific files</div>
+            <pre>git add index.html styles.css</pre>
+            <div class="command-desc">Prepares specific files for committing</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Stage all changes</div>
+            <pre>git add .</pre>
+            <div class="command-desc">Prepares all modified and new files</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Commit staged changes</div>
+            <pre>git commit -m "Add user login functionality"</pre>
+            <div class="command-desc">Creates a permanent snapshot with a message</div>
+        </div>
+
+        <div class="note">
+            <p><strong>Commit Message Guidelines:</strong></p>
+            <ul>
+                <li>Limit to 50 characters for the subject line</li>
+                <li>Use imperative mood ("Add" not "Added")</li>
+                <li>Explain <strong>what</strong> and <strong>why</strong> (not how)</li>
+            </ul>
+        </div>
+
+        <h4>3. Branching</h4>
+
+        <div class="branch-visual">
+            * main<br>
+            |<br>
+            | * feature/login (HEAD)<br>
+            | |<br>
+            | * Add login form<br>
+            |/<br>
+            * Initial commit
+        </div>
+
+        <div class="command">
+            <div class="command-title">List all branches</div>
+            <pre>git branch</pre>
+            <div class="command-desc">Shows local branches (* marks current)</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Create and switch to new branch</div>
+            <pre>git checkout -b feature/login</pre>
+            <div class="command-desc">Creates branch and moves HEAD to it</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Switch between branches</div>
+            <pre>git checkout main</pre>
+            <div class="command-desc">Moves HEAD to specified branch</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Merge branches</div>
+            <pre>git merge feature/login</pre>
+            <div class="command-desc">Combines feature/login into current branch</div>
+        </div>
+
+        <div class="tip">
+            <h4>Modern Git Alternative</h4>
+            <p>Git 2.23+ introduced <code>git switch</code> and <code>git restore</code>:</p>
+            <pre>git switch -c new-feature  # Create and switch
+git switch main        # Switch branches</pre>
+        </div>
+
+        <h4>4. Undoing Changes</h4>
+
+        <div class="command">
+            <div class="command-title">Undo last commit (keep changes)</div>
+            <pre>git reset --soft HEAD~1</pre>
+            <div class="command-desc">Moves HEAD back but keeps changes staged</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Discard file changes</div>
+            <pre>git checkout -- index.html</pre>
+            <div class="command-desc">Reverts file to last committed state</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Create undo commit</div>
+            <pre>git revert a1b2c3d</pre>
+            <div class="command-desc">Safely reverses a specific commit</div>
+        </div>
+
+        <div class="danger">
+            <h4>Dangerous Reset</h4>
+            <pre>git reset --hard HEAD~3</pre>
+            <p>This will <strong>permanently delete</strong> the last 3 commits and all their changes. Use with extreme
+                caution!</p>
+        </div>
+
+        <h4>5. Viewing History</h4>
+
+        <div class="command">
+            <div class="command-title">Compact log with graph</div>
+            <pre>git log --oneline --graph --all</pre>
+            <div class="command-desc">Visualizes branch structure</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">See changes in commits</div>
+            <pre>git show abc123</pre>
+            <div class="command-desc">Displays full details of a commit</div>
+        </div>
+
+        <div class="command">
+            <div class="command-title">Compare branches</div>
+            <pre>git diff main..feature</pre>
+            <div class="command-desc">Shows all differences between branches</div>
         </div>
     </section>
 

@@ -90,7 +90,8 @@
         </div>
 
         <h3>Example: Installing npm Packages</h3>
-        <pre><code>npm install express         # Install Express.js
+        <pre>
+<code>npm install express         # Install Express.js
 npm install -g nodemon    # Install globally for live reload</code></pre>
     </section>
 
@@ -106,7 +107,8 @@ npm install -g nodemon    # Install globally for live reload</code></pre>
         </ol>
 
         <h3>Example: Creating a New Git Repository</h3>
-        <pre><code>mkdir my-project
+        <pre>
+<code>mkdir my-project
 cd my-project
 git init
 echo "# My Project" >> README.md
@@ -124,15 +126,18 @@ git commit -m "First commit"</code></pre>
         <h2>3. Git Command Line and Advanced Techniques</h2>
 
         <h3>Branching & Merging</h3>
-        <pre><code>git checkout -b feature/login   # Create and switch to a new branch
+        <pre>
+<code>git checkout -b feature/login   # Create and switch to a new branch
 git merge feature/login      # Merge into main branch</code></pre>
 
         <h3>Undoing Changes</h3>
-        <pre><code>git reset --hard HEAD      # Discard all uncommitted changes
+        <pre>
+<code>git reset --hard HEAD      # Discard all uncommitted changes
 git revert &lt;commit-hash&gt;  # Revert a specific commit safely</code></pre>
 
         <h3>Rebasing Example</h3>
-        <pre><code>git checkout feature/login
+        <pre>
+<code>git checkout feature/login
 git rebase main           # Apply changes on top of main branch</code></pre>
     </section>
 
@@ -150,7 +155,8 @@ git rebase main           # Apply changes on top of main branch</code></pre>
         </ol>
 
         <h3>Example: Contributing to Open Source</h3>
-        <pre><code># Clone your fork
+        <pre>
+<code># Clone your fork
 git clone https://github.com/your-username/awesome-project.git
 
 # Add upstream (original repo)
@@ -166,7 +172,8 @@ git merge upstream/main</code></pre>
         <h2>5. Developer Workflow Best Practices</h2>
 
         <h3>Modular Code Structure Example</h3>
-        <pre><code>project/
+        <pre>
+<code>project/
 ├── src/
 │   ├── components/  # Reusable UI components
 │   ├── utils/       # Helper functions
@@ -175,7 +182,8 @@ git merge upstream/main</code></pre>
 └── README.md</code></pre>
 
         <h3>CI/CD with GitHub Actions</h3>
-        <pre><code># .github/workflows/nodejs.yml
+        <pre>
+<code># .github/workflows/nodejs.yml
 name: Node.js CI
 on: [push]
 jobs:

@@ -124,8 +124,9 @@
       transform: translateX(-50%);
       max-width: 90%;
       width: 800px;
-      background: #2c3e50;
-      color: white;
+      background: #1a1a1a;
+      /* Darker background for better contrast */
+      color: #ffffff;
       padding: 20px;
       border-radius: 10px;
       font-family: 'Poppins', sans-serif;
@@ -134,7 +135,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
       animation: slideUp 0.5s ease-out;
     }
 
@@ -160,6 +161,7 @@
 
     #cookie-consent a {
       color: #f1c40f;
+      /* Bright yellow for good contrast */
       text-decoration: underline;
       transition: color 0.2s;
     }
@@ -177,40 +179,40 @@
     #cookie-consent button {
       border: none;
       padding: 10px 20px;
-      color: white;
       font-size: 14px;
       border-radius: 5px;
       cursor: pointer;
-      transition: all 0.2s;
-      font-weight: 500;
-    }
-
-    #cookie-consent #accept-cookies {
-      background: #27ae60;
+      font-weight: 600;
+      transition: background-color 0.2s ease, opacity 0.2s ease;
       color: #ffffff;
     }
 
-    #cookie-consent #accept-cookies:hover {
-      background: #2ecc71;
-      opacity: 0.9;
-      /* Adjust hover state */
+    #accept-cookies {
+      background-color: darkgreen;
     }
 
-    #cookie-consent #reject-cookies {
-      background: #e74c3c;
-      color: #ffffff;
+    #accept-cookies:hover {
+      background-color: #15803d;
+      /* Tailwind green-700 */
+      opacity: 0.95;
     }
 
-    #cookie-consent #reject-cookies:hover {
-      background: #c0392b;
-      opacity: 0.9;
-      /* Adjust hover state */
+    #reject-cookies {
+      background-color: #dc2626;
+      /* Tailwind red-600 */
+    }
+
+    #reject-cookies:hover {
+      background-color: #b91c1c;
+      /* Tailwind red-700 */
+      opacity: 0.95;
     }
 
     #accept-cookies:focus,
     #reject-cookies:focus {
-      outline: 2px solid #0056b3;
-      /* Darker outline on focus */
+      outline: 3px solid #3b82f6;
+      /* Strong blue focus ring */
+      outline-offset: 2px;
     }
 
     @media (max-width: 768px) {
@@ -358,14 +360,19 @@
   </footer>
 
   <!-- Cookie Consent Banner -->
-  <div id="cookie-consent" style="display: none;">
-    <p>We use cookies to enhance your experience on our website. They help us understand how you interact with our site
-      and improve its performance. Read <a href="/privacy-policy.html">Privacy Policy</a> to learn about how we use cookies.</p>
+  <div id="cookie-consent" style="display: none;" role="dialog" aria-live="polite" aria-label="Cookie Consent Notice">
+    <p>
+      We use cookies to enhance your experience on our website. They help us understand how you interact with our site
+      and improve its performance. Read our
+      <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      to learn about how we use cookies.
+    </p>
     <div class="btn-group">
       <button id="accept-cookies">Accept All</button>
       <button id="reject-cookies" class="reject">Reject Non-Essential</button>
     </div>
   </div>
+
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
   <!-- JavaScript -->

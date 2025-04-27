@@ -242,16 +242,28 @@
             <li><strong>Branch</strong>: Isolated line of development</li>
             <li><strong>Merge</strong>: Combining branches</li>
             <li><strong>Remote</strong>: Hosted repository (e.g., GitHub)</li>
+            <li><img src="/images/git-workflow.webp" /></li>
         </ul>
 
         <h3>Essential Commands</h3>
 
-        <h4>Setup & Basics</h4>
-        <pre><code class="language-bash">git init                  # Initialize new repo
-git clone &lt;url&gt;           # Clone existing repo
-git status                # View changed files</code></pre>
+        <h4>1. Setup & Basics</h4>
 
-        <h4>Making Changes</h4>
+        <p>Open terminal in project folder:</p>
+        <pre><code class="language-bash">cd myproject </code></pre>
+
+        <p>To initialize new git repository, run: </p>
+        <pre><code class="language-bash">git init </code></pre>
+
+        <p>or</p>
+
+        <p>To clone existing repository, run: </p>
+        <pre><code class="language-bash">git clone &lt;url&gt;</code></pre>
+
+        <p>To see changed files, run: </p>
+        <pre><code class="language-bash">git status </code></pre>
+
+        <h4>2. Making Changes</h4>
         <pre><code class="language-bash">git add &lt;file&gt;            # Stage specific file
 git add .                 # Stage all changes
 git commit -m "Message"   # Commit staged changes</code></pre>

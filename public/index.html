@@ -124,7 +124,6 @@
       transform: translateX(-50%);
       width: 100%;
       max-width: 500px;
-      /* <-- Smaller max width */
       background: #1a1a1a;
       color: #ffffff;
       padding: 20px;
@@ -139,6 +138,7 @@
       animation: slideUp 0.5s ease-out;
       box-sizing: border-box;
       overflow-wrap: break-word;
+      text-align: center;
     }
 
     @keyframes slideUp {
@@ -155,15 +155,14 @@
 
     #cookie-consent p {
       margin: 0;
-      font-size: 16px;
+      font-size: 12px;
       flex: 1;
-      min-width: 250px;
-      padding-right: 20px;
+      min-width: 200px;
+      text-align: justify;
     }
 
     #cookie-consent a {
       color: #f1c40f;
-      /* Bright yellow for good contrast */
       text-decoration: underline;
       transition: color 0.2s;
     }
@@ -195,25 +194,21 @@
 
     #accept-cookies:hover {
       background-color: #15803d;
-      /* Tailwind green-700 */
       opacity: 0.95;
     }
 
     #reject-cookies {
       background-color: #dc2626;
-      /* Tailwind red-600 */
     }
 
     #reject-cookies:hover {
       background-color: #b91c1c;
-      /* Tailwind red-700 */
       opacity: 0.95;
     }
 
     #accept-cookies:focus,
     #reject-cookies:focus {
       outline: 3px solid #3b82f6;
-      /* Strong blue focus ring */
       outline-offset: 2px;
     }
 

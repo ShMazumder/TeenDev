@@ -242,8 +242,8 @@
             <li><strong>Branch</strong>: Isolated line of development</li>
             <li><strong>Merge</strong>: Combining branches</li>
             <li><strong>Remote</strong>: Hosted repository (e.g., GitHub)</li>
-            <li><img src="/images/git-workflow.webp" /></li>
         </ul>
+        <img style="max-width: 75%;" src="/images/git-workflow.webp" />
 
         <h3>Essential Commands</h3>
 
@@ -264,9 +264,18 @@
         <pre><code class="language-bash">git status </code></pre>
 
         <h4>2. Making Changes</h4>
-        <pre><code class="language-bash">git add &lt;file&gt;            # Stage specific file
-git add .                 # Stage all changes
-git commit -m "Message"   # Commit staged changes</code></pre>
+
+        <p>To stage specific file, run: </p>
+        <pre><code class="language-bash">git add &lt;file&gt;</code></pre>
+
+        <p>or</p>
+        <p>To stage all changes, run: </p>
+        <pre><code class="language-bash">git add .</code></pre>
+
+        <h4>Commit</h4>
+        <p>To Commit staged changes, run: </p>
+        <pre><code class="language-bash">git commit -m "Message"</code></pre>
+        <p>Write a proper message to describe the staged changes in the place of "Message"</p>
 
         <h4>Branching</h4>
         <pre><code class="language-bash">git branch                # List branches

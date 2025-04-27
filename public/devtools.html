@@ -253,6 +253,116 @@
         }
     </style>
 
+    <style>
+        /* Cookie Consent Styles */
+        #cookie-consent {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 500px;
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            z-index: 9999;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.5s ease-out;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+            text-align: center;
+        }
+
+        @keyframes slideUp {
+            from {
+                bottom: -100px;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 20px;
+                opacity: 1;
+            }
+        }
+
+        #cookie-consent p {
+            margin: 0;
+            font-size: 12px;
+            flex: 1;
+            min-width: 200px;
+            text-align: justify;
+        }
+
+        #cookie-consent a {
+            color: #f1c40f;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        #cookie-consent a:hover {
+            color: #f39c12;
+        }
+
+        #cookie-consent .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        #cookie-consent button {
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s ease, opacity 0.2s ease;
+            color: #ffffff;
+        }
+
+        #accept-cookies {
+            background-color: darkgreen;
+        }
+
+        #accept-cookies:hover {
+            background-color: #15803d;
+            opacity: 0.95;
+        }
+
+        #reject-cookies {
+            background-color: #dc2626;
+        }
+
+        #reject-cookies:hover {
+            background-color: #b91c1c;
+            opacity: 0.95;
+        }
+
+        #accept-cookies:focus,
+        #reject-cookies:focus {
+            outline: 3px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            #cookie-consent {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #cookie-consent p {
+                padding-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- JavaScript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>

@@ -29,7 +29,7 @@
   <!-- Favicon -->
   <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 
-  <link href="./css/styles.css" rel="stylesheet">
+  <!-- <link href="./css/styles.css" rel="stylesheet"> -->
   <!-- <script src="./js/main.js"></script> -->
 
   <!-- Tailwind CSS -->
@@ -233,6 +233,12 @@
       }
     }
   </style>
+
+  <link href="./css/styles.css" rel="stylesheet">
+  <!-- <link rel="preload" href="./css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+  <noscript>
+    <link rel="stylesheet" href="./css/styles.css">
+  </noscript>
 </head>
 
 <body class="bg-gradient-to-b from-blue-50 to-white text-gray-800">
@@ -373,7 +379,7 @@
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
   <!-- JavaScript -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
   <script>
 

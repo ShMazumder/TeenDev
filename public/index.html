@@ -122,10 +122,10 @@
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      max-width: 90%;
-      width: 800px;
+      width: 100%;
+      max-width: 500px;
+      /* <-- Smaller max width */
       background: #1a1a1a;
-      /* Darker background for better contrast */
       color: #ffffff;
       padding: 20px;
       border-radius: 10px;
@@ -135,8 +135,10 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
       animation: slideUp 0.5s ease-out;
+      box-sizing: border-box;
+      overflow-wrap: break-word;
     }
 
     @keyframes slideUp {

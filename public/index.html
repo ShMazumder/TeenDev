@@ -9,8 +9,8 @@
     content="Join TeenDev's intensive One-month program to master web & mobile app development, Git/GitHub, and launch your tech career. Limited seats available!">
 
   <!-- Preload critical resources -->
-  <link rel="preload" href="./images/hero1.webp" as="image" fetchpriority="high">
-  <link rel="preload" href="./css/styles.css" as="style">
+  <link rel="preload" href="/images/hero1.webp" as="image" fetchpriority="high">
+  <!-- <link rel="preload" href="/css/styles.css" as="style" fetchpriority="high"> -->
 
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
     as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -22,7 +22,7 @@
   <meta property="og:title" content="TeenDev: Accelerate Your Development Career | CAFU at Feni University">
   <meta property="og:description"
     content="Join TeenDev's intensive One-month program to master web & mobile app development, Git/GitHub, and launch your tech career.">
-  <meta property="og:image" content="./images/hero1.webp">
+  <meta property="og:image" content="/images/hero1.webp">
   <meta property="og:url" content="https://teendev.web.app/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -37,8 +37,8 @@
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png" />
 
-  <!-- <link href="./css/styles.css" rel="stylesheet"> -->
-  <!-- <script src="./js/main.js"></script> -->
+  <link href="/css/styles.css" rel="stylesheet">
+  <!-- <script src="/js/main.js"></script> -->
 
   <!-- Tailwind CSS -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
@@ -55,7 +55,7 @@
     body {
       scroll-behavior: smooth;
       font-family: 'Poppins', sans-serif;
-      background-image: url(./images/hero.webp);
+      background-image: url(/images/hero.webp);
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
@@ -63,7 +63,7 @@
     }
 
     .hero {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/hero1.webp);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/images/hero1.webp);
       background-attachment: fixed;
       background-position: center;
       background-size: cover;
@@ -76,7 +76,7 @@
     }
 
     .program-contents {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(./images/staire.webp);
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(/images/staire.webp);
       background-attachment: fixed;
       background-position: top;
       background-size: cover;
@@ -96,7 +96,7 @@
     }
 
     .footnote {
-      background: linear-gradient(rgba(26, 86, 219, 0.9), rgba(26, 86, 219, 0.9)), url(./images/rocket.webp);
+      background: linear-gradient(rgba(26, 86, 219, 0.9), rgba(26, 86, 219, 0.9)), url(/images/rocket.webp);
       background-size: cover;
       background-position: top;
       background-repeat: no-repeat;
@@ -242,10 +242,10 @@
     }
   </style>
 
-  <!-- <link href="./css/styles.css" rel="stylesheet"> -->
-  <!-- <link rel="preload" href="./css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+  <!-- <link href="/css/styles.css" rel="stylesheet"> -->
+  <!-- <link rel="preload" href="/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
   <noscript>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
   </noscript>
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">

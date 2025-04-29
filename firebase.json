@@ -8,6 +8,14 @@
     ],
     "rewrites": [
       {
+        "source": "/eval1",
+        "destination": "/evaluation1.html"
+      },
+      {
+        "source": "/eval2",
+        "destination": "/evaluation2.html"
+      },
+      {
         "source": "/privacy",
         "destination": "/privacy-police.html"
       },

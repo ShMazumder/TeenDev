@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment Portal</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script>
+    // Countdown Timer Script
+    const deadline = new Date("2025-05-10T23:59:59").getTime(); // <-- Change Deadline here
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = deadline - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "Deadline Passed";
+      }
+    }
+    setInterval(updateCountdown, 1000);
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">Assignment Portal</h1>
+      <span class="text-sm text-gray-500">Deadline: <span id="countdown" class="font-semibold text-red-600"></span></span>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-5xl mx-auto p-6 space-y-10">
+
+    <!-- Web Development Task -->
+    <section class="bg-white rounded-2xl p-6 shadow">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-600">1. Web Development Task</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Build a <strong>Student Management System</strong> (Add/View/Edit/Delete Students).</li>
+        <li>Frontend: HTML, CSS (Bootstrap/Tailwind), JavaScript.</li>
+        <li>Backend: Node.js + Express.js or PHP.</li>
+        <li>Database: MySQL or MongoDB.</li>
+        <li><strong>Bonus:</strong> Deploy the app on Netlify/Vercel.</li>
+      </ul>
+    </section>
+
+    <!-- Mobile App Development Task -->
+    <section class="bg-white rounded-2xl p-6 shadow">
+      <h2 class="text-2xl font-semibold mb-4 text-green-600">2. Mobile App Development Task</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Develop a <strong>Weather App</strong> using Flutter.</li>
+        <li>Fetch current weather using OpenWeatherMap API.</li>
+        <li>Features: Search by City, Display Weather Details.</li>
+        <li><strong>Bonus:</strong> Create a microservice API backend.</li>
+      </ul>
+    </section>
+
+    <!-- UI/UX Design Task -->
+    <section class="bg-white rounded-2xl p-6 shadow">
+      <h2 class="text-2xl font-semibold mb-4 text-purple-600">3. UI/UX Design Task</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Design a <strong>Food Delivery App</strong> in Figma or Adobe XD.</li>
+        <li>Include Home, Restaurant List, Dish Details, Cart, Order Summary pages.</li>
+        <li>Create a clickable interactive prototype.</li>
+      </ul>
+    </section>
+
+    <!-- Submission Instructions -->
+    <section class="bg-white rounded-2xl p-6 shadow">
+      <h2 class="text-2xl font-semibold mb-4 text-red-600">Submission Instructions</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Upload your project to a <strong>Public GitHub Repository</strong>.</li>
+        <li>Ensure your project has a proper <strong>README.md</strong>.</li>
+        <li>Commit your work in stages (not all at once).</li>
+        <li>Submit your GitHub repository link using the button below.</li>
+      </ul>
+
+      <div class="mt-6 text-center">
+        <a href="mailto:your-email@example.com?subject=Assignment%20Submission" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full text-lg transition">
+          Submit GitHub Link
+        </a>
+      </div>
+    </section>
+
+    <!-- Evaluation Criteria -->
+    <section class="bg-white rounded-2xl p-6 shadow">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">Evaluation Criteria</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Technical Skills</strong> (25 points)</li>
+        <li><strong>Task Completion</strong> (20 points)</li>
+        <li><strong>Code Quality</strong> (15 points)</li>
+        <li><strong>GitHub Usage</strong> (10 points)</li>
+        <li><strong>Creativity & Bonus Effort</strong> (10 points)</li>
+        <li><strong>Problem Solving/Handling Errors</strong> (10 points)</li>
+        <li><strong>Presentation</strong> (10 points)</li>
+      </ul>
+
+      <div class="mt-4 text-sm text-gray-500">
+        Scoring Guide:  
+        <br> ✅ 85-100: Ready for Hiring
+        <br> 🚀 70-84: Almost Ready
+        <br> 📚 50-69: Needs Pre-Hiring Training
+        <br> ⚡ Below 50: Strong Training Recommended
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

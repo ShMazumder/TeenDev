@@ -644,7 +644,7 @@
         function updateDayContent() {
             const day = courseData[currentDay];
 
-            dayContent.innerHTML = `<h2>Day ${day.day}: ${day.title}</h2>`;
+            dayContent.innerHTML = `<h2>${day.title}</h2>`;
             fetch(day.content)
                 .then(response => {
                     if (!response.ok) {

@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source": "/uiux",
+        "destination": "/uiux.html"
+      },
+      {
         "source": "/eval1",
         "destination": "/evaluation1.html"
       },

@@ -2,27 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>30-Day UI/UX Mastery | TeenDev</title>
     <style>
         :root {
             --primary: #6C63FF;
             --secondary: #00BF63;
-            --accent: #FF6584;
             --dark: #2D3748;
             --light: #F7FAFC;
             --gray: #E2E8F0;
         }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
 
+        /* Header */
         .header {
             background: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -38,11 +37,12 @@
             font-size: 1.2rem;
         }
 
+        /* Progress Bar */
         .progress-container {
             width: 100%;
             background: var(--gray);
             border-radius: 10px;
-            margin-top: 0.5rem;
+            margin: 1rem 0;
         }
 
         .progress-bar {
@@ -53,9 +53,10 @@
             transition: width 0.5s;
         }
 
+        /* Course Content */
         .course-container {
             display: flex;
-            min-height: calc(100vh - 100px);
+            min-height: calc(100vh - 120px);
         }
 
         .sidebar {
@@ -63,44 +64,6 @@
             background: var(--light);
             padding: 1rem;
             border-right: 1px solid var(--gray);
-        }
-
-        .sidebar h3 {
-            margin-top: 0;
-        }
-
-        .day-list {
-            list-style: none;
-            padding: 0;
-            max-height: calc(100vh - 200px);
-            overflow-y: auto;
-        }
-
-        .day-list li {
-            padding: 0.5rem 0;
-            cursor: pointer;
-            border-bottom: 1px solid var(--gray);
-        }
-
-        .day-list li.active {
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        .day-list li.completed::before {
-            content: "\2713 ";
-            color: var(--secondary);
-        }
-
-        .day-list li::after {
-            content: " (Right-click to mark complete)";
-            font-size: 0.7rem;
-            color: #999;
-            display: none;
-        }
-
-        .day-list li:hover::after {
-            display: inline;
         }
 
         .content {
@@ -116,8 +79,16 @@
             padding: 1.5rem;
             margin-bottom: 1rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
         }
 
+        .day-card h2 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        /* Navigation */
         .nav-buttons {
             display: flex;
             justify-content: space-between;
@@ -143,6 +114,31 @@
             color: var(--primary);
         }
 
+        /* Sidebar Days List */
+        .day-list {
+            list-style: none;
+            padding: 0;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
+        .day-list li {
+            padding: 0.5rem 0;
+            cursor: pointer;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .day-list li.active {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .day-list li.completed::before {
+            content: "✓ ";
+            color: var(--secondary);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
             .course-container {
                 flex-direction: column;
@@ -152,6 +148,283 @@
                 width: 100%;
                 border-right: none;
                 border-bottom: 1px solid var(--gray);
+            }
+        }
+    </style>
+
+    <style>
+        /* ===== Base Styles ===== */
+        :root {
+            --primary: #6C63FF;
+            /* Purple for main actions */
+            --secondary: #00BF63;
+            /* Green for progress */
+            --accent: #FF6584;
+            /* Pink for highlights */
+            --dark: #2D3748;
+            /* Dark gray for text */
+            --light: #F7FAFC;
+            /* Light background */
+            --gray: #E2E8F0;
+            /* Borders and subtle elements */
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ===== Day Content Container ===== */
+        .day-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            max-height: ;
+        }
+
+        .day-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--gray);
+        }
+
+        .day-header h2 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .day-header .subtitle {
+            color: var(--dark);
+            opacity: 0.8;
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+
+        /* ===== Section Styles ===== */
+        .section {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: rgba(108, 99, 255, 0.05);
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .section-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .section-icon {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+
+        .section-body {
+            padding: 1.5rem;
+        }
+
+        /* ===== Individual Section Types ===== */
+        /* Objective Section */
+        .objective .section-header {
+            background: rgba(108, 99, 255, 0.08);
+            border-left: 4px solid var(--primary);
+        }
+
+        .objective p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Lesson Content */
+        .lesson-points {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .lesson-points li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .lesson-points li:before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        /* Examples Section */
+        .examples .section-header {
+            background: rgba(255, 101, 132, 0.08);
+            border-left: 4px solid var(--accent);
+        }
+
+        .example {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--gray);
+        }
+
+        .example:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .example h4 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+
+        .example strong {
+            color: var(--dark);
+        }
+
+        /* Challenge Section */
+        .challenge .section-header {
+            background: rgba(0, 191, 99, 0.08);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .challenge-steps {
+            padding-left: 1.2rem;
+        }
+
+        .challenge-steps li {
+            margin-bottom: 0.5rem;
+        }
+
+        .pro-tip {
+            background: rgba(0, 191, 99, 0.1);
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .pro-tip strong {
+            color: var(--secondary);
+        }
+
+        /* Summary Section */
+        .summary .section-header {
+            background: rgba(159, 122, 234, 0.08);
+            border-left: 4px solid #9F7AEA;
+        }
+
+        .key-points {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            padding: 0.4rem 0;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .key-points li:before {
+            content: "✓";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .personal-notes {
+            margin-top: 1.5rem;
+        }
+
+        .personal-notes h4 {
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .personal-notes textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 0.8rem;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: inherit;
+            resize: vertical;
+        }
+
+        /* ===== Navigation ===== */
+        .day-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .prev-btn,
+        .next-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prev-btn {
+            background: white;
+            border: 1px solid var(--gray);
+            color: var(--dark);
+        }
+
+        .next-btn {
+            background: var(--primary);
+            border: 1px solid var(--primary);
+            color: white;
+        }
+
+        .prev-btn:hover {
+            background: var(--light);
+        }
+
+        .next-btn:hover {
+            background: #5a52e0;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 640px) {
+            .day-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .day-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-body {
+                padding: 1.2rem;
+            }
+
+            .prev-btn,
+            .next-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -167,76 +440,259 @@
     </div>
 
     <div class="course-container">
+        <!-- Sidebar with Day Navigation -->
         <div class="sidebar">
             <h3>Course Days</h3>
             <ul class="day-list" id="dayList">
-                <li data-target="day-1">Day 1: Introduction</li>
-                <li data-target="day-2">Day 2: Research</li>
-                <li data-target="day-3">Day 3: Wireframing</li>
-                <li data-target="day-4">Day 4: Prototyping</li>
-                <!-- Add more days as needed -->
+                <!-- Generated by JavaScript -->
             </ul>
         </div>
 
+        <!-- Main Content -->
         <div class="content">
-            <div id="day-1" class="day-card">
+            <div class="day-card" id="dayContent">
                 <h2>Day 1: Introduction to UI/UX</h2>
-                <p>Overview of User Interface and User Experience principles.</p>
-            </div>
-            <div id="day-2" class="day-card">
-                <h2>Day 2: Research</h2>
-                <p>Understanding user research methods like interviews and surveys.</p>
-            </div>
-            <div id="day-3" class="day-card">
-                <h2>Day 3: Wireframing</h2>
-                <p>Learn how to sketch ideas and structure your application layout.</p>
-            </div>
-            <div id="day-4" class="day-card">
-                <h2>Day 4: Prototyping</h2>
-                <p>Create interactive prototypes to simulate real user flow.</p>
+                <h3>What You'll Learn</h3>
+                <ul>
+                    <li>Difference between UI and UX</li>
+                    <li>Core principles of good design</li>
+                    <li>Tools used in the industry</li>
+                </ul>
+                <h3>Activity</h3>
+                <p>Analyze 3 apps you use daily and identify one UI and one UX strength/weakness in each.</p>
+                <div class="nav-buttons">
+                    <button class="btn btn-outline" id="prevBtn" disabled>Previous</button>
+                    <button class="btn btn-primary" id="nextBtn">Next Day</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        const days = document.querySelectorAll('.day-list li');
-        const progressBar = document.querySelector('.progress-bar');
-        const completedDays = JSON.parse(localStorage.getItem('completedDays')) || [];
+        // Course Data - Expand this with all 30 days
+        const courseData = [
+            {
+                day: 1,
+                title: "📘 Day 1: What is UI/UX?",
+                content: `uiux/1.html`
+            },
+            {
+                day: 2,
+                title: "📘 Day 2: UI/UX Design Process Overview",
+                content: `uiux/2.html`
+            },
+            {
+                day: 3,
+                title: "📘 Day 3: Principles of Good UX Design",
+                content: `uiux/3.html`
+            },
+            {
+                day: 4,
+                title: "📘 Day 4: Creating User Personas and Empathy Maps",
+                content: `uiux/4.html`
+            },
+            {
+                day: 5,
+                title: "📘 Day 5: User Journey Mapping",
+                content: `uiux/5.html`
+            },
+            {
+                day: 6,
+                title: "📘 Day 6: Wireframing Fundamentals – Turning Ideas into Layouts",
+                content: `uiux/6.html`
+            },
+            {
+                day: 7,
+                title: "📘 Day 7: High-Fidelity UI Design – From Wireframes to Real Interfaces",
+                content: `uiux/7.html`
+            },
+            {
+                day: 8,
+                title: "📘 Day 8: UI Prototyping & Interactive Flows – Bringing Your Design to Life",
+                content: `uiux/8.html`
+            },
+            {
+                day: 9,
+                title: "📘 Day 9: User Testing and Feedback Loop – Design That Works for Real People",
+                content: `uiux/9.html`
+            },
+            {
+                day: 10,
+                title: "📘 Day 10: Design Handoff to Developers – Bridging the Gap Between Design & Code",
+                content: `uiux/10.html`
+            },
+            {
+                day: 11,
+                title: "📘 Day 11: UX Case Studies & Critique – Learn from Real Apps (Good & Bad)",
+                content: `uiux/11.html`
+            },
+            {
+                day: 12,
+                title: "📘 Day 12: Design Systems & Atomic Design – Creating Consistent, Scalable UI",
+                content: `uiux/12.html`
+            },
+            {
+                day: 13,
+                title: "📘 Day 13: Wireframing & Rapid Prototyping – Planning Before You Pixel",
+                content: `uiux/13.html`
+            },
+            {
+                day: 14,
+                title: "📘 Day 14: Interaction Design & Microinteractions – Making UI Feel Alive",
+                content: `uiux/14.html`
+            },
+            {
+                day: 15,
+                title: "📘 Day 15: Responsive UI Design & Breakpoints – Designing for All Screens",
+                content: `uiux/15.html`
+            },
+            {
+                day: 16,
+                title: "📘 Day 16: Design Systems & Style Guide Creation – Designing with Consistency and Speed",
+                content: `uiux/16.html`
+            },
+            {
+                day: 17,
+                title: "📘 Day 17: Wireframing & Low-Fidelity Prototypes – Sketch Before You Build",
+                content: `uiux/17.html`
+            },
+            {
+                day: 18,
+                title: "📘 Day 18: High-Fidelity UI Design – Branding, Polish & Realistic UI",
+                content: `uiux/18.html`
+            },
+            {
+                day: 19,
+                title: "📘 Day 19: Usability Testing & Feedback Collection – Validate Your Design with Real Users",
+                content: `uiux/19.html`
+            },
+            {
+                day: 20,
+                title: "📘 Day 20: Interactive Prototyping – Turning Your Designs into Clickable Experiences",
+                content: `uiux/20.html`
+            },
+            {
+                day: 21,
+                title: "📘 Day 21: UI Handoff to Developers – Delivering Your Design for Development",
+                content: `uiux/21.html`
+            },
+            {
+                day: 22,
+                title: "📘 Day 22: Responsive Design – Adapting Your Design to All Devices",
+                content: `uiux/22.html`
+            },
+            {
+                day: 23,
+                title: "📘 Day 23: Usability Testing – Validating Your Design Through User Feedback",
+                content: `uiux/23.html`
+            },
+            {
+                day: 24,
+                title: "📘 Day 24: Accessibility in Design – Building for All Users",
+                content: `uiux/24.html`
+            },
+            {
+                day: 25,
+                title: "📘 Day 25: Responsive Design – Crafting Fluid Layouts for All Devices",
+                content: `uiux/25.html`
+            },
+            {
+                day: 26,
+                title: "📘 Day 26: Design Systems and Consistency",
+                content: `uiux/26.html`
+            },
+            {
+                day: 27,
+                title: "📘 Day 27: Accessibility and Inclusive Design",
+                content: `uiux/27.html`
+            },
+            {
+                day: 28,
+                title: "📘 Day 28: Mobile-First Design",
+                content: `uiux/28.html`
+            },
+            {
+                day: 29,
+                title: "📘 Day 29: Progressive Web Apps (PWAs)",
+                content: `uiux/29.html`
+            },
+            {
+                day: 30,
+                title: "📘 Day 30: Deploying and Maintaining Your Application",
+                content: `uiux/30.html`
+            },
+        ];
 
-        function updateProgressBar() {
-            const percent = (completedDays.length / days.length) * 100;
-            progressBar.style.width = percent + '%';
+        // DOM Elements
+        const dayContent = document.getElementById('dayContent');
+        const dayList = document.getElementById('dayList');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('progressBar');
+
+        let currentDay = 0; // Start with Day 1 (index 0)
+
+        // Initialize the course
+        function initCourse() {
+            // Generate sidebar day list
+            courseData.forEach((day, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${day.title}`;
+                li.addEventListener('click', () => navigateToDay(index));
+                dayList.appendChild(li);
+            });
+
+            updateDayContent();
         }
 
-        days.forEach((day, index) => {
-            if (completedDays.includes(index)) day.classList.add('completed');
+        // Update displayed content
+        function updateDayContent() {
+            const day = courseData[currentDay];
 
-            day.addEventListener('click', () => {
-                document.querySelectorAll('.day-list li').forEach(d => d.classList.remove('active'));
-                day.classList.add('active');
+            dayContent.innerHTML = `<h2>${day.title}</h2>`;
+            fetch(day.content)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load content from ${day.content}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    dayContent.innerHTML += `${html}`;
+                })
+                .catch(error => console.error('Error loading day content:', error));
 
-                const targetId = day.getAttribute('data-target');
-                if (targetId) {
-                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-                }
+            // Update active day in sidebar
+            const days = dayList.querySelectorAll('li');
+            days.forEach((li, index) => {
+                li.classList.toggle('active', index === currentDay);
             });
 
-            day.addEventListener('contextmenu', (e) => {
-                e.preventDefault();
-                if (day.classList.contains('completed')) {
-                    day.classList.remove('completed');
-                    const i = completedDays.indexOf(index);
-                    if (i > -1) completedDays.splice(i, 1);
-                } else {
-                    day.classList.add('completed');
-                    completedDays.push(index);
-                }
-                localStorage.setItem('completedDays', JSON.stringify(completedDays));
-                updateProgressBar();
-            });
+            // Update buttons
+            prevBtn.disabled = currentDay === 0;
+            nextBtn.disabled = currentDay === courseData.length - 1;
+
+            // Update progress
+            const progress = ((currentDay + 1) / courseData.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Navigation functions
+        function navigateToDay(index) {
+            currentDay = index;
+            updateDayContent();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentDay > 0) navigateToDay(currentDay - 1);
         });
 
-        updateProgressBar();
+        nextBtn.addEventListener('click', () => {
+            if (currentDay < courseData.length - 1) navigateToDay(currentDay + 1);
+        });
+
+        // Initialize
+        initCourse();
     </script>
 </body>
 

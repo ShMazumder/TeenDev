@@ -79,6 +79,8 @@
             padding: 1.5rem;
             margin-bottom: 1rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
         }
 
         .day-card h2 {
@@ -116,6 +118,8 @@
         .day-list {
             list-style: none;
             padding: 0;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
         }
 
         .day-list li {
@@ -180,6 +184,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem 1rem;
+            max-height: ;
         }
 
         .day-header {
@@ -468,17 +473,17 @@
         const courseData = [
             {
                 day: 1,
-                title: "📘 Day 1: What is UI/UX?",                
+                title: "📘 Day 1: What is UI/UX?",
                 content: `uiux/1.html`
-            },           
+            },
             {
                 day: 2,
-                title: "📘 Day 2: UI/UX Design Process Overview",                
+                title: "📘 Day 2: UI/UX Design Process Overview",
                 content: `uiux/2.html`
             },
             {
                 day: 3,
-                title: "📘 Day 3: Principles of Good UX Design",                
+                title: "📘 Day 3: Principles of Good UX Design",
                 content: `uiux/3.html`
             },
             {
@@ -493,7 +498,7 @@
             },
             {
                 day: 6,
-                title: "📘 Day 6: Wireframing Fundamentals – Turning Ideas into Layouts",                
+                title: "📘 Day 6: Wireframing Fundamentals – Turning Ideas into Layouts",
                 content: `uiux/6.html`
             },
             {
@@ -503,7 +508,7 @@
             },
             {
                 day: 8,
-                title: "📘 Day 8: UI Prototyping & Interactive Flows – Bringing Your Design to Life",                
+                title: "📘 Day 8: UI Prototyping & Interactive Flows – Bringing Your Design to Life",
                 content: `uiux/8.html`
             },
             {
@@ -518,7 +523,7 @@
             },
             {
                 day: 11,
-                title: "📘 Day 11: UX Case Studies & Critique – Learn from Real Apps (Good & Bad)",                
+                title: "📘 Day 11: UX Case Studies & Critique – Learn from Real Apps (Good & Bad)",
                 content: `uiux/11.html`
             },
             {
@@ -533,7 +538,7 @@
             },
             {
                 day: 14,
-                title: "📘 Day 14: Interaction Design & Microinteractions – Making UI Feel Alive",                
+                title: "📘 Day 14: Interaction Design & Microinteractions – Making UI Feel Alive",
                 content: `uiux/14.html`
             },
             {
@@ -548,12 +553,12 @@
             },
             {
                 day: 17,
-                title: "📘 Day 17: Wireframing & Low-Fidelity Prototypes – Sketch Before You Build",                
+                title: "📘 Day 17: Wireframing & Low-Fidelity Prototypes – Sketch Before You Build",
                 content: `uiux/17.html`
             },
             {
                 day: 18,
-                title: "📘 Day 18: High-Fidelity UI Design – Branding, Polish & Realistic UI",                
+                title: "📘 Day 18: High-Fidelity UI Design – Branding, Polish & Realistic UI",
                 content: `uiux/18.html`
             },
             {
@@ -563,7 +568,7 @@
             },
             {
                 day: 20,
-                title: "📘 Day 20: Interactive Prototyping – Turning Your Designs into Clickable Experiences",                
+                title: "📘 Day 20: Interactive Prototyping – Turning Your Designs into Clickable Experiences",
                 content: `uiux/20.html`
             },
             {
@@ -573,7 +578,7 @@
             },
             {
                 day: 22,
-                title: "📘 Day 22: Responsive Design – Adapting Your Design to All Devices",                
+                title: "📘 Day 22: Responsive Design – Adapting Your Design to All Devices",
                 content: `uiux/22.html`
             },
             {
@@ -583,7 +588,7 @@
             },
             {
                 day: 24,
-                title: "📘 Day 24: Accessibility in Design – Building for All Users",                
+                title: "📘 Day 24: Accessibility in Design – Building for All Users",
                 content: `uiux/24.html`
             },
             {
@@ -613,7 +618,7 @@
             },
             {
                 day: 30,
-                title: "📘 Day 30: Deploying and Maintaining Your Application",                
+                title: "📘 Day 30: Deploying and Maintaining Your Application",
                 content: `uiux/30.html`
             },
         ];

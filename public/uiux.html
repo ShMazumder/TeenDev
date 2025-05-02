@@ -60,6 +60,23 @@
             transition: width 0.5s;
         }
 
+        .page-progress-container {
+            width: 100%;
+            background: var(--gray);
+            border-radius: 10px;
+            margin: 0;
+            position: sticky;
+            top: 0;
+        }
+
+        .page-progress-bar {
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s;
+        }
+
         .nav-buttons {
             display: flex;
             justify-content: space-between;
@@ -346,8 +363,8 @@
 </head>
 
 <body class="font-sans bg-gray-50 text-gray-800">
-    <div class="progress-container">
-        <div class="progress-bar" id="pageProgressBar"></div>
+    <div class="page-progress-container">
+        <div class="page-progress-bar" id="pageProgressBar"></div>
     </div>
 
     <div id="dayContent">

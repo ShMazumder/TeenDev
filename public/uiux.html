@@ -21,6 +21,21 @@
     <!-- <link href="/css/styles.css" rel="stylesheet"> -->
 
     <style>
+        .progress-container {
+            width: 100%;
+            background: var(--gray);
+            border-radius: 10px;
+            margin: .5rem 0;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s;
+        }
+
         .nav-buttons {
             display: flex;
             justify-content: space-between;

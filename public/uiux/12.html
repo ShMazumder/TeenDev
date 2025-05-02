@@ -1,478 +1,232 @@
-<article class="text-token-text-primary w-full" dir="auto" data-testid="conversation-turn-28" data-scroll-anchor="false"
-    >
-    
-    <div
-        class="text-base my-auto mx-auto py-5 [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[70rem]:[--thread-content-margin:--spacing(12)] px-(--thread-content-margin)">
-        <div class="[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto flex max-w-(--thread-content-max-width) flex-1 text-base gap-4 md:gap-5 lg:gap-6 group/turn-messages focus-visible:outline-hidden"
-            tabindex="-1">
-            <div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn">
-                <div class="relative flex-col gap-1 md:gap-3">
-                    <div class="flex max-w-full flex-col grow">
-                        <div data-message-author-role="assistant" data-message-id="e54db5c1-f937-4ab2-9d96-a7405b8fe170"
-                            dir="auto"
-                            class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5"
-                            data-message-model-slug="gpt-4o">
-                            <div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]">
-                                <div class="markdown prose dark:prose-invert w-full break-words light">
-                                    <p data-start="0" data-end="57" class="">Awesome! Let's dive into <strong
-                                            data-start="25" data-end="35">Day 12</strong> of your 30-day guide.</p>
-                                    <hr data-start="59" data-end="62" class="" >
-                                    <h2 data-start="64" data-end="147" class="">📘 <strong data-start="70"
-                                            data-end="147">Day 12: Design Systems &amp; Atomic Design – Creating
-                                            Consistent, Scalable UI</strong></h2>
-                                    <hr data-start="149" data-end="152" class="" >
-                                    <h3 data-start="154" data-end="175" class="">🎯 <strong data-start="161"
-                                            data-end="175">Objective:</strong></h3>
-                                    <p data-start="176" data-end="293" class="">Learn how to build and use a <strong
-                                            data-start="205" data-end="222">design system</strong> that ensures
-                                        consistency, scalability, and collaboration across teams.</p>
-                                    <hr data-start="295" data-end="298" class="" >
-                                    <h3 data-start="300" data-end="326" class="">📖 <strong data-start="307"
-                                            data-end="326">Lesson Content:</strong></h3>
-                                    <h3 data-start="328" data-end="363" class="">🧠 <strong data-start="335"
-                                            data-end="363">What Is a Design System?</strong></h3>
-                                    <p data-start="365" data-end="404" class="">A <strong data-start="367"
-                                            data-end="384">Design System</strong> is a collection of:</p>
-                                    <ul data-start="405" data-end="560">
-                                        <li data-start="405" data-end="445" class="" >
-                                            <p data-start="407" data-end="445" class="">UI components (buttons, cards,
-                                                modals)</p>
-                                        </li>
-                                        <li data-start="446" data-end="483" class="" >
-                                            <p data-start="448" data-end="483" class="">Design patterns (forms,
-                                                navigation)</p>
-                                        </li>
-                                        <li data-start="484" data-end="519" class="" >
-                                            <p data-start="486" data-end="519" class="">Style guides (colors,
-                                                typography)</p>
-                                        </li>
-                                        <li data-start="520" data-end="560" class="" >
-                                            <p data-start="522" data-end="560" class="">Guidelines for usage and
-                                                accessibility</p>
-                                        </li>
-                                    </ul>
-                                    <blockquote data-start="562" data-end="662">
-                                        <p data-start="564" data-end="662" class="">Think of it as the <strong
-                                                data-start="583" data-end="598">UI language</strong> of your product –
-                                            just like a coding framework, but for design.</p>
-                                    </blockquote>
-                                    <hr data-start="664" data-end="667" class="" >
-                                    <h3 data-start="669" data-end="717" class="">🧬 <strong data-start="676"
-                                            data-end="717">Atomic Design Principles (Brad Frost)</strong></h3>
-                                    <p data-start="719" data-end="790" class="">Atomic Design breaks UI into <strong
-                                            data-start="748" data-end="763">five levels</strong>, from smallest to
-                                        largest:</p>
-                                    <div
-                                        class="group pointer-events-none relative flex justify-center *:pointer-events-auto">
-                                        <span
-                                            class="pointer-events-none absolute start-full top-4 z-10 hidden h-full w-fit ps-2 md:block"
-                                            data-state="closed"><button
-                                                class="hover:bg-token-main-surface-secondary text-token-text-secondary pointer-events-auto rounded-lg px-1 py-1 opacity-0 transition-opacity duration-200 group-focus-within:opacity-100 group-hover:opacity-100"><svg
-                                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z"
-                                                        fill="currentColor"></path>
-                                                </svg></button></span>
-                                        <div class="tableContainer horzScrollShadows relative">
-                                            <table class="min-w-full" data-start="792" data-end="1471">
-                                                <thead data-start="792" data-end="887">
-                                                    <tr data-start="792" data-end="887">
-                                                        <th data-start="792" data-end="804">Level</th>
-                                                        <th data-start="804" data-end="839">Example</th>
-                                                        <th data-start="839" data-end="887">Description</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody data-start="984" data-end="1471">
-                                                    <tr data-start="984" data-end="1079">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="984" data-end="996"><strong data-start="986"
-                                                                data-end="995">Atoms</strong></td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="996" data-end="1031">Buttons, Inputs, Labels
-                                                        </td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1031" data-end="1079">Basic HTML elements</td>
-                                                    </tr>
-                                                    <tr data-start="1080" data-end="1177">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1080" data-end="1096"><strong data-start="1082"
-                                                                data-end="1095">Molecules</strong></td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1096" data-end="1129">Input + Label + Button
-                                                        </td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1129" data-end="1177">Simple combinations of
-                                                            atoms</td>
-                                                    </tr>
-                                                    <tr data-start="1178" data-end="1275">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1178" data-end="1194"><strong data-start="1180"
-                                                                data-end="1193">Organisms</strong></td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1194" data-end="1227">Navbars, Cards, Modals
-                                                        </td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1227" data-end="1275">Complex reusable sections
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-start="1276" data-end="1373">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1276" data-end="1292"><strong data-start="1278"
-                                                                data-end="1291">Templates</strong></td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1292" data-end="1325">Page layout with dummy
-                                                            content</td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1325" data-end="1373">Structural layout with
-                                                            placeholders</td>
-                                                    </tr>
-                                                    <tr data-start="1374" data-end="1471">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1374" data-end="1390"><strong data-start="1376"
-                                                                data-end="1385">Pages</strong></td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1390" data-end="1423">Full page with real
-                                                            content</td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="1423" data-end="1471">Final UI ready for testing
-                                                            or deployment</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <p data-start="1473" data-end="1522" class="">✅ <strong data-start="1475"
-                                            data-end="1487">Benefit:</strong> Easier to update, test, and reuse.</p>
-                                    <hr data-start="1524" data-end="1527" class="" >
-                                    <h3 data-start="1529" data-end="1571" class="">🛠️ <strong data-start="1537"
-                                            data-end="1571">Tools to Create Design Systems</strong></h3>
-                                    <ul data-start="1573" data-end="1774">
-                                        <li data-start="1573" data-end="1625" class="" >
-                                            <p data-start="1575" data-end="1625" class=""><strong data-start="1575"
-                                                    data-end="1584">Figma</strong>: Create shared libraries with
-                                                components</p>
-                                        </li>
-                                        <li data-start="1626" data-end="1665" class="" >
-                                            <p data-start="1628" data-end="1665" class=""><strong data-start="1628"
-                                                    data-end="1638">Sketch</strong>: Symbols and shared styles</p>
-                                        </li>
-                                        <li data-start="1666" data-end="1710" class="" >
-                                            <p data-start="1668" data-end="1710" class=""><strong data-start="1668"
-                                                    data-end="1680">Adobe XD</strong>: Design tokens and components</p>
-                                        </li>
-                                        <li data-start="1711" data-end="1774" class="" >
-                                            <p data-start="1713" data-end="1774" class=""><strong data-start="1713"
-                                                    data-end="1726">Storybook</strong>: Live UI components for devs
-                                                (React, Vue, etc.)</p>
-                                        </li>
-                                    </ul>
-                                    <hr data-start="1776" data-end="1779" class="" >
-                                    <h3 data-start="1781" data-end="1829" class="">📁 <strong data-start="1788"
-                                            data-end="1829">What to Include in Your Design System</strong></h3>
-                                    <ol data-start="1831" data-end="2304">
-                                        <li data-start="1831" data-end="1919" class="" >
-                                            <p data-start="1834" data-end="1844" class=""><strong data-start="1834"
-                                                    data-end="1844">Colors</strong></p>
-                                            <ul data-start="1848" data-end="1919">
-                                                <li data-start="1848" data-end="1896" class="" >
-                                                    <p data-start="1850" data-end="1896" class="">Primary, secondary,
-                                                        success, danger, grayscale</p>
-                                                </li>
-                                                <li data-start="1900" data-end="1919" class="" >
-                                                    <p data-start="1902" data-end="1919" class="">HEX or RGB values</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li data-start="1921" data-end="1982" class="" >
-                                            <p data-start="1924" data-end="1938" class=""><strong data-start="1924"
-                                                    data-end="1938">Typography</strong></p>
-                                            <ul data-start="1942" data-end="1982">
-                                                <li data-start="1942" data-end="1982" class="" >
-                                                    <p data-start="1944" data-end="1982" class="">Font families,
-                                                        weights, sizes, spacing</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li data-start="1984" data-end="2049" class="" >
-                                            <p data-start="1987" data-end="2004" class=""><strong data-start="1987"
-                                                    data-end="2004">Spacing Scale</strong></p>
-                                            <ul data-start="2008" data-end="2049">
-                                                <li data-start="2008" data-end="2049" class="" >
-                                                    <p data-start="2010" data-end="2049" class="">Consistent units
-                                                        (e.g., 4px, 8px, 16px)</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li data-start="2051" data-end="2111" class="" >
-                                            <p data-start="2054" data-end="2065" class=""><strong data-start="2054"
-                                                    data-end="2065">Buttons</strong></p>
-                                            <ul data-start="2069" data-end="2111">
-                                                <li data-start="2069" data-end="2111" class="" >
-                                                    <p data-start="2071" data-end="2111" class="">States: default,
-                                                        hover, active, disabled</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li data-start="2113" data-end="2168" class="" >
-                                            <p data-start="2116" data-end="2125" class=""><strong data-start="2116"
-                                                    data-end="2125">Forms</strong></p>
-                                            <ul data-start="2129" data-end="2168">
-                                                <li data-start="2129" data-end="2168" class="" >
-                                                    <p data-start="2131" data-end="2168" class="">Inputs, text areas,
-                                                        validation styles</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li data-start="2170" data-end="2227" class="" >
-                                            <p data-start="2173" data-end="2182" class=""><strong data-start="2173"
-                                                    data-end="2182">Icons</strong></p>
-                                            <ul data-start="2186" data-end="2227">
-                                                <li data-start="2186" data-end="2227" class="" >
-                                                    <p data-start="2188" data-end="2227" class="">Style (outline/solid),
-                                                        usage guidelines</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li data-start="2229" data-end="2304" class="" >
-                                            <p data-start="2232" data-end="2247" class=""><strong data-start="2232"
-                                                    data-end="2247">Grid/Layout</strong></p>
-                                            <ul data-start="2251" data-end="2304">
-                                                <li data-start="2251" data-end="2304" class="" >
-                                                    <p data-start="2253" data-end="2304" class="">Columns, gutters,
-                                                        breakpoints for responsive design</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ol>
-                                    <hr data-start="2306" data-end="2309" class="" >
-                                    <h3 data-start="2311" data-end="2355" class="">🎨 <strong data-start="2318"
-                                            data-end="2355">Example: Button Component (Figma)</strong></h3>
-                                    <div
-                                        class="group pointer-events-none relative flex justify-center *:pointer-events-auto">
-                                        <span
-                                            class="pointer-events-none absolute start-full top-4 z-10 hidden h-full w-fit ps-2 md:block"
-                                            data-state="closed"><button
-                                                class="hover:bg-token-main-surface-secondary text-token-text-secondary pointer-events-auto rounded-lg px-1 py-1 opacity-0 transition-opacity duration-200 group-focus-within:opacity-100 group-hover:opacity-100"><svg
-                                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z"
-                                                        fill="currentColor"></path>
-                                                </svg></button></span>
-                                        <div class="tableContainer horzScrollShadows relative">
-                                            <table class="min-w-full" data-start="2357" data-end="2657">
-                                                <thead data-start="2357" data-end="2399">
-                                                    <tr data-start="2357" data-end="2399">
-                                                        <th data-start="2357" data-end="2375">Property</th>
-                                                        <th data-start="2375" data-end="2399">Value</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody data-start="2443" data-end="2657">
-                                                    <tr data-start="2443" data-end="2485">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2443" data-end="2461">Color</td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2461" data-end="2485">#007BFF</td>
-                                                    </tr>
-                                                    <tr data-start="2486" data-end="2528">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2486" data-end="2504">Font</td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2504" data-end="2528">Poppins Bold, 16px</td>
-                                                    </tr>
-                                                    <tr data-start="2529" data-end="2571">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2529" data-end="2547">Border Radius</td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2547" data-end="2571">8px</td>
-                                                    </tr>
-                                                    <tr data-start="2572" data-end="2614">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2572" data-end="2590">Padding</td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2590" data-end="2614">12px 24px</td>
-                                                    </tr>
-                                                    <tr data-start="2615" data-end="2657">
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2615" data-end="2633">Hover State</td>
-                                                        <td class="max-w-[calc(var(--thread-content-max-width)*2/3)]"
-                                                            data-start="2633" data-end="2657">#0056b3</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <p data-start="2659" data-end="2695" class="">Use <strong data-start="2663"
-                                            data-end="2684">Variants in Figma</strong> to define:</p>
-                                    <ul data-start="2696" data-end="2765">
-                                        <li data-start="2696" data-end="2733" class="" >
-                                            <p data-start="2698" data-end="2733" class="">Primary / Secondary / Ghost
-                                                buttons</p>
-                                        </li>
-                                        <li data-start="2734" data-end="2765" class="" >
-                                            <p data-start="2736" data-end="2765" class="">States: Hover, Focus, Loading
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <hr data-start="2767" data-end="2770" class="" >
-                                    <h3 data-start="2772" data-end="2823" class="">🧪 <strong data-start="2779"
-                                            data-end="2823">Mini Challenge: Build Your Design System</strong></h3>
-                                    <ol data-start="2825" data-end="2999">
-                                        <li data-start="2825" data-end="2844" class="" >
-                                            <p data-start="2828" data-end="2844" class="">Open Figma or XD</p>
-                                        </li>
-                                        <li data-start="2845" data-end="2947" class="" >
-                                            <p data-start="2848" data-end="2855" class="">Create:</p>
-                                            <ul data-start="2859" data-end="2947">
-                                                <li data-start="2859" data-end="2874" class="" >
-                                                    <p data-start="2861" data-end="2874" class="">Color palette</p>
-                                                </li>
-                                                <li data-start="2878" data-end="2896" class="" >
-                                                    <p data-start="2880" data-end="2896" class="">Typography scale</p>
-                                                </li>
-                                                <li data-start="2900" data-end="2947" class="" >
-                                                    <p data-start="2902" data-end="2947" class="">One reusable button
-                                                        component (with variants)</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li data-start="2948" data-end="2999" class="" >
-                                            <p data-start="2951" data-end="2999" class="">Organize into a <strong
-                                                    data-start="2967" data-end="2978">library</strong> or <strong
-                                                    data-start="2982" data-end="2999">component set</strong></p>
-                                        </li>
-                                    </ol>
-                                    <p data-start="3001" data-end="3150" class="">Optional: Try using a free UI kit like
-                                        <a data-start="3040" data-end="3085" rel="noopener" target="_new"
-                                            class="">Material Design</a> or <a data-start="3089" data-end="3150"
-                                            rel="noopener" target="_new" class="">Ant Design Figma kit</a></p>
-                                    <hr data-start="3152" data-end="3155" class="" >
-                                    <h3 data-start="3157" data-end="3189" class="">🚫 Common Mistakes to Avoid:</h3>
-                                    <ul data-start="3190" data-end="3337">
-                                        <li data-start="3190" data-end="3226" class="" >
-                                            <p data-start="3192" data-end="3226" class="">Inconsistent spacing or font
-                                                sizes</p>
-                                        </li>
-                                        <li data-start="3227" data-end="3266" class="" >
-                                            <p data-start="3229" data-end="3266" class="">Too many custom components (no
-                                                reuse)</p>
-                                        </li>
-                                        <li data-start="3267" data-end="3290" class="" >
-                                            <p data-start="3269" data-end="3290" class="">Lack of documentation</p>
-                                        </li>
-                                        <li data-start="3291" data-end="3337" class="" >
-                                            <p data-start="3293" data-end="3337" class="">No version control (leading to
-                                                design drift)</p>
-                                        </li>
-                                    </ul>
-                                    <hr data-start="3339" data-end="3342" class="" >
-                                    <h3 data-start="3344" data-end="3359" class="">📝 Summary:</h3>
-                                    <ul data-start="3360" data-end="3562">
-                                        <li data-start="3360" data-end="3432" class="" >
-                                            <p data-start="3362" data-end="3432" class="">A <strong data-start="3364"
-                                                    data-end="3381">Design System</strong> builds consistency and speeds
-                                                up both design &amp; dev</p>
-                                        </li>
-                                        <li data-start="3433" data-end="3496" class="" >
-                                            <p data-start="3435" data-end="3496" class="">Use <strong data-start="3439"
-                                                    data-end="3456">Atomic Design</strong> to break interfaces into
-                                                logical levels</p>
-                                        </li>
-                                        <li data-start="3497" data-end="3562" class="" >
-                                            <p data-start="3499" data-end="3562" class="">Tools like Figma + Storybook
-                                                help maintain and share components</p>
-                                        </li>
-                                    </ul>
-                                    <hr data-start="3564" data-end="3567" class="">
-                                    <h3 data-start="3569" data-end="3584" class="">🔮 Up Next:</h3>
-                                    <p data-start="3585" data-end="3723" class="">In <strong data-start="3588"
-                                            data-end="3598">Day 13</strong>, we’ll explore <strong data-start="3614"
-                                            data-end="3644">Wireframing Best Practices</strong> – sketching your ideas
-                                        quickly and clearly before designing high-fidelity UIs.</p>
-                                    <p data-start="3725" data-end="3799" class="">Would you like to continue to <strong
-                                            data-start="3755" data-end="3798">Day 13: Wireframing &amp; Rapid
-                                            Prototyping</strong>?</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex absolute start-0 end-0 flex justify-start">
-                        <div
-                            class="touch:-me-2 touch:-ms-3.5 -ms-2.5 -me-1 flex items-center p-1 select-none -mt-1 focus-within:transition-none hover:transition-none duration-500 group-hover/turn-messages:delay-300 pointer-events-none [mask-image:linear-gradient(to_right,black_33%,transparent_66%)] [mask-position:100%_0%] [mask-size:300%_100%] motion-safe:transition-[mask-position] group-hover/turn-messages:pointer-events-auto group-hover/turn-messages:[mask-position:0_0] group-focus-within/turn-messages:pointer-events-auto group-focus-within/turn-messages:[mask-position:0_0] has-data-[state=open]:pointer-events-auto has-data-[state=open]:[mask-position:0_0]">
-                            <span class="" data-state="closed"><button
-                                    class="text-token-text-secondary hover:bg-token-main-surface-secondary rounded-lg"
-                                    aria-label="Copy" data-testid="copy-turn-action-button"><span
-                                        class="touch:w-[38px] flex h-[30px] w-[30px] items-center justify-center"><svg
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z"
-                                                fill="currentColor"></path>
-                                        </svg></span></button></span><span class="" data-state="closed"><button
-                                    class="text-token-text-secondary hover:bg-token-main-surface-secondary rounded-lg"
-                                    aria-label="Good response" data-testid="good-response-turn-action-button"><span
-                                        class="touch:w-[38px] flex h-[30px] w-[30px] items-center justify-center"><svg
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M12.1318 2.50389C12.3321 2.15338 12.7235 1.95768 13.124 2.00775L13.5778 2.06447C16.0449 2.37286 17.636 4.83353 16.9048 7.20993L16.354 8.99999H17.0722C19.7097 8.99999 21.6253 11.5079 20.9313 14.0525L19.5677 19.0525C19.0931 20.7927 17.5124 22 15.7086 22H6C4.34315 22 3 20.6568 3 19V12C3 10.3431 4.34315 8.99999 6 8.99999H8C8.25952 8.99999 8.49914 8.86094 8.6279 8.63561L12.1318 2.50389ZM10 20H15.7086C16.6105 20 17.4008 19.3964 17.6381 18.5262L19.0018 13.5262C19.3488 12.2539 18.391 11 17.0722 11H15C14.6827 11 14.3841 10.8494 14.1956 10.5941C14.0071 10.3388 13.9509 10.0092 14.0442 9.70591L14.9932 6.62175C15.3384 5.49984 14.6484 4.34036 13.5319 4.08468L10.3644 9.62789C10.0522 10.1742 9.56691 10.5859 9 10.8098V19C9 19.5523 9.44772 20 10 20ZM7 11V19C7 19.3506 7.06015 19.6872 7.17071 20H6C5.44772 20 5 19.5523 5 19V12C5 11.4477 5.44772 11 6 11H7Z"
-                                                fill="currentColor"></path>
-                                        </svg></span></button></span><span class="" data-state="closed"><button
-                                    class="text-token-text-secondary hover:bg-token-main-surface-secondary rounded-lg"
-                                    aria-label="Bad response" data-testid="bad-response-turn-action-button"><span
-                                        class="touch:w-[38px] flex h-[30px] w-[30px] items-center justify-center"><svg
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M11.8727 21.4961C11.6725 21.8466 11.2811 22.0423 10.8805 21.9922L10.4267 21.9355C7.95958 21.6271 6.36855 19.1665 7.09975 16.7901L7.65054 15H6.93226C4.29476 15 2.37923 12.4921 3.0732 9.94753L4.43684 4.94753C4.91145 3.20728 6.49209 2 8.29589 2H18.0045C19.6614 2 21.0045 3.34315 21.0045 5V12C21.0045 13.6569 19.6614 15 18.0045 15H16.0045C15.745 15 15.5054 15.1391 15.3766 15.3644L11.8727 21.4961ZM14.0045 4H8.29589C7.39399 4 6.60367 4.60364 6.36637 5.47376L5.00273 10.4738C4.65574 11.746 5.61351 13 6.93226 13H9.00451C9.32185 13 9.62036 13.1506 9.8089 13.4059C9.99743 13.6612 10.0536 13.9908 9.96028 14.2941L9.01131 17.3782C8.6661 18.5002 9.35608 19.6596 10.4726 19.9153L13.6401 14.3721C13.9523 13.8258 14.4376 13.4141 15.0045 13.1902V5C15.0045 4.44772 14.5568 4 14.0045 4ZM17.0045 13V5C17.0045 4.64937 16.9444 4.31278 16.8338 4H18.0045C18.5568 4 19.0045 4.44772 19.0045 5V12C19.0045 12.5523 18.5568 13 18.0045 13H17.0045Z"
-                                                fill="currentColor"></path>
-                                        </svg></span></button></span><span class="" data-state="closed"><button
-                                    class="text-token-text-secondary hover:bg-token-main-surface-secondary rounded-lg"
-                                    aria-label="Read aloud" data-testid="voice-play-turn-action-button"><span
-                                        class="touch:w-[38px] flex h-[30px] w-[30px] items-center justify-center"><svg
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M11 4.9099C11 4.47485 10.4828 4.24734 10.1621 4.54132L6.67572 7.7372C6.49129 7.90626 6.25019 8.00005 6 8.00005H4C3.44772 8.00005 3 8.44776 3 9.00005V15C3 15.5523 3.44772 16 4 16H6C6.25019 16 6.49129 16.0938 6.67572 16.2629L10.1621 19.4588C10.4828 19.7527 11 19.5252 11 19.0902V4.9099ZM8.81069 3.06701C10.4142 1.59714 13 2.73463 13 4.9099V19.0902C13 21.2655 10.4142 22.403 8.81069 20.9331L5.61102 18H4C2.34315 18 1 16.6569 1 15V9.00005C1 7.34319 2.34315 6.00005 4 6.00005H5.61102L8.81069 3.06701ZM20.3166 6.35665C20.8019 6.09313 21.409 6.27296 21.6725 6.75833C22.5191 8.3176 22.9996 10.1042 22.9996 12.0001C22.9996 13.8507 22.5418 15.5974 21.7323 17.1302C21.4744 17.6185 20.8695 17.8054 20.3811 17.5475C19.8927 17.2896 19.7059 16.6846 19.9638 16.1962C20.6249 14.9444 20.9996 13.5175 20.9996 12.0001C20.9996 10.4458 20.6064 8.98627 19.9149 7.71262C19.6514 7.22726 19.8312 6.62017 20.3166 6.35665ZM15.7994 7.90049C16.241 7.5688 16.8679 7.65789 17.1995 8.09947C18.0156 9.18593 18.4996 10.5379 18.4996 12.0001C18.4996 13.3127 18.1094 14.5372 17.4385 15.5604C17.1357 16.0222 16.5158 16.1511 16.0539 15.8483C15.5921 15.5455 15.4632 14.9255 15.766 14.4637C16.2298 13.7564 16.4996 12.9113 16.4996 12.0001C16.4996 10.9859 16.1653 10.0526 15.6004 9.30063C15.2687 8.85905 15.3578 8.23218 15.7994 7.90049Z"
-                                                fill="currentColor"></path>
-                                        </svg></span></button></span><span class="" data-state="closed"><button
-                                    class="text-token-text-secondary hover:bg-token-main-surface-secondary rounded-lg"
-                                    aria-label="Edit in canvas"><span
-                                        class="touch:w-[38px] flex h-[30px] w-[30px] items-center justify-center"><svg
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="icon-md">
-                                            <path
-                                                d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z"
-                                                fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                                stroke-linejoin="round"></path>
-                                            <path
-                                                d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round"></path>
-                                            <path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg></span></button></span><span class="hidden"></span><span class=""
-                                data-state="closed"><button type="button" id="radix-«r5cf»" aria-haspopup="menu"
-                                    aria-expanded="false" data-state="closed"
-                                    class="cursor-pointer text-token-text-secondary hover:bg-token-main-surface-secondary touch:px-2.5 h-[30px] rounded-md px-1.5">
-                                    <div class="flex items-center pb-0"><svg width="24" height="24" viewBox="0 0 24 24"
-                                            fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md">
-                                            <path
-                                                d="M3.06957 10.8763C3.62331 6.43564 7.40967 3 12 3C14.2824 3 16.4028 3.85067 18.0118 5.25439V4C18.0118 3.44772 18.4595 3 19.0118 3C19.5641 3 20.0118 3.44772 20.0118 4V8C20.0118 8.55228 19.5641 9 19.0118 9H15C14.4477 9 14 8.55228 14 8C14 7.44772 14.4477 7 15 7H16.9571C15.6757 5.76379 13.9101 5 12 5C8.43108 5 5.48466 7.67174 5.0542 11.1237C4.98586 11.6718 4.48619 12.0607 3.93815 11.9923C3.39011 11.924 3.00123 11.4243 3.06957 10.8763ZM20.0618 12.0077C20.6099 12.076 20.9988 12.5757 20.9304 13.1237C20.3767 17.5644 16.5903 21 12 21C9.72322 21 7.60762 20.1535 5.99999 18.7559V20C5.99999 20.5523 5.55228 21 4.99999 21C4.44771 21 3.99999 20.5523 3.99999 20V16C3.99999 15.4477 4.44771 15 4.99999 15H8.99999C9.55228 15 9.99999 15.4477 9.99999 16C9.99999 16.5523 9.55228 17 8.99999 17H7.04285C8.32433 18.2362 10.0899 19 12 19C15.5689 19 18.5153 16.3283 18.9458 12.8763C19.0141 12.3282 19.5138 11.9393 20.0618 12.0077Z"
-                                                fill="currentColor"></path>
-                                        </svg><span class="overflow-hidden text-sm text-clip whitespace-nowrap"
-                                            style="opacity: 0; padding-left: 0px; width: 0px;">4o</span><svg width="24"
-                                            height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M5.29289 9.29289C5.68342 8.90237 6.31658 8.90237 6.70711 9.29289L12 14.5858L17.2929 9.29289C17.6834 8.90237 18.3166 8.90237 18.7071 9.29289C19.0976 9.68342 19.0976 10.3166 18.7071 10.7071L12.7071 16.7071C12.5196 16.8946 12.2652 17 12 17C11.7348 17 11.4804 16.8946 11.2929 16.7071L5.29289 10.7071C4.90237 10.3166 4.90237 9.68342 5.29289 9.29289Z"
-                                                fill="currentColor"></path>
-                                        </svg></div>
-                                </button></span></div>
-                    </div>
+<div class="max-w-4xl mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="mb-12 text-center">
+        <h1 class="text-4xl font-bold text-primary-700 mb-4">Let's dive into <span class="text-secondary-600">Day 12</span> of your 30-day UX guide</h1>
+        <div class="w-24 h-1 bg-primary-400 mx-auto mb-6"></div>
+        <p class="text-gray-600">Design Systems & Atomic Design</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+        <!-- Lesson Title -->
+        <div class="bg-gradient-to-r from-primary-600 to-secondary-500 px-6 py-4">
+            <h2 class="text-2xl font-bold text-white flex items-center">
+                <span class="mr-3">📘</span> Day 12: Design Systems & Atomic Design – Creating Consistent, Scalable UI
+            </h2>
+        </div>
+
+        <div class="p-6 space-y-8">
+            <!-- Objective Section -->
+            <section>
+                <div class="flex items-center mb-4">
+                    <h3 class="text-xl font-semibold text-primary-700 flex items-center">
+                        <span class="mr-2">🎯</span> Objective:
+                    </h3>
                 </div>
+                <p class="text-gray-700 leading-relaxed">
+                    Learn how to build and use a <span class="font-semibold text-primary-600">design system</span> that ensures consistency, scalability, and collaboration across teams.
+                </p>
+            </section>
+
+            <div class="border-t border-gray-200"></div>
+
+            <!-- What Is a Design System -->
+            <section>
+                <h3 class="text-xl font-semibold text-primary-700 flex items-center mb-4">
+                    <span class="mr-2">🧠</span> What Is a Design System?
+                </h3>
+                <p class="text-gray-700 mb-4">A <span class="font-semibold text-primary-600">Design System</span> is a collection of:</p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-4">
+                    <li>UI components (buttons, cards, modals)</li>
+                    <li>Design patterns (forms, navigation)</li>
+                    <li>Style guides (colors, typography)</li>
+                    <li>Guidelines for usage and accessibility</li>
+                </ul>
+                <blockquote class="border-l-4 border-primary-400 pl-4 italic text-gray-600">
+                    Think of it as the <span class="font-semibold text-primary-600">UI language</span> of your product – just like a coding framework, but for design.
+                </blockquote>
+            </section>
+
+            <div class="border-t border-gray-200"></div>
+
+            <!-- Atomic Design Principles -->
+            <section>
+                <h3 class="text-xl font-semibold text-primary-700 flex items-center mb-4">
+                    <span class="mr-2">🧬</span> Atomic Design Principles (Brad Frost)
+                </h3>
+                <p class="text-gray-700 mb-4">Atomic Design breaks UI into <span class="font-semibold text-primary-600">five levels</span>, from smallest to largest:</p>
+                <table class="min-w-full border-collapse text-gray-700">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="px-4 py-2 text-left font-semibold">Level</th>
+                            <th class="px-4 py-2 text-left font-semibold">Example</th>
+                            <th class="px-4 py-2 text-left font-semibold">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="px-4 py-2 border-t"><span class="font-semibold text-primary-600">Atoms</span></td><td class="px-4 py-2 border-t">Buttons, Inputs, Labels</td><td class="px-4 py-2 border-t">Basic HTML elements</td></tr>
+                        <tr><td class="px-4 py-2 border-t"><span class="font-semibold text-primary-600">Molecules</span></td><td class="px-4 py-2 border-t">Input + Label + Button</td><td class="px-4 py-2 border-t">Simple combinations of atoms</td></tr>
+                        <tr><td class="px-4 py-2 border-t"><span class="font-semibold text-primary-600">Organisms</span></td><td class="px-4 py-2 border-t">Navbars, Cards, Modals</td><td class="px-4 py-2 border-t">Complex reusable sections</td></tr>
+                        <tr><td class="px-4 py-2 border-t"><span class="font-semibold text-primary-600">Templates</span></td><td class="px-4 py-2 border-t">Page layout with dummy content</td><td class="px-4 py-2 border-t">Structural layout with placeholders</td></tr>
+                        <tr><td class="px-4 py-2 border-t"><span class="font-semibold text-primary-600">Pages</span></td><td class="px-4 py-2 border-t">Full page with real content</td><td class="px-4 py-2 border-t">Final UI ready for testing or deployment</td></tr>
+                    </tbody>
+                </table>
+                <p class="text-gray-700 mt-4">✅ <span class="font-semibold text-primary-600">Benefit:</span> Easier to update, test, and reuse.</p>
+            </section>
+
+            <div class="border-t border-gray-200"></div>
+
+            <!-- Tools to Create Design Systems -->
+            <section>
+                <h3 class="text-xl font-semibold text-primary-700 flex items-center mb-4">
+                    <span class="mr-2">🛠️</span> Tools to Create Design Systems
+                </h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li><span class="font-semibold text-primary-600">Figma</span>: Create shared libraries with components</li>
+                    <li><span class="font-semibold text-primary-600">Sketch</span>: Symbols and shared styles</li>
+                    <li><span class="font-semibold text-primary-600">Adobe XD</span>: Design tokens and components</li>
+                    <li><span class="font-semibold text-primary-600">Storybook</span>: Live UI components for devs (React, Vue, etc.)</li>
+                </ul>
+            </section>
+
+            <div class="border-t border-gray-200"></div>
+
+            <!-- What to Include in Your Design System -->
+            <section>
+                <h3 class="text-xl font-semibold text-primary-700 flex items-center mb-4">
+                    <span class="mr-2">📁</span> What to Include in Your Design System
+                </h3>
+                <ol class="list-decimal pl-5 space-y-4 text-gray-700">
+                    <li><span class="font-semibold text-primary-600">Colors</span>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>Primary, secondary, success, danger, grayscale</li>
+                            <li>HEX or RGB values</li>
+                        </ul>
+                    </li>
+                    <li><span class="font-semibold text-primary-600">Typography</span>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>Font families, weights, sizes, spacing</li>
+                        </ul>
+                    </li>
+                    <li><span class="font-semibold text-primary-600">Spacing Scale</span>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>Consistent units (e.g., 4px, 8px, 16px)</li>
+                        </ul>
+                    </li>
+                    <li><span class="font-semibold text-primary-600">Buttons</span>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>States: default, hover, active, disabled</li>
+                        </ul>
+                    </li>
+                    <li><span class="font-semibold text-primary-600">Forms</span>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>Inputs, text areas, validation styles</li>
+                        </ul>
+                    </li>
+                    <li><span class="font-semibold text-primary-600">Icons</span>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>Style (outline/solid), usage guidelines</li>
+                        </ul>
+                    </li>
+                    <li><span class="font-semibold text-primary-600">Grid/Layout</span>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>Columns, gutters, breakpoints for responsive design</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <div class="border-t border-gray-200"></div>
+
+            <!-- Example: Button Component -->
+            <section>
+                <h3 class="text-xl font-semibold text-primary-700 flex items-center mb-4">
+                    <span class="mr-2">🎨</span> Example: Button Component (Figma)
+                </h3>
+                <table class="min-w-full border-collapse text-gray-700">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="px-4 py-2 text-left font-semibold">Property</th>
+                            <th class="px-4 py-2 text-left font-semibold">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="px-4 py-2 border-t">Color</td><td class="px-4 py-2 border-t">#007BFF</td></tr>
+                        <tr><td class="px-4 py-2 border-t">Font</td><td class="px-4 py-2 border-t">Poppins Bold, 16px</td></tr>
+                        <tr><td class="px-4 py-2 border-t">Border Radius</td><td class="px-4 py-2 border-t">8px</td></tr>
+                        <tr><td class="px-4 py-2 border-t">Padding</td><td class="px-4 py-2 border-t">12px 24px</td></tr>
+                        <tr><td class="px-4 py-2 border-t">Hover State</td><td class="px-4 py-2 border-t">#0056b3</td></tr>
+                    </tbody>
+                </table>
+                <p class="text-gray-700 mt-4 mb-2">Use <span class="font-semibold text-primary-600">Variants in Figma</span> to define:</p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>Primary/Secondary/Ghost buttons</li>
+                    <li>States: Hover, Focus, Loading</li>
+                </ul>
+            </section>
+
+            <div class="border-t border-gray-200"></div>
+
+            <!-- Mini Challenge -->
+            <section>
+                <h3 class="text-xl font-semibold text-primary-700 flex items-center mb-4">
+                    <span class="mr-2">🧪</span> Mini Challenge: Build Your Design System
+                </h3>
+                <ol class="list-decimal pl-5 space-y-3 text-gray-700">
+                    <li>Open Figma or XD</li>
+                    <li>Create:
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Color palette</li>
+                            <li>Typography scale</li>
+                            <li>One reusable button component (with variants)</li>
+                        </ul>
+                    </li>
+                    <li>Organize into a <span class="font-semibold text-primary-600">library</span> or <span class="font-semibold text-primary-600">component set</span></li>
+                </ol>
+                <p class="text-gray-700 mt-4">Optional: Try using a free UI kit like <a href="https://material.io/design" target="_blank" class="text-primary-600 hover:underline">Material Design</a> or <a href="https://www.figma.com/community/file/912837788133462725" target="_blank" class="text-primary-600 hover:underline">Ant Design Figma kit</a></p>
+            </section>
+
+            <div class="border-t border-gray-200"></div>
+
+            <!-- Common Mistakes -->
+            <section>
+                <h3 class="text-xl font-semibold text-primary-700 flex items-center mb-4">
+                    <span class="mr-2">🚫</span> Common Mistakes to Avoid:
+                </h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>Inconsistent spacing or font sizes</li>
+                    <li>Too many custom components (no reuse)</li>
+                    <li>Lack of documentation</li>
+                    <li>No version control (leading to design drift)</li>
+                </ul>
+            </section>
+
+            <div class="border-t border-gray-200"></div>
+
+            <!-- Summary -->
+            <section>
+                <h3 class="text-xl font-semibold text-primary-700 flex items-center mb-4">
+                    <span class="mr-2">📝</span> Summary:
+                </h3>
+                <ul class="list-disc pl-5 space-y-3 text-gray-700">
+                    <li>A <span class="font-semibold text-primary-600">Design System</span> builds consistency and speeds up both design & dev</li>
+                    <li>Use <span class="font-semibold text-primary-600">Atomic Design</span> to break interfaces into logical levels</li>
+                    <li>Tools like Figma + Storybook help maintain and share components</li>
+                </ul>
+            </section>
+
+            <div class="border-t border-gray-200"></div>
+
+            <!-- CTA -->
+            <div class="text-center py-6">
+                <h3 class="text-xl font-semibold text-primary-700 mb-4">🔮 Up Next:</h3>
+                <p class="text-lg font-medium text-gray-800 mb-6">
+                    In <span class="font-semibold text-primary-600">Day 13</span>, we’ll explore <span class="font-semibold text-primary-600">Wireframing Best Practices</span> – sketching your ideas quickly and clearly before designing high-fidelity UIs.
+                </p>
+                <button class="bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-medium py-3 px-8 rounded-lg transition duration-300 transform hover:-translate-y-0.5 shadow-md hover:shadow-lg">
+                    Continue to Day 13
+                </button>
             </div>
         </div>
     </div>
-</article>
+</div>

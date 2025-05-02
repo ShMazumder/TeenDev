@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>30-Day UI/UX Mastery | TeenDev</title>
-    <meta name="description" content="Master UI/UX design in just 30 days with TeenDev’s hands-on challenge. Learn essential tools, design principles, and real-world workflows to become a confident designer — no prior experience needed." />
+    <meta name="description"
+        content="Master UI/UX design in just 30 days with TeenDev’s hands-on challenge. Learn essential tools, design principles, and real-world workflows to become a confident designer — no prior experience needed." />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
@@ -18,14 +19,14 @@
     <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png" />
 
     <!-- Open Graph / Social Media Meta Tags -->
-	<meta property="og:title" content="TeenDev: Accelerate Your Development Career | CAFU at Feni University">
-	<meta property="og:description"
-		content="Join TeenDev's intensive One-month program to master web & mobile app development, Git/GitHub, and launch your tech career.">
-	<meta property="og:image" content="/images/hero1.webp">
-	<meta property="og:url" content="https://teendev.web.app/">
-	<meta property="og:type" content="website">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="author" content="S.h. Mazumder">
+    <meta property="og:title" content="TeenDev: Accelerate Your Development Career | CAFU at Feni University">
+    <meta property="og:description"
+        content="Join TeenDev's intensive One-month program to master web & mobile app development, Git/GitHub, and launch your tech career.">
+    <meta property="og:image" content="/images/hero1.webp">
+    <meta property="og:url" content="https://teendev.web.app/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="author" content="S.h. Mazumder">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -96,6 +97,10 @@
             margin: 2rem auto;
             padding-left: 1rem;
             padding-right: 1rem;
+        }
+
+        #scroll-progress {
+            transition: width 0.2s ease-out;
         }
     </style>
 
@@ -370,6 +375,17 @@
 
             // Initialize
             initCourse();
+
+            const pageProgressBar = document.getElementById('pageProgressBar');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                pageProgressBar.style.width = `${scrollPercent}%`;
+                if (scrollPercent > 90) {
+                    progressBar.classList.replace('bg-primary', 'bg-secondary');
+                }
+            });
         });
     </script>
 </head>

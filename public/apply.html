@@ -175,64 +175,67 @@
         <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📝 Application Form</h2>
         <div id="success-message" class="success-message">Form submitted successfully! We will contact you soon.</div>
         <form id="application-form" class="space-y-6">
+            <div data-aos="fade-up">
+                <label for="full-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                <input type="text" id="full-name" name="full-name" class="form-input" placeholder="Enter your full name"
+                    required>
+                <span id="full-name-error" class="error-message">Please enter your full name.</span>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div data-aos="fade-right">
-                    <label for="full-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
-                    <input type="text" id="full-name" name="full-name" class="form-input"
-                        placeholder="Enter your full name" required>
-                    <span id="full-name-error" class="error-message">Please enter your full name.</span>
-                </div>
                 <div data-aos="fade-left">
                     <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
                     <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email"
                         required>
                     <span id="email-error" class="error-message">Please enter a valid email address.</span>
                 </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div data-aos="fade-right">
+
+                <div data-aos="fade-up">
                     <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
                     <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number"
                         required>
                     <span id="phone-error" class="error-message">Please enter a valid phone number (e.g.,
                         +8801234567890).</span>
                 </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div data-aos="fade-left">
                     <label for="city" class="block text-gray-700 font-semibold mb-2">City</label>
                     <input type="text" id="city" name="city" class="form-input" placeholder="Enter your city" required>
                     <span id="city-error" class="error-message">Please enter your city.</span>
                 </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div data-aos="fade-right">
+
+                <div data-aos="fade-up">
                     <label for="country" class="block text-gray-700 font-semibold mb-2">Country</label>
                     <input type="text" id="country" name="country" class="form-input" placeholder="Enter your country"
                         required>
                     <span id="country-error" class="error-message">Please enter your country.</span>
                 </div>
-                <div data-aos="fade-left">
-                    <label for="course" class="block text-gray-700 font-semibold mb-2">Select Course</label>
-                    <select id="course" name="course" class="form-input" required>
-                        <option value="" disabled selected>Select Course</option>
-                        <option value="uiux">UI/UX Design</option>
-                        <option value="frontend-web">Frontend Web Development (HTML, CSS, JavaScript)</option>
-                        <optgroup label="Backend Development">
-                            <option value="backend-php">Backend Development (PHP)</option>
-                            <option value="backend-python">Backend Development (Python)</option>
-                            <option value="backend-nodejs">Backend Development (NodeJS)</option>
-                        </optgroup>
-                        <optgroup label="Database Development">
-                            <option value="database-mysql">Database Development (MySQL)</option>
-                            <option value="database-pgsql">Database Development (PgSQL)</option>
-                        </optgroup>
-                        <option value="mobile-app-flutter">Mobile App Development (Flutter)</option>
-                        <option value="microservice-firebase">Serverless Microservice with Firebase</option>
-                        <option value="deployment-web-app">Cloud Deployment and App Publishing</option>
-                    </select>
-                    <span id="course-error" class="error-message">Please select a course.</span>
-                </div>
             </div>
-            <div data-aos="fade-right">
+
+            <div data-aos="fade-left">
+                <label for="course" class="block text-gray-700 font-semibold mb-2">Select Course</label>
+                <select id="course" name="course" class="form-input" required>
+                    <option value="" disabled selected>Select Course</option>
+                    <option value="uiux">UI/UX Design</option>
+                    <option value="frontend-web">Frontend Web Development (HTML, CSS, JavaScript)</option>
+                    <optgroup label="Backend Development">
+                        <option value="backend-php">Backend Development (PHP)</option>
+                        <option value="backend-python">Backend Development (Python)</option>
+                        <option value="backend-nodejs">Backend Development (NodeJS)</option>
+                    </optgroup>
+                    <optgroup label="Database Development">
+                        <option value="database-mysql">Database Development (MySQL)</option>
+                        <option value="database-pgsql">Database Development (PgSQL)</option>
+                    </optgroup>
+                    <option value="mobile-app-flutter">Mobile App Development (Flutter)</option>
+                    <option value="microservice-firebase">Serverless Microservice with Firebase</option>
+                    <option value="deployment-web-app">Cloud Deployment and App Publishing</option>
+                </select>
+                <span id="course-error" class="error-message">Please select a course.</span>
+            </div>
+
+            <div data-aos="fade-up">
                 <label for="experience" class="block text-gray-700 font-semibold mb-2">Experience Level</label>
                 <select id="experience" name="experience" class="form-input" required>
                     <option value="" disabled selected>Select your experience level</option>
@@ -242,6 +245,7 @@
                 </select>
                 <span id="experience-error" class="error-message">Please select your experience level.</span>
             </div>
+
             <div data-aos="fade-left">
                 <label for="message" class="block text-gray-700 font-semibold mb-2">Why do you want to join?</label>
                 <textarea id="message" name="message" class="form-input" rows="4"
@@ -251,6 +255,7 @@
                 <p id="message-help" class="text-gray-500 text-sm mt-1">Share your goals and what you hope to achieve
                     with TeenDev.</p>
             </div>
+
             <div class="text-center" data-aos="fade-up">
                 <button type="submit" class="btn-primary">Submit Application</button>
             </div>

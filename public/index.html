@@ -9,9 +9,7 @@
 		content="Join TeenDev's intensive One-month program to master web & mobile app development, Git/GitHub, and launch your tech career. Limited seats available!">
 
 	<!-- Preload critical resources -->
-	<link rel="preload" href="/images/hero1.webp" as="image" fetchpriority="high">
-	<!-- <link rel="preload" href="/css/styles.css" as="style" fetchpriority="high"> -->
-
+	<!-- <link rel="preload" href="/images/hero1.webp" as="image" fetchpriority="high"> -->
 	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
 		as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript>
@@ -28,6 +26,7 @@
 	<meta property="og:type" content="website">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="author" content="S.h. Mazumder">
+	<meta name="theme-color" content="#1a56db">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
@@ -39,14 +38,15 @@
 	<meta name="msapplication-TileColor" content="#ffffff" />
 	<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png" />
 
+	<!-- Styles -->
 	<link href="/css/styles.css" rel="stylesheet">
-	<!-- <script src="/js/main.js"></script> -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+	</noscript>
 
-	<!-- Tailwind CSS -->
-	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
-	<!-- AOS Animation -->
-	<!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+	<!-- JavaScript -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
 	<style>
 		:root {
@@ -56,17 +56,12 @@
 
 		body {
 			scroll-behavior: smooth;
-			font-family: 'Poppins', sans-serif;
-			background-image: url(/images/hero.webp);
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: cover;
+			font-family: 'Poppins', 'Arial', sans-serif;
 			line-height: 1.6;
 		}
 
 		.hero {
 			background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(26, 86, 219, 0.9)), url(/images/hero4.webp);
-			background-attachment: fixed;
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -78,22 +73,17 @@
 		}
 
 		.program-contents {
-			background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(/images/staire.webp);
-			background-attachment: fixed;
-			background-position: top;
-			background-size: cover;
-			background-repeat: no-repeat;
+			background: rgba(255, 255, 255, 0.95);
 		}
 
-		.program-contents div div {
-			background: rgba(255, 255, 255, 0.85);
+		.program-contents .card {
 			border-radius: 10px;
 			padding: 20px 30px;
 			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 			transition: transform 0.3s ease;
 		}
 
-		.program-contents div div:hover {
+		.program-contents .card:hover {
 			transform: translateY(-5px);
 		}
 
@@ -102,7 +92,6 @@
 			background-size: cover;
 			background-position: top;
 			background-repeat: no-repeat;
-			background-attachment: fixed;
 			padding: 5rem 1rem;
 		}
 
@@ -122,12 +111,16 @@
 			box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 		}
 
+		.btn-primary:focus {
+			outline: 3px solid #3b82f6;
+			outline-offset: 2px;
+		}
+
 		.text-shadow {
-			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+			text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 		}
 
 		@media (max-width: 768px) {
-
 			.hero {
 				min-height: 50vh;
 				padding: 2rem 1rem;
@@ -152,7 +145,7 @@
 			color: #ffffff;
 			padding: 20px;
 			border-radius: 10px;
-			font-family: 'Poppins', sans-serif;
+			font-family: 'Poppins', 'Arial', sans-serif;
 			z-index: 9999;
 			display: flex;
 			flex-wrap: wrap;
@@ -230,12 +223,6 @@
 			opacity: 0.95;
 		}
 
-		#accept-cookies:focus,
-		#reject-cookies:focus {
-			outline: 3px solid #3b82f6;
-			outline-offset: 2px;
-		}
-
 		@media (max-width: 768px) {
 			#cookie-consent {
 				flex-direction: column;
@@ -246,150 +233,27 @@
 				padding-right: 0;
 				margin-bottom: 15px;
 			}
-
-
 		}
 	</style>
-
-	<!-- <link href="/css/styles.css" rel="stylesheet"> -->
-	<!-- <link rel="preload" href="/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
-	<noscript>
-		<link rel="stylesheet" href="/css/styles.css">
-	</noscript>
-
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<!-- JavaScript -->
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-
 </head>
 
 <body class="bg-gradient-to-b from-blue-50 to-white text-gray-800">
-
 	<!-- Hero Section -->
-	<section class="hero text-white text-center px-4">
+	<section class="hero text-white text-center px-4" aria-label="Program Introduction">
 		<h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-shadow">🔥 TeenDev: Accelerate Your Development Career!
-			🔥
-		</h1>
+			🔥</h1>
 		<p class="italic text-xl md:text-2xl mb-6 text-shadow">"Learn Today. Lead Tomorrow."</p>
 		<p class="text-lg md:text-xl text-shadow max-w-3xl mx-auto">A One-month intensive program to jumpstart your
 			career in web and mobile development</p>
 	</section>
 
 	<!-- Program Outline -->
-	<!-- <section class="program-contents outline-dotted bg-white p-8 md:p-12 max-w-5xl mx-auto rounded-2xl shadow-lg my-10"
-		data-aos="fade-up">
-		<h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📚 What You'll Learn</h2>
-
-		<div class="space-y-8">
-			<div data-aos="fade-right" class="p-6 bg-white rounded-lg shadow-md">
-				<h3 class="text-2xl font-bold mb-4 text-blue-600">🎨 UI/UX Design Course</h3>
-				<p class="text-gray-600 mb-4">Master the art of designing user-friendly, responsive interfaces over 30 days.</p>
-				<ul class="list-disc pl-6 space-y-2 text-gray-800">
-					<li>UI/UX Design Principles and Processes</li>
-					<li>User Journey Mapping and Personas</li>
-					<li>Wireframing and Prototyping (Low to High Fidelity)</li>
-					<li>Responsive Design and Accessibility</li>
-					<li>Design Systems and Usability Testing</li>
-				</ul>
-				<a href="https://teendev.web.app/apply" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-					Start Learning
-				</a>
-			</div>
-
-			<div data-aos="fade-right" class="p-6 bg-white rounded-lg shadow-md">
-				<h3 class="text-2xl font-bold mb-4 text-blue-600">💻 Frontend Development Course</h3>
-				<p class="text-gray-600 mb-4">Craft stunning, interactive web interfaces with core technologies.</p>
-				<ul class="list-disc pl-6 space-y-2 text-gray-800">
-					<li>HTML5 Structure and Semantics</li>
-					<li>CSS3 Styling and Animations</li>
-					<li>JavaScript (ES6+) Interactivity</li>
-					<li>Responsive Design Techniques</li>
-				</ul>
-				<a href="https://teendev.web.app/apply" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-					Start Learning
-				</a>
-			</div>
-
-			<div data-aos="fade-right" class="p-6 bg-white rounded-lg shadow-md">
-				<h3 class="text-2xl font-bold mb-4 text-blue-600">💻 Backend Development Course</h3>
-				<p class="text-gray-600 mb-4">Build powerful server-side applications with modern languages.</p>
-				<ul class="list-disc pl-6 space-y-2 text-gray-800">
-					<li>PHP for Web Applications</li>
-					<li>Python Frameworks (Django, Flask)</li>
-					<li>NodeJS and Express Basics</li>
-					<li>API Development and Integration</li>
-				</ul>
-				<a href="https://teendev.web.app/apply" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-					Start Learning
-				</a>
-			</div>
-
-			<div data-aos="fade-right" class="p-6 bg-white rounded-lg shadow-md">
-				<h3 class="text-2xl font-bold mb-4 text-blue-600">💻 Database Integration Course</h3>
-				<p class="text-gray-600 mb-4">Manage and connect data for dynamic web applications.</p>
-				<ul class="list-disc pl-6 space-y-2 text-gray-800">
-					<li>MySQL Database Design</li>
-					<li>NoSQL with MongoDB</li>
-					<li>Query Optimization Techniques</li>
-					<li>Backend-to-Database Connectivity</li>
-				</ul>
-				<a href="https://teendev.web.app/apply" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-					Start Learning
-				</a>
-			</div>
-
-			<div data-aos="fade-right" class="p-6 bg-white rounded-lg shadow-md">
-				<h3 class="text-2xl font-bold mb-4 text-blue-600">💻 Server Deployment and Cloud Basics Course</h3>
-				<p class="text-gray-600 mb-4">Launch and scale web apps with cloud infrastructure.</p>
-				<ul class="list-disc pl-6 space-y-2 text-gray-800">
-					<li>Server Setup (Linux Basics)</li>
-					<li>Cloud Platforms (AWS, GCP, Azure)</li>
-					<li>Deployment with Docker</li>
-					<li>Scaling and Load Balancing</li>
-				</ul>
-				<a href="https://teendev.web.app/apply" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-					Start Learning
-				</a>
-			</div>
-
-			<div data-aos="fade-left">
-				<h3 class="text-2xl font-bold mb-4 text-blue-600">📱 Mobile Application Development</h3>
-				<ul class="list-disc pl-6 space-y-2">
-					<li>Mobile UI Mockup and UX Design Principles</li>
-					<li>Cross-platform App Development with Flutter</li>
-					<li>Serverless Microservice Integration</li>
-					<li>App Publishing to Google Play Store</li>
-				</ul>
-
-				<a href="https://teendev.web.app/apply" target="_blank" rel="noopener noreferrer"
-					class="btn-primary inline-block mt-4">
-					Start Learning
-				</a>
-			</div>
-
-			<div data-aos="fade-right">
-				<h3 class="text-2xl font-bold mb-4 text-blue-600">🛠️ Essential Developer Tools</h3>
-				<ul class="list-disc pl-6 space-y-2">
-					<li>Git Version Control System Mastery</li>
-					<li>Git Command Line and Advanced Techniques</li>
-					<li>GitHub Collaboration and Open Source Contribution</li>
-					<li>Developer Workflow Best Practices</li>
-				</ul>
-
-				<a href="https://teendev.web.app/devtools" rel="noopener noreferrer"
-					class="btn-primary inline-block mt-4">
-					Start Learning
-				</a>
-			</div>
-		</div>
-	</section> -->
-
 	<section
 		class="program-contents outline-dotted bg-gray-50 p-8 md:p-12 max-w-6xl mx-auto rounded-2xl shadow-lg my-10"
 		data-aos="fade-up">
 		<h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📚 What You'll Learn</h2>
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-			<div data-aos="fade-top" class="p-6 bg-white rounded-lg shadow-md">
+			<div data-aos="fade-right" class="card">
 				<h3 class="text-2xl font-bold mb-4 text-blue-600">🎨 UI/UX Design Course</h3>
 				<p class="text-gray-600 mb-4">Master the art of designing user-friendly, responsive interfaces over 30
 					days.</p>
@@ -411,7 +275,7 @@
 				</a>
 			</div>
 
-			<div data-aos="fade-top" class="p-6 bg-white rounded-lg shadow-md">
+			<div data-aos="fade-left" class="card">
 				<h3 class="text-2xl font-bold mb-4 text-blue-600">💻 Frontend Development Course</h3>
 				<p class="text-gray-600 mb-4">Craft stunning, interactive web interfaces with core technologies.</p>
 				<ul class="list-disc pl-6 space-y-2 text-gray-800">
@@ -431,7 +295,7 @@
 				</a>
 			</div>
 
-			<div data-aos="fade-top" class="p-6 bg-white rounded-lg shadow-md">
+			<div data-aos="fade-right" class="card">
 				<h3 class="text-2xl font-bold mb-4 text-blue-600">💻 Backend Development Course</h3>
 				<p class="text-gray-600 mb-4">Build powerful server-side applications with modern languages.</p>
 				<ul class="list-disc pl-6 space-y-2 text-gray-800">
@@ -451,7 +315,7 @@
 				</a>
 			</div>
 
-			<div data-aos="fade-top" class="p-6 bg-white rounded-lg shadow-md">
+			<div data-aos="fade-left" class="card">
 				<h3 class="text-2xl font-bold mb-4 text-blue-600">💻 Database Integration Course</h3>
 				<p class="text-gray-600 mb-4">Manage and connect data for dynamic web applications.</p>
 				<ul class="list-disc pl-6 space-y-2 text-gray-800">
@@ -471,7 +335,7 @@
 				</a>
 			</div>
 
-			<div data-aos="fade-top" class="p-6 bg-white rounded-lg shadow-md">
+			<div data-aos="fade-right" class="card">
 				<h3 class="text-2xl font-bold mb-4 text-blue-600">💻 Server Deployment and Cloud Basics Course</h3>
 				<p class="text-gray-600 mb-4">Launch and scale web apps with cloud infrastructure.</p>
 				<ul class="list-disc pl-6 space-y-2 text-gray-800">
@@ -491,7 +355,7 @@
 				</a>
 			</div>
 
-			<div data-aos="fade-top" class="p-6 bg-white rounded-lg shadow-md">
+			<div data-aos="fade-left" class="card">
 				<h3 class="text-2xl font-bold mb-4 text-blue-600">📱 Mobile Application Development</h3>
 				<p class="text-gray-600 mb-4">Create cross-platform mobile apps with modern frameworks.</p>
 				<ul class="list-disc pl-6 space-y-2 text-gray-800">
@@ -511,7 +375,7 @@
 				</a>
 			</div>
 
-			<div data-aos="fade-top" class="p-6 bg-white rounded-lg shadow-md">
+			<div data-aos="fade-right" class="card">
 				<h3 class="text-2xl font-bold mb-4 text-blue-600">🛠️ Essential Developer Tools</h3>
 				<p class="text-gray-600 mb-4">Boost productivity with must-know developer tools.</p>
 				<ul class="list-disc pl-6 space-y-2 text-gray-800">
@@ -563,15 +427,13 @@
 		<h2 class="text-3xl font-bold mb-8 text-center text-blue-700">💬 What Past Participants Say</h2>
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 			<div class="bg-white p-6 rounded-xl shadow-md" data-aos="flip-left">
-				<p class="italic mb-4">"TeenDev completely transformed my approach to coding. The hands-on projects gave
-					me the
-					confidence to build real applications."</p>
+				<p class="italic mb-4" lang="en">"TeenDev completely transformed my approach to coding. The hands-on
+					projects gave me the confidence to build real applications."</p>
 				<p class="font-semibold text-blue-600">— Previous Participant</p>
 			</div>
 			<div class="bg-white p-6 rounded-xl shadow-md" data-aos="flip-left" data-aos-delay="100">
-				<p class="italic mb-4">"The Git/GitHub training alone was worth it! I now collaborate on projects like a
-					pro and
-					my workflow is so much more efficient."</p>
+				<p class="italic mb-4" lang="en">"The Git/GitHub training alone was worth it! I now collaborate on
+					projects like a pro and my workflow is so much more efficient."</p>
 				<p class="font-semibold text-blue-600">— Program Graduate</p>
 			</div>
 		</div>
@@ -582,8 +444,7 @@
 		<div class="max-w-4xl mx-auto">
 			<h2 class="text-3xl md:text-4xl font-bold mb-6">🚀 Launch Your Development Career Today! 🚀</h2>
 			<p class="text-xl mb-8 max-w-2xl mx-auto">Limited seats available for this intensive One-month program.
-				Don't miss
-				this opportunity to accelerate your skills!</p>
+				Don't miss this opportunity to accelerate your skills!</p>
 			<a href="https://teendev.web.app/" target="_blank" rel="noopener noreferrer"
 				class="btn-primary inline-block">
 				Apply Now
@@ -592,7 +453,7 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="text-center p-6 bg-gray-100 text-gray-600 text-sm">
+	<footer class="text-center p-6 bg-gray-100 text-gray-600 text-sm" role="contentinfo">
 		<div class="max-w-5xl mx-auto">
 			<div class="flex flex-wrap justify-center gap-4 mb-4">
 				<span>#TeenDev</span>
@@ -602,29 +463,30 @@
 				<span>#GitHub</span>
 				<span>#TechEducation</span>
 			</div>
-			<p>© 2025 TeenDev Program by CSE Association Feni University (CAFU). All rights reserved.</p>
+			<p>© <span id="current-year"></span> TeenDev Program by CSE Association Feni University (CAFU). All rights
+				reserved.</p>
 			<p class="mt-2"><a href="/privacy" class="text-blue-600 hover:underline">Privacy Policy</a> | <a
 					href="/terms" class="text-blue-600 hover:underline">Terms of Service</a></p>
 		</div>
 	</footer>
 
 	<!-- Cookie Consent Banner -->
-	<div id="cookie-consent" style="display: none;" role="dialog" aria-live="polite" aria-label="Cookie Consent Notice">
+	<div id="cookie-consent" style="display: none;" role="dialog" aria-live="polite" aria-label="Cookie Consent Notice"
+		aria-hidden="true">
 		<p>
 			We use cookies to enhance your experience on our website. They help us understand how you interact with our
-			site
-			and improve its performance. Read our
+			site and improve its performance. Read our
 			<a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
 			to learn about how we use cookies.
 		</p>
 		<div class="btn-group">
-			<button id="accept-cookies">Accept All</button>
-			<button id="reject-cookies" class="reject">Reject Non-Essential</button>
+			<button id="accept-cookies" aria-label="Accept all cookies">Accept All</button>
+			<button id="reject-cookies" class="reject" aria-label="Reject non-essential cookies">Reject
+				Non-Essential</button>
 		</div>
 	</div>
 
 	<script>
-
 		// Initialize AOS animations
 		document.addEventListener('DOMContentLoaded', function () {
 			AOS.init({
@@ -633,34 +495,43 @@
 				easing: 'ease-out-quad',
 				offset: 100
 			});
+		});
 
-			// Cookie Consent Logic
+		// Cookie Consent Logic
+		document.addEventListener('DOMContentLoaded', function () {
 			const cookieConsent = document.getElementById('cookie-consent');
 			const acceptCookies = document.getElementById('accept-cookies');
 			const rejectCookies = document.getElementById('reject-cookies');
 
 			if (!localStorage.getItem('cookieConsent')) {
 				cookieConsent.style.display = 'flex';
+				cookieConsent.setAttribute('aria-hidden', 'false');
 			} else if (localStorage.getItem('cookieConsent') === 'accepted') {
 				cookieConsent.style.display = 'none';
+				cookieConsent.setAttribute('aria-hidden', 'true');
 				loadAnalytics();
+			} else {
+				cookieConsent.style.display = 'none';
+				cookieConsent.setAttribute('aria-hidden', 'true');
 			}
 
 			acceptCookies.addEventListener('click', function () {
 				localStorage.setItem('cookieConsent', 'accepted');
 				cookieConsent.style.display = 'none';
+				cookieConsent.setAttribute('aria-hidden', 'true');
 				loadAnalytics();
 			});
 
 			rejectCookies.addEventListener('click', function () {
 				localStorage.setItem('cookieConsent', 'rejected');
 				cookieConsent.style.display = 'none';
+				cookieConsent.setAttribute('aria-hidden', 'true');
 			});
 
 			function loadAnalytics() {
 				if (window.dataLayer) return;
 
-				var script = document.createElement('script');
+				const script = document.createElement('script');
 				script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HS4MQ1S6TY';
 				script.async = true;
 				document.head.appendChild(script);
@@ -677,9 +548,18 @@
 						'analytics_storage': 'granted'
 					});
 				};
+
+				script.onerror = function () {
+					console.error('Failed to load Google Tag Manager script.');
+				};
 			}
 		});
 
+		// Dynamic Copyright Year
+		document.addEventListener('DOMContentLoaded', function () {
+			const yearSpan = document.getElementById('current-year');
+			yearSpan.textContent = new Date().getFullYear();
+		});
 	</script>
 </body>
 

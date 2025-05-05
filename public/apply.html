@@ -9,7 +9,7 @@
         content="Apply for TeenDev's intensive one-month program to master web & mobile app development and launch your tech career. Limited seats available!">
 
     <!-- Preload critical resources -->
-    <!-- <link rel="preload" href="/images/hero1.webp" as="image" fetchpriority="high"> -->
+    <link rel="preload" href="/images/hero4.webp" as="image" fetchpriority="high">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -111,6 +111,23 @@
             box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
         }
 
+        .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .hero {
                 min-height: 40vh;
@@ -154,60 +171,68 @@
     </section>
 
     <!-- Application Form -->
-    <section class="p-8 md:p-12 max-w-5xl mx-auto bg-white rounded-2xl shadow-lg my-10" data-aos="fade-up">
+    <section class="p-8 md:p-12 max-w-5xl mx-auto bg-gray-50 rounded-2xl shadow-lg my-10" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📝 Application Form</h2>
-        <form class="space-y-6"
-            onsubmit="alert('Form submitted successfully! We will contact you soon.'); return false;">
-
-            <div data-aos="fade-up">
-                <label for="full-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
-                <input type="text" id="full-name" name="full-name" class="form-input" placeholder="Enter your full name"
-                    required>
-            </div>
-
+        <div id="success-message" class="success-message">Form submitted successfully! We will contact you soon.</div>
+        <form id="application-form" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div data-aos="fade-up">
+                <div data-aos="fade-right">
+                    <label for="full-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" class="form-input"
+                        placeholder="Enter your full name" required>
+                    <span id="full-name-error" class="error-message">Please enter your full name.</span>
+                </div>
+                <div data-aos="fade-left">
                     <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
                     <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email"
                         required>
+                    <span id="email-error" class="error-message">Please enter a valid email address.</span>
                 </div>
-
-                <div data-aos="fade-up">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div data-aos="fade-right">
                     <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
                     <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number"
                         required>
+                    <span id="phone-error" class="error-message">Please enter a valid phone number (e.g.,
+                        +8801234567890).</span>
                 </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div data-aos="fade-up">
+                <div data-aos="fade-left">
                     <label for="city" class="block text-gray-700 font-semibold mb-2">City</label>
                     <input type="text" id="city" name="city" class="form-input" placeholder="Enter your city" required>
+                    <span id="city-error" class="error-message">Please enter your city.</span>
                 </div>
-                <div data-aos="fade-up">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div data-aos="fade-right">
                     <label for="country" class="block text-gray-700 font-semibold mb-2">Country</label>
                     <input type="text" id="country" name="country" class="form-input" placeholder="Enter your country"
                         required>
+                    <span id="country-error" class="error-message">Please enter your country.</span>
+                </div>
+                <div data-aos="fade-left">
+                    <label for="course" class="block text-gray-700 font-semibold mb-2">Select Course</label>
+                    <select id="course" name="course" class="form-input" required>
+                        <option value="" disabled selected>Select Course</option>
+                        <option value="uiux">UI/UX Design</option>
+                        <option value="frontend-web">Frontend Web Development (HTML, CSS, JavaScript)</option>
+                        <optgroup label="Backend Development">
+                            <option value="backend-php">Backend Development (PHP)</option>
+                            <option value="backend-python">Backend Development (Python)</option>
+                            <option value="backend-nodejs">Backend Development (NodeJS)</option>
+                        </optgroup>
+                        <optgroup label="Database Development">
+                            <option value="database-mysql">Database Development (MySQL)</option>
+                            <option value="database-pgsql">Database Development (PgSQL)</option>
+                        </optgroup>
+                        <option value="mobile-app-flutter">Mobile App Development (Flutter)</option>
+                        <option value="microservice-firebase">Serverless Microservice with Firebase</option>
+                        <option value="deployment-web-app">Cloud Deployment and App Publishing</option>
+                    </select>
+                    <span id="course-error" class="error-message">Please select a course.</span>
                 </div>
             </div>
-
-            <div data-aos="fade-up">
-                <label for="course" class="block text-gray-700 font-semibold mb-2">Select Course</label>
-                <select id="course" name="course" class="form-input" required>
-                    <option value="" disabled selected>Select Course</option>
-                    <option value="uiux">UI/UX Design</option>
-                    <option value="frontend-web" disabled>Frontend Web Development (HTML, CSS, JavaScript)</option>
-                    <option value="backend-php" disabled>Backend Development (PHP)</option>
-                    <option value="backend-python" disabled>Backend Development (Python)</option>
-                    <option value="backend-nodejs" disabled>Backend Development (NodeJS)</option>
-                    <option value="backend-mysql" disabled>Database Development (MySQL)</option>
-                    <option value="backend-phsql" disabled>Database Development (PgSQL)</option>
-                    <option value="mobile-app-flutter" disabled>Mobile App Development (Flutter)</option>
-                    <option value="microservice-with-firebase" disabled>Serverless Microservice with Firebase</option>
-                    <option value="deployment-web-app">Cloud Deployment and App Publishing</option>
-                </select>
-            </div>
-            <div data-aos="fade-up">
+            <div data-aos="fade-right">
                 <label for="experience" class="block text-gray-700 font-semibold mb-2">Experience Level</label>
                 <select id="experience" name="experience" class="form-input" required>
                     <option value="" disabled selected>Select your experience level</option>
@@ -215,11 +240,16 @@
                     <option value="intermediate">Intermediate</option>
                     <option value="advanced">Advanced</option>
                 </select>
+                <span id="experience-error" class="error-message">Please select your experience level.</span>
             </div>
-            <div data-aos="fade-up">
+            <div data-aos="fade-left">
                 <label for="message" class="block text-gray-700 font-semibold mb-2">Why do you want to join?</label>
                 <textarea id="message" name="message" class="form-input" rows="4"
-                    placeholder="Tell us your motivation for joining TeenDev" required></textarea>
+                    placeholder="Tell us your motivation for joining TeenDev" required
+                    aria-describedby="message-help"></textarea>
+                <span id="message-error" class="error-message">Please provide your motivation for joining.</span>
+                <p id="message-help" class="text-gray-500 text-sm mt-1">Share your goals and what you hope to achieve
+                    with TeenDev.</p>
             </div>
             <div class="text-center" data-aos="fade-up">
                 <button type="submit" class="btn-primary">Submit Application</button>
@@ -260,6 +290,81 @@
         document.addEventListener('DOMContentLoaded', function () {
             const yearSpan = document.getElementById('current-year');
             yearSpan.textContent = new Date().getFullYear();
+        });
+
+        // Form Validation and Submission
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('application-form');
+            const successMessage = document.getElementById('success-message');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                // Reset error messages
+                document.querySelectorAll('.error-message').forEach(error => error.style.display = 'none');
+                successMessage.style.display = 'none';
+
+                // Get form values
+                const fullName = document.getElementById('full-name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const city = document.getElementById('city').value.trim();
+                const country = document.getElementById('country').value.trim();
+                const course = document.getElementById('course').value;
+                const experience = document.getElementById('experience').value;
+                const message = document.getElementById('message').value.trim();
+
+                let isValid = true;
+
+                // Validation
+                if (!fullName) {
+                    document.getElementById('full-name-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email || !emailRegex.test(email)) {
+                    document.getElementById('email-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                const phoneRegex = /^\+\d{1,3}\d{6,14}$/;
+                if (!phone || !phoneRegex.test(phone)) {
+                    document.getElementById('phone-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                if (!city) {
+                    document.getElementById('city-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                if (!country) {
+                    document.getElementById('country-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                if (!course) {
+                    document.getElementById('course-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                if (!experience) {
+                    document.getElementById('experience-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                if (!message) {
+                    document.getElementById('message-error').style.display = 'block';
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    window.scrollTo({ top: form.offsetTop, behavior: 'smooth' });
+                }
+            });
         });
     </script>
 </body>

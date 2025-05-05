@@ -158,28 +158,55 @@
         <h2 class="text-3xl font-bold mb-8 text-center text-blue-700">📝 Application Form</h2>
         <form class="space-y-6"
             onsubmit="alert('Form submitted successfully! We will contact you soon.'); return false;">
+
+            <div data-aos="fade-up">
+                <label for="full-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                <input type="text" id="full-name" name="full-name" class="form-input" placeholder="Enter your full name"
+                    required>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div data-aos="fade-right">
-                    <label for="full-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
-                    <input type="text" id="full-name" name="full-name" class="form-input"
-                        placeholder="Enter your full name" required>
-                </div>
-                <div data-aos="fade-left">
+                <div data-aos="fade-up">
                     <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
                     <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email"
                         required>
                 </div>
+
+                <div data-aos="fade-up">
+                    <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number"
+                        required>
+                </div>
             </div>
-            <div data-aos="fade-right">
-                <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
-                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number"
-                    required>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div data-aos="fade-up">
+                    <label for="city" class="block text-gray-700 font-semibold mb-2">City</label>
+                    <input type="text" id="city" name="city" class="form-input" placeholder="Enter your city" required>
+                </div>
+                <div data-aos="fade-up">
+                    <label for="country" class="block text-gray-700 font-semibold mb-2">Country</label>
+                    <input type="text" id="country" name="country" class="form-input" placeholder="Enter your country"
+                        required>
+                </div>
             </div>
-            <div data-aos="fade-left">
-                <label for="city" class="block text-gray-700 font-semibold mb-2">City</label>
-                <input type="text" id="city" name="city" class="form-input" placeholder="Enter your city" required>
+
+            <div data-aos="fade-up">
+                <label for="course" class="block text-gray-700 font-semibold mb-2">Select Course</label>
+                <select id="course" name="course" class="form-input" required>
+                    <option value="" disabled selected>Select Course</option>
+                    <option value="uiux">UI/UX Design</option>
+                    <option value="frontend-web">Frontend Web Development (HTML, CSS, JavaScript)</option>
+                    <option value="backend-php">Backend Development (PHP)</option>
+                    <option value="backend-python">Backend Development (Python)</option>
+                    <option value="backend-nodejs">Backend Development (NodeJS)</option>
+                    <option value="backend-nodejs">Database Development (MySQL)</option>
+                    <option value="backend-nodejs">Database Development (PgSQL)</option>
+                    <option value="mobile-app-flutter">Mobile App Development (Flutter)</option>
+                    <option value="deployment-web-app">Cloud Deployment and App Publishing</option>
+                </select>
             </div>
-            <div data-aos="fade-right">
+            <div data-aos="fade-up">
                 <label for="experience" class="block text-gray-700 font-semibold mb-2">Experience Level</label>
                 <select id="experience" name="experience" class="form-input" required>
                     <option value="" disabled selected>Select your experience level</option>
@@ -188,7 +215,7 @@
                     <option value="advanced">Advanced</option>
                 </select>
             </div>
-            <div data-aos="fade-left">
+            <div data-aos="fade-up">
                 <label for="message" class="block text-gray-700 font-semibold mb-2">Why do you want to join?</label>
                 <textarea id="message" name="message" class="form-input" rows="4"
                     placeholder="Tell us your motivation for joining TeenDev" required></textarea>

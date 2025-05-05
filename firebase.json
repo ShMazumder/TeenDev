@@ -8,8 +8,8 @@
     ],
     "rewrites": [
       {
-        "source": "/uiux-mobile",
-        "destination": "/uiux-mobile.html"
+        "source": "/apply",
+        "destination": "/apply.html"
       },
       {
         "source": "/uiux",

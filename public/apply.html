@@ -381,13 +381,17 @@
                     };
 
                     // Call Google Apps Script API
-                    // "https://script.google.com/macros/s/AKfycbxiRqqKzrsx6lNPxefqrlCtyAN7fJMddWCQgg4kgDQ08bneoYvD930Q3N-QE2WWivL5/exec"
-                    fetch('https://script.google.com/macros/s/AKfycbxiRqqKzrsx6lNPxefqrlCtyAN7fJMddWCQgg4kgDQ08bneoYvD930Q3N-QE2WWivL5/exec', {
-                        method: 'POST',
-                        mode: 'no-cors', // Explicitly set CORS mode
+                    // "https://script.google.com/macros/s/AKfycbw4yULNUCbz8qZ32FQj4P3KQijrBT9CQoBCptPeOW7_EtNK4MM2NfFrK-Q4JSGPr_9d/exec"
+                    fetch('https://script.google.com/macros/s/AKfycbw4yULNUCbz8qZ32FQj4P3KQijrBT9CQoBCptPeOW7_EtNK4MM2NfFrK-Q4JSGPr_9d/exec', {
+                        redirect: "follow",
                         headers: {
-                            'Content-Type': 'application/json'
+                            "Content-Type": "text/plain;charset=utf-8",
                         },
+                        method: 'POST',
+                        // mode: 'no-cors', // Explicitly set CORS mode
+                        // headers: {
+                        //     'Content-Type': 'application/json'
+                        // },
                         body: JSON.stringify(formData)
                     })
                         .then(response => {

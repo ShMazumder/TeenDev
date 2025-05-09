@@ -381,15 +381,21 @@
                     };
 
                     // Call Google Apps Script API
-                    // "https://script.google.com/macros/s/AKfycbxr_8CyMNFBYVhsTYjBhP7l4c06DFsbp9sXN4BV7EUhxT3oPolM6UZqEqIyzNIHHoRL/exec"
-                    fetch('https://script.google.com/macros/s/AKfycbxr_8CyMNFBYVhsTYjBhP7l4c06DFsbp9sXN4BV7EUhxT3oPolM6UZqEqIyzNIHHoRL/exec', {
+                    // "https://script.google.com/macros/s/AKfycbxiRqqKzrsx6lNPxefqrlCtyAN7fJMddWCQgg4kgDQ08bneoYvD930Q3N-QE2WWivL5/exec"
+                    fetch('https://script.google.com/macros/s/AKfycbxiRqqKzrsx6lNPxefqrlCtyAN7fJMddWCQgg4kgDQ08bneoYvD930Q3N-QE2WWivL5/exec', {
                         method: 'POST',
+                        mode: 'cors', // Explicitly set CORS mode
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify(formData)
                     })
-                        .then(response => response.json())
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! Status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
                         .then(data => {
                             if (data.success) {
                                 successMessage.style.display = 'block';
@@ -399,10 +405,12 @@
                                 }, 5000);
                                 window.scrollTo({ top: form.offsetTop, behavior: 'smooth' });
                             } else {
+                                console.error('Server error:', data.message);
                                 alert('Error submitting form: ' + data.message);
                             }
                         })
                         .catch(error => {
+                            console.error('Fetch error:', error);
                             alert('An error occurred: ' + error.message);
                         });
                 } else {

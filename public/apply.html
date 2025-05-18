@@ -383,10 +383,13 @@
                     // Call Google Apps Script API
                     // "https://script.google.com/macros/s/AKfycbx717aR6o9v7oDWyZ5AO5v4V4yMJl4ZtWP9hjXDRfLZgZdO9RUmMreRYgS6fKodTxYm/exec"
                     fetch('https://script.google.com/macros/s/AKfycbx717aR6o9v7oDWyZ5AO5v4V4yMJl4ZtWP9hjXDRfLZgZdO9RUmMreRYgS6fKodTxYm/exec', {
-                        redirect: "follow",
+                        redirect: 'follow',
                         headers: {
-                            "Content-Type": "text/plain;charset=utf-8",
+                            'Content-Type': 'application/json' // Use application/json for JSON data
                         },
+                        // headers: {
+                        //     "Content-Type": "text/plain;charset=utf-8",
+                        // },
                         method: 'POST',
                         // mode: 'no-cors', // Explicitly set CORS mode
                         // headers: {

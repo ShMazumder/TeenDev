@@ -36,8 +36,12 @@
         "destination": "/devtools.html"
       },
       {
-        "source": "/fontend-development/M{01,02,03,04,05}/L{01,02,03,04,05}",
-        "destination": "/**.html"
+        "source": "/fontend-development/M{01,02,03,04,05}/L{01,02,03,04,05}{,/}",
+        "destination": "/fontend-development/M$1/L$2/index.html"
+      },
+      {
+        "source": "/fontend-development/M{03,05}/L05{,/}",
+        "destination": "/404.html"
       },
       {
         "source": "/**",

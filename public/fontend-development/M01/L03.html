@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Development - Module 01 Lesson 03</title>
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold">Lesson 03: Forms and Accessibility</h1>
+      <p class="mt-2">Module 01: HTML5 Structure and Semantics</p>
+    </div>
+  </header>
+  <main class="container mx-auto px-4 py-8">
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Objective</h2>
+      <p class="mb-4 text-gray-600">Create interactive forms and ensure accessibility with proper HTML attributes and ARIA roles.</p>
+      <h2 class="text-2xl font-semibold mb-4">Content</h2>
+      <h3 class="text-xl font-medium mb-2">1. HTML Forms Basics</h3>
+      <p class="mb-2 text-gray-600">Learn to create forms using &lt;form&gt;, &lt;input&gt;, &lt;select&gt;, and &lt;textarea&gt; elements.</p>
+      <p class="mb-2"><a href="#" class="text-blue-600 hover:underline">Watch Video (5 min)</a></p>
+      <h3 class="text-xl font-medium mb-2">2. Accessibility in Forms</h3>
+      <p class="mb-2 text-gray-600">Use labels, ARIA roles, and alt text to make forms accessible to all users.</p>
+      <p class="mb-2"><a href="#" class="text-blue-600 hover:underline">Watch Video (10 min)</a></p>
+      <h3 class="text-xl font-medium mb-2">3. Hands-On Exercise</h3>
+      <p class="mb-2 text-gray-600">Build an accessible contact form. Example:</p>
+      <pre class="bg-gray-200 p-4 rounded text-sm"><code>&lt;form action="/submit" method="POST"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required aria-required="true"&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required aria-required="true"&gt;
+  &lt;label for="message"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="message" name="message" aria-describedby="message-desc"&gt;&lt;/textarea&gt;
+  &lt;p id="message-desc"&gt;Enter your message here.&lt;/p&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      <h3 class="text-xl font-medium mb-2">4. Quiz</h3>
+      <p class="mb-2 text-gray-600">Test your knowledge with a 5-question quiz on forms and accessibility.</p>
+      <p class="mb-2"><a href="#" class="text-blue-600 hover:underline">Take Quiz</a></p>
+      <h3 class="text-xl font-medium mb-2">Resources</h3>
+      <ul class="list-disc pl-5 text-gray-600">
+        <li><a href="#" class="text-blue-600 hover:underline">HTML Forms Cheat Sheet</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA" class="text-blue-600 hover:underline">MDN Web Docs: ARIA</a></li>
+      </ul>
+    </div>
+    <div class="flex justify-between mt-6">
+      <a href="/M01/L02.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Previous</a>
+      <a href="/M01/L04.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Next</a>
+    </div>
+  </main>
+</body>
+</html>

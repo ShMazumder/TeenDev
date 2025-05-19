@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Development - Module 05 Lesson 01</title>
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold">Lesson 01: Advanced Responsive Design</h1>
+      <p class="mt-2">Module 05: Responsive Design and Capstone Project</p>
+    </div>
+  </header>
+  <main class="container mx-auto px-4 py-8">
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Objective</h2>
+      <p class="mb-4 text-gray-600">Master advanced responsive techniques using media queries, fluid grids, and viewport units.</p>
+      <h2 class="text-2xl font-semibold mb-4">Content</h2>
+      <h3 class="text-xl font-medium mb-2">1. Fluid Grids and Viewport Units</h3>
+      <p class="mb-2 text-gray-600">Learn to use percentages, vw, vh, and rem for flexible layouts.</p>
+      <p class="mb-2"><a href="#" class="text-blue-600 hover:underline">Watch Video (5 min)</a></p>
+      <h3 class="text-xl font-medium mb-2">2. Advanced Media Queries</h3>
+      <p class="mb-2 text-gray-600">Apply complex media queries for device-specific styling.</p>
+      <p class="mb-2"><a href="#" class="text-blue-600 hover:underline">Watch Video (10 min)</a></p>
+      <h3 class="text-xl font-medium mb-2">3. Hands-On Exercise</h3>
+      <p class="mb-2 text-gray-600">Create a responsive grid layout. Example:</p>
+      <pre class="bg-gray-200 p-4 rounded text-sm"><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+      <h3 class="text-xl font-medium mb-2">4. Quiz</h3>
+      <p class="mb-2 text-gray-600">Test your knowledge with a 5-question quiz on responsive design.</p>
+      <p class="mb-2"><a href="#" class="text-blue-600 hover:underline">Take Quiz</a></p>
+      <h3 class="text-xl font-medium mb-2">Resources</h3>
+      <ul class="list-disc pl-5 text-gray-600">
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" class="text-blue-600 hover:underline">MDN Web Docs: CSS Grid</a></li>
+        <li><a href="https://web.dev/responsive-web-design-basics/" class="text-blue-600 hover:underline">Web.dev: Responsive Design</a></li>
+      </ul>
+    </div>
+    <div class="flex justify-between mt-6">
+      <button disabled class="bg-gray-300 text-gray-600 px-4 py-2 rounded cursor-not-allowed">Previous</button>
+      <a href="/M05/L02.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Next</a>
+    </div>
+  </main>
+</body>
+</html>

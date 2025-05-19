@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Development - Module 03 Lesson 02</title>
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold">Lesson 02: Keyframe Animations</h1>
+      <p class="mt-2">Module 03: CSS3 Animations and Frameworks</p>
+    </div>
+  </header>
+  <main class="container mx-auto px-4 py-8">
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Objective</h2>
+      <p class="mb-4 text-gray-600">Build engaging animations using @keyframes for hero sections, loaders, and microinteractions.</p>
+      <h2 class="text-2xl font-semibold mb-4">Content</h2>
+      <h3 class="text-xl font-medium mb-2">1. Introduction to Keyframes</h3>
+      <p class="mb-2 text-gray-600">Learn how to define animations using @keyframes and the animation property.</p>
+      <p class="mb-2"><a href="#" class="text-blue-600 hover:underline">Watch Video (5 min)</a></p>
+      <h3 class="text-xl font-medium mb-2">2. Creating Animations</h3>
+      <p class="mb-2 text-gray-600">Apply keyframes to create effects like fade-ins, spins, and bounces.</p>
+      <p class="mb-2"><a href="#" class="text-blue-600 hover:underline">Watch Video (10 min)</a></p>
+      <h3 class="text-xl font-medium mb-2">3. Hands-On Exercise</h3>
+      <p class="mb-2 text-gray-600">Create a loading spinner with keyframes. Example:</p>
+      <pre class="bg-gray-200 p-4 rounded text-sm"><code>@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spinner {
+  animation: spin 1s linear infinite;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #2563eb;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}</code></pre>
+      <h3 class="text-xl font-medium mb-2">4. Quiz</h3>
+      <p class="mb-2 text-gray-600">Test your knowledge with a 5-question quiz on keyframe animations.</p>
+      <p class="mb-2"><a href="#" class="text-blue-600 hover:underline">Take Quiz</a></p>
+      <h3 class="text-xl font-medium mb-2">Resources</h3>
+      <ul class="list-disc pl-5 text-gray-600">
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes" class="text-blue-600 hover:underline">MDN Web Docs: @keyframes</a></li>
+        <li><a href="https://css-tricks.com/almanac/properties/a/animation/" class="text-blue-600 hover:underline">CSS Tricks: Animation Guide</a></li>
+      </ul>
+    </div>
+    <div class="flex justify-between mt-6">
+      <a href="/M03/L01.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Previous</a>
+      <a href="/M03/L03.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Next</a>
+    </div>
+  </main>
+</body>
+</html>
